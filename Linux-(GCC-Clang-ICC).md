@@ -238,7 +238,7 @@ The Python bindings pysgpp can be used either by setting the
 export PYTHONPATH="/PATH_TO_SGPP/lib:$PYTHONPATH"
 ```
 
-or by installing pysgpp in the local 'site-packages' folder:
+or by installing pysgpp in the local `site-packages` folder:
 
 ```console
 python setup.py install --user
@@ -251,7 +251,7 @@ export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:$LD_LIBRARY_PATH"
 python tutorial.py
 ```
 
-@subsection linux_using_java Java
+## Java
 Java programs using the Java bindings jsgpp have to be compiled in this way:
 
 ```console

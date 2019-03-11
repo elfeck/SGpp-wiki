@@ -480,6 +480,8 @@ Now create an operation as usual and evaluate the interpolation with a test para
   std::cout << "Target function value: " << func(parameter) << "\n";
   std::cout << "Numerical result: " << result << "\n";
 }
+```
+
 ### Example 7:
 
 void example7() {

@@ -1,3 +1,3 @@
-[Home](https://github.com/SGpp/SGpp/wiki)
+[**Home**](https://github.com/SGpp/SGpp/wiki)
 
-[Introductory examplea](https://github.com/SGpp/SGpp/wiki/Introductory-Examples)
+[**Introductory examples**](https://github.com/SGpp/SGpp/wiki/Introductory-Examples)

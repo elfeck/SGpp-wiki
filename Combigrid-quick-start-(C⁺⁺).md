@@ -483,7 +483,7 @@ Now create an operation as usual and evaluate the interpolation with a test para
 ```
 
 ### Example 7:
-
+'''
 void example7() {
   //  std::shared_ptr<sgpp::combigrid::CombigridOperation> operation =
   //      sgpp::combigrid::CombigridOperation::createExpUniformBoundaryLinearInterpolation(1, func);

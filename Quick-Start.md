@@ -16,7 +16,7 @@ These examples show the most basic features of each module. Additional examples,
 * Irgendwas
 
 *Datamining pipeline
-    *MinerFromConfig
+    *examplesPipeline/miner.cpp
 
 
 ### Optimization module

@@ -14,12 +14,9 @@ These examples show the most basic features of each module. Additional examples,
 
 ### Datadriven module
 * density estimation
-       *[C⁺⁺]
-* Item 3
-    * Item 3a
+    * [C⁺⁺]
 
-*datamining pipeline
-    *examplesPipeline/miner.cpp
+*datamining pipeline (examplesPipeline/miner.cpp)
 
 
 ### Optimization module

@@ -14,7 +14,7 @@ However, we use B-splines here instead to obtain a smoother interpolant.
 The resulting sparse grid function is then minimized with the method of steepest descent.
 For comparison, we also minimize the objective function with Nelder-Mead's method.
 
-For instructions on how to use SG++ within MATLAB, please see \ref installation.
+For instructions on how to use SG++ within MATLAB, please see [Installation](https://github.com/SGpp/SGpp/wiki/Installation).
 However, for this example to work, some extra steps are necessary.
 In the following, we assume that we want to run the example on Linux.
 

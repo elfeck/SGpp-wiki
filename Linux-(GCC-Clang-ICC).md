@@ -302,7 +302,8 @@ g++ your_mex_program.o \
 
 Of course, you have to add include paths and library switches for each
 module that 'your_mex_program' uses.
-@subsubsection linux_using_matlab_jsgpp Via jsgpp
+
+### Via jsgpp
 The third way of using SG++ from within MATLAB is jsgpp,
 i.e., using the Java library of SG++ and import it to MATLAB.
 Before we can use these methods in MATLAB, we have to add

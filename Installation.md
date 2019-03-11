@@ -7,5 +7,5 @@ If you want to use SG++ with MATLAB, we recommend to use the binaries provided i
 * [Linux (GCC/Clang/ICC)](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC))
 * OSX (GCC/ICC)
 * Windows (MinGW)
-* MATLAB binaries
+* [MATLAB binaries](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries)
 

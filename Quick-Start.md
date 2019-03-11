@@ -13,9 +13,10 @@ These examples show the most basic features of each module. Additional examples,
 * Python
 
 ### Datadriven module
-* Irgendwas
+* density estimation
+    *[C⁺⁺]
 
-*Datamining pipeline
+*datamining pipeline
     *examplesPipeline/miner.cpp
 
 

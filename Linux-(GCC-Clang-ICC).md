@@ -1,4 +1,3 @@
-@page linux Linux (GCC/Clang/ICC)
 This page contains instructions for compiling and using SG++ with
 GCC, Clang or ICC under Linux.
 For brevity, we assume you want to compile with GCC;

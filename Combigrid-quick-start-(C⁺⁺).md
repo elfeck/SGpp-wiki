@@ -40,7 +40,7 @@ static const sgpp::combigrid::MultiFunction func(f);
 size_t d = 3;
 ```
 
-@section combigrid_example_1 Example 1: Leja quadrature with linear growth of grid points
+### Example 1: Leja quadrature with linear growth of grid points
 
 Here comes the first and very simple example.
 
@@ -88,7 +88,7 @@ We can also find out how many function evaluations have been used:
 }
 ```
 
-@section combigrid_example_2 Example 2: Polynomial interpolation on nested Clenshaw Curtis grids
+### Example 2: Polynomial interpolation on nested Clenshaw Curtis grids
 
 The next example uses interpolation.
 
@@ -205,7 +205,7 @@ another CombigridOperation or CombigridMultiOperation for your actual evaluation
 }
 ```
 
-@section combigrid_example_3 Example 3: Evaluation at multiple points
+### Example 3: Evaluation at multiple points
 
 Now, we want to do interpolation at multiple evaluation points efficiently.
 
@@ -263,7 +263,7 @@ We can also set the parameters via a DataMatrix containing the vectors as column
 }  // end example3
 ```
 
-@section combigrid_example_4 Example 4: Serialization and lookup tables
+### Example 4: Serialization and lookup tables
 
 This example shows how to store and retrieve computed function values.
 
@@ -345,7 +345,7 @@ For demonstration purposes, we use loggingFunc directly this time without a look
 }
 ```
 
-@section combigrid_example_5 Example 5: Using different operations in each dimension
+### Example 5: Using different operations in each dimension
 
 This example shows how to apply different operators in different dimensions.
 
@@ -414,7 +414,7 @@ function, the operation approximates the result of ![f6].
 }
 ```
 
-@section combigrid_example_6 Example 6: Using a function operating on grids
+### Example 6: Using a function operating on grids
 
 This example shows how to apply different operators in different dimensions.
 
@@ -480,6 +480,7 @@ Now create an operation as usual and evaluate the interpolation with a test para
   std::cout << "Target function value: " << func(parameter) << "\n";
   std::cout << "Numerical result: " << result << "\n";
 }
+### Example 7:
 
 void example7() {
   //  std::shared_ptr<sgpp::combigrid::CombigridOperation> operation =
@@ -510,8 +511,7 @@ Now compare the result to the actual function value:
             << std::endl;
 }
 ```
-
-@section combigrid_example_8 Example 8: UQ setting with variance refinement
+### Example 8: UQ setting with variance refinement
 
 This example shows how to use the variance refinement method that uses the PCE transformation for
 variance computation on each subspace.

@@ -122,9 +122,9 @@ On the first level, we obtain 1, on the second 1/4, and on the third
 1/16 as surpluses.
 
 [f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvec%7Bx%7D_j%20%5Cin%20%5B0%2C%201%5D%5E2
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvarphi_j%5Ccolon%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D
-[f2]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20f%5Ccolon%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20f%28x_0%2C%20x_1%29%20%3A%3D%2016%20%28x_0%20-%201%29%20x_0%20%28x_1%20-%201%29%20x_1%0A
-[f3]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20u%5Ccolon%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20u%28x_0%2C%20x_1%29%20%3A%3D%20%5Csum_%7Bj%3D0%7D%5E%7BN-1%7D%20%5Calpha_j%20%5Cvarphi_j%28x_0%2C%20x_1%29%0A
+[f1]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvarphi_j:%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D
+[f2]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20f:%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20f%28x_0%2C%20x_1%29%20%3A%3D%2016%20%28x_0%20-%201%29%20x_0%20%28x_1%20-%201%29%20x_1%0A
+[f3]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20u:%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20u%28x_0%2C%20x_1%29%20%3A%3D%20%5Csum_%7Bj%3D0%7D%5E%7BN-1%7D%20%5Calpha_j%20%5Cvarphi_j%28x_0%2C%20x_1%29%0A
 [f4]: http://chart.apis.google.com/chart?cht=tx&chl=%5Calpha_j
 [f5]: http://chart.apis.google.com/chart?cht=tx&chl=u%28%5Cvec%7Bx%7D_j%29%20%3D%20f%28%5Cvec%7Bx%7D_j%29
 [f6]: http://chart.apis.google.com/chart?cht=tx&chl=j

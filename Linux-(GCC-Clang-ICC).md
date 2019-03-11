@@ -166,10 +166,12 @@ python setup.py install --user
 ```
 Instructions are also displayed at the end of the build.
 In Python, you can import the library and print its contents via
-@code{.py}
+
+```python
 import pysgpp
 dir(pysgpp)
-@endcode
+```
+
 ## Java Bindings
 By default, the Java bindings are built, too.
 If not, then the JDK is missing

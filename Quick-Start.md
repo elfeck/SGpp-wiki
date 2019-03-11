@@ -27,10 +27,6 @@ These examples show the most basic features of each module. Additional examples,
 * [Java](https://github.com/SGpp/SGpp/wiki/Optimization-quick-start-(Java))
 * [MATLAB](https://github.com/SGpp/SGpp/wiki/Optimization-quick-start-(MATLAB))
 
-### PDE module
-
-### Quadrature module
-
 ### Solver module
 
 

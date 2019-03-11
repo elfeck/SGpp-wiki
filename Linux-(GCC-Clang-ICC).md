@@ -238,7 +238,7 @@ The Python bindings pysgpp can be used either by setting the
 export PYTHONPATH="/PATH_TO_SGPP/lib:$PYTHONPATH"
 ```
 
-or by installing pysgpp in the local @c site-packages folder:
+or by installing pysgpp in the local 'site-packages' folder:
 
 ```console
 python setup.py install --user
@@ -281,7 +281,7 @@ with SG++ directly in C++ and converting input and output arguments
 from and to MATLAB's data structures.
 The parameters to be passed to
 <a href="https://www.mathworks.com/help/matlab/ref/mex.html" target="_blank">
-MATLAB's @c mex function</a> which compiles
+MATLAB's 'mex' function</a> which compiles
 the program are largely the same as for plain C++.
 Alternatively, you can link and compile by yourself:
 
@@ -302,13 +302,13 @@ g++ your_mex_program.o \
 ```
 
 Of course, you have to add include paths and library switches for each
-module that @c your_mex_program uses.
+module that 'your_mex_program' uses.
 @subsubsection linux_using_matlab_jsgpp Via jsgpp
 The third way of using SG++ from within MATLAB is jsgpp,
 i.e., using the Java library of SG++ and import it to MATLAB.
 Before we can use these methods in MATLAB, we have to add
 `/PATH_TO_SGPP/lib/jsgpp` to the `librarypath.txt` file of MATLAB.
-(Hint: Typing @c matlabroot in MATLAB returns the path of your MATLAB
+(Hint: Typing 'matlabroot' in MATLAB returns the path of your MATLAB
 installation.)
 Open the file `/PATH_TO_MATLAB/toolbox/local/librarypath.txt` in a text editor
 and add the line
@@ -320,7 +320,7 @@ and add the line
 at the end of the file.
 Now we can start MATLAB.
 However, we have to set the environment variables `LD_LIBRARY_PATH` and
-@c LD_PRELOAD before:
+`LD_PRELOAD` before:
 ```console
 export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:/PATH_TO_SGPP/lib/jsgpp:$LD_LIBRARY_PATH"
 export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6:$LD_PRELOAD"
@@ -329,7 +329,7 @@ matlab
 The variable `LD_LIBRARY_PATH` has to be set to allow MATLAB to find
 the shared libraries (see above).
 However, this does not suffice:
-MATLAB ships its own version of @c libstdc++
+MATLAB ships its own version of `libstdc++`
 (usually in `/PATH_TO_MATLAB/sys/os/glnxa64`) and prepends its location
 to MATLAB's internal `LD_LIBRARY_PATH`.
 Since this version of `libstdc++` is most likely incompatible with the
@@ -351,15 +351,15 @@ at java.lang.System.loadLibrary(Unknown Source)
 at sgpp.LoadJSGPPLib.loadJSGPPLib(LoadJSGPPLib.java:10)
 ```
 
-To work around this issue, set the @c LD_PRELOAD variable
-to load the correct version @c libstdc++ before calling MATLAB.
+To work around this issue, set the `LD_PRELOAD` variable
+to load the correct version `libstdc++` before calling MATLAB.
 You can find the correct version by examining the output of
 
 ```console
 ldd /PATH_TO_SGPP/lib/jsgpp/libjsgpp.so
 ```
 
-and searching for a line containing @c libstdc++.
+and searching for a line containing `libstdc++`.
 On 64-bit Ubuntu systems, it can be located in
 <tt>/usr/lib/x86_64-linux-gnu/libstdc++.so.6</tt>,
 but it can differ on other systems.
@@ -384,7 +384,7 @@ Undefined variable "sgpp" or class "sgpp.LoadJSGPPLib.loadJSGPPLib".
 
 Keep in mind that, however, MATLAB seems not to be compatible with Java 8 yet.
 After starting MATLAB,
-we have to add the @c jsgpp.jar file to MATLAB's class path with the command
+we have to add the `jsgpp.jar` file to MATLAB's class path with the command
 
 ```console
 javaaddpath('/PATH_TO_SGPP/lib/jsgpp/jsgpp.jar');
@@ -411,12 +411,12 @@ part dynamic; our jsgpp.jar should be in the latter part).
 ```console
 import sgpp.*
 ```
-in MATLAB to not have to write @c sgpp. in front of every method.
+in MATLAB to not have to write `sgpp`. in front of every method.
 - Call
 ```console
 methods('sgpp.Classname')
 ```
-to see all methods of the class "Classname" (e.g. @c Grid).
+to see all methods of the class "Classname" (e.g. `Grid`).
 - The methods itself can also be called like Java methods in the MATLAB
 command window, e.g.:
 ```console

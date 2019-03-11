@@ -1,13 +1,9 @@
-\page example_tutorial_m tutorial.m (Start Here)
-
 To be able to quickly start with a toolkit, it is often advantageous
 (not only for the impatient users), to look at some code examples first.
 In this tutorial, we give a short example program which interpolates a
 bivariate function on a regular sparse grid.
 Identical versions of the example are given in all languages
 currently supported by SG++: C++, Python, Java, and MATLAB.
-
-For instructions on how to compile and run the example, please see \ref installation.
 
 In the example, we create a two-dimensional regular sparse grid with level 3
 (with grid points ![f0])

@@ -1,5 +1,7 @@
 Welcome to the SGpp wiki!
 
+For information on installation and usage of SGpp see []()
+
 Get started with our [quick start examples](https://github.com/SGpp/SGpp/wiki/Quick-Start)!
 
 ### Structure of SGpp

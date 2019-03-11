@@ -15,7 +15,7 @@ In the constructor, we give the dimensionality of the domain
 The eval method evaluates the objective function and returns the function
 value ![f2] for a given point ![f3].
 
-´´´java
+```java
 public class ExampleFunction extends sgpp.OptScalarFunction {
   /**
    * Constructor.
@@ -46,7 +46,7 @@ public class ExampleFunction extends sgpp.OptScalarFunction {
   public void clone(sgpp.SWIGTYPE_p_std__unique_ptrT_sgpp__optimization__ScalarFunction_t clone) {
   }
 }
-´´´
+```
 
 The actual example looks follows.
 \dontinclude optimization.java

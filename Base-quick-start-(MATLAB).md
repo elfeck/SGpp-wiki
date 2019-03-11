@@ -111,7 +111,16 @@ fprintf('u(0.52, 0.73) = %.4f\n', opEval.eval(alpha,p));
 ```
 
 The example results in the following output:
-\verbinclude tutorial.output.txt
+
+```matlab
+dimensionality:         2
+number of grid points:  17
+length of alpha vector: 17
+alpha before hierarchization: [1, 0.75, 0.75, 0.4375, 0.9375, 0.9375, 0.4375, 0.75, 0.75, 0.4375, 0.9375, 0.9375, 0.4375, 0.5625, 0.5625, 0.5625, 0.5625]
+alpha after hierarchization:  [1, 0.25, 0.25, 0.0625, 0.0625, 0.0625, 0.0625, 0.25, 0.25, 0.0625, 0.0625, 0.0625, 0.0625, 0.0625, 0.0625, 0.0625, 0.0625]
+u(0.52, 0.73) = 0.7696
+```
+
 It can be clearly seen that the surpluses decay with a factor of 1/4:
 On the first level, we obtain 1, on the second 1/4, and on the third
 1/16 as surpluses.

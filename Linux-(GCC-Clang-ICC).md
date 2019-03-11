@@ -232,7 +232,7 @@ export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:$LD_LIBRARY_PATH"
 
 ## Python
 The Python bindings pysgpp can be used either by setting the
-'PYTHONPATH' environment variable to include the @c lib directory, i.e.
+'PYTHONPATH' environment variable to include the `lib directory`, i.e.
 
 ``` console
 export PYTHONPATH="/PATH_TO_SGPP/lib:$PYTHONPATH"

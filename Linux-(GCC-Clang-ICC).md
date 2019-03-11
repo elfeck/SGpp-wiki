@@ -400,7 +400,7 @@ explained above.
 Therefore, you likely have to change some calls especially to static
 methods like <tt>sgpp.createOperationEval</tt>, which are now located
 at <tt>sgpp.jsgpp.*</tt>.
-@subsubsection linux_using_matlab_hints Hints
+### Hints
 - Use
 ```console
 javaclasspath();

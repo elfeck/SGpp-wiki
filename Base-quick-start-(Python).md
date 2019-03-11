@@ -55,7 +55,7 @@ print "dimensionality:         {}".format(gridStorage.getDimension())
 
 Now, we use a sgpp::base::GridGenerator to
 create a regular sparse grid of level 3.
-Thus, \c gridStorage.getSize() returns 17, the number of grid points
+Thus, gridStorage.getSize() returns 17, the number of grid points
 of a two-dimensional regular sparse grid of level 3.
 
 ```python
@@ -65,11 +65,11 @@ print "number of grid points:  {}".format(gridStorage.getSize())
 ```
 
 We create an object of type sgpp::base::DataVector
-which is essentially a wrapper around a \c double array.
-The \c DataVector is initialized with as many
+which is essentially a wrapper around a double array.
+The DataVector is initialized with as many
 entries as there are grid points. It serves as a coefficient vector for the
 sparse grid interpolant we want to construct. As the entries of a
-freshly created \c DataVector are not initialized, we set them to
+freshly created DataVector are not initialized, we set them to
 0.0. (This is superfluous here as we initialize them in the
 next few lines anyway.)
 
@@ -79,10 +79,10 @@ alpha.setAll(0.0)
 print "length of alpha vector: {}".format(len(alpha))
 ```
 
-The \c for loop iterates over all grid points: For each grid
-point \c gp, the corresponding coefficient ![f4] is set to the
+The for loop iterates over all grid points: For each grid
+point gp, the corresponding coefficient ![f4] is set to the
 function value at the grid point's coordinates which are obtained by
-\c getStandardCoordinate(dim).
+getStandardCoordinate(dim).
 The current coefficient vector is then printed.
 
 ```python

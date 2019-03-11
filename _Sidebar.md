@@ -1,4 +1,4 @@
-[# Home](https://github.com/SGpp/SGpp/wiki)
+[Home](https://github.com/SGpp/SGpp/wiki)
 
 ## Quick Start
 [Overview](https://github.com/SGpp/SGpp/wiki/Quick-Start)

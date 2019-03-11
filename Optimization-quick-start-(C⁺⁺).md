@@ -199,7 +199,7 @@ The example program outputs the following results:
 '''c++
 sgpp::optimization example program started.
 
---------------------------------------------------------------------------------
+\-\-\-\-\-\-
 Generating grid...
 
 Adaptive grid generation (Ritter-Novak)...

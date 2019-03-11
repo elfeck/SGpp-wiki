@@ -1,1 +1,1 @@
-TODO
+Have a look at our [doxygen documentation](http://sgpp.sparsegrids.org/installation.html). 

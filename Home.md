@@ -1,6 +1,8 @@
 Welcome to the SGpp wiki!
 
-For information on installation and usage of SGpp see [Installation](https://github.com/SGpp/SGpp/wiki/Installation)
+For information on installation and usage of SGpp see [Installation](https://github.com/SGpp/SGpp/wiki/Installation).
+
+Information about the individual SGpp modules can be found [here]().
 
 Get started with our [quick start examples](https://github.com/SGpp/SGpp/wiki/Quick-Start)!
 

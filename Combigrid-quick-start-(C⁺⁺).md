@@ -482,7 +482,7 @@ Now create an operation as usual and evaluate the interpolation with a test para
 }
 ```
 
-### Example 7:
+### Example 7: Interpolation with an operation
 ```
 void example7() {
   //  std::shared_ptr<sgpp::combigrid::CombigridOperation> operation =

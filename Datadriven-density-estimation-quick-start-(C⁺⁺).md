@@ -1,4 +1,3 @@
-\page example_learnerSGDETest_cpp learner SGDE
 This examples demonstrates density estimation.
 
 ```c++

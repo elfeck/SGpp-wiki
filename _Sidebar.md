@@ -1,4 +1,4 @@
-[Wiki Home](https://github.com/SGpp/SGpp/wiki)
+[Wiki Home](https://github.com/SGpp/SGpp/wiki/SGpp-Wiki)
 
 [Installation](https://github.com/SGpp/SGpp/wiki/Installation)
 

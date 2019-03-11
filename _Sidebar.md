@@ -1,3 +1,4 @@
+## Wiki
 [Home](https://github.com/SGpp/SGpp/wiki)
 
 ## Quick Start

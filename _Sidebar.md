@@ -2,5 +2,7 @@
 
 [Installation](https://github.com/SGpp/SGpp/wiki/Installation)
 
+[Modules](https://github.com/SGpp/SGpp/wiki/Modules)
+
 ## Quick Start
 [Overview](https://github.com/SGpp/SGpp/wiki/Quick-Start)

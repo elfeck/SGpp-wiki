@@ -2,8 +2,7 @@ This page contains instructions for compiling and using SG++ with
 GCC, Clang or ICC under Linux.
 For brevity, we assume you want to compile with GCC;
 the compiler can be changed easily, however.
-(#Dependencies)
-[create an anchor](#Dependencies)
+#Dependencies
 ## Required
 The following software is required in order to build SG++:
 - <a href="https://gcc.gnu.org/" target="_blank">GCC (&ge; 4.8)</a> or
@@ -149,30 +148,33 @@ The Python bindings are important,
 because some unit tests are written in Python.
 By default, the Python bindings are built, too.
 If not, then some prerequisites are missing
-(see \ref linux_dependencies).
+(see Dependencies).
+
 By default, the Python bindings will be annotated with Python docstrings,
 if Doxygen is installed.
 Disabling this feature, which is recommended if you have to recompile the whole codebase frequently, is done by setting <tt>PYDOC=0</tt> in the
 SCons command line.
+
 When the build is finished,
 the Python bindings are installed in <tt>lib/pysgpp</tt>.
 If you use them, add the <tt>lib</tt> directory to your <tt>PYTHONPATH</tt>.
 Alternatively, you can install the bindings into your local
 <tt>site-packages</tt> directory:
-@verbatim
+
+```console
 python setup.py install --user
-@endverbatim
+```
 Instructions are also displayed at the end of the build.
 In Python, you can import the library and print its contents via
 @code{.py}
 import pysgpp
 dir(pysgpp)
 @endcode
-@subsection linux_compilation_jsgpp Java Bindings
+## Java Bindings
 By default, the Java bindings are built, too.
 If not, then the JDK is missing
-(see \ref linux_dependencies).
-@subsection linux_compilation_eclipse Eclipse and SCons
+(see Dependencies).
+## Eclipse and SCons
 Create a Makefile project and change the project properties as follows:
 - <i>Properties</i> &rarr; <i>C/C++ Build</i> &rarr; <i>Builder Settings</i>:
 Disable <i>Use default build command</i> and set <i>Build command</i> to
@@ -180,7 +182,7 @@ Disable <i>Use default build command</i> and set <i>Build command</i> to
 - <i>Properties</i> &rarr; <i>C/C++ Build</i> &rarr; <i>Behaviour</i>:
 Set <i>Build (Incremental build)</i> to, e.g., <tt>-j 2</tt>
 and <i>Clean</i> to <tt>-c</tt>.
-@section linux_using Using SG++
+# Using SG++
 In this section, we show how SG++ can be used as a library in other programs.
 For C++, this includes compilation, linking, and execution of the program
 using SG++.
@@ -189,71 +191,86 @@ We also show how to use SG++ from the other supported languages
 As an example application, we consider the @ref example_tutorial_cpp
 from the directory <tt>base/examples</tt>;
 however, the instructions can be analogously applied to other programs.
-Note that all examples, including @ref example_tutorial_cpp, are automatically built
-after each SCons run.
+
+Note that all examples, are automatically built after each SCons run.
 Therefore, the following steps are not necessary to compile the examples;
 rather, the intent is to show the steps to build an application using SG++.
 In the following, the current directory is always <tt>base/examples</tt> and
 @c /PATH_TO_SGPP refers to the absolute path of the SG++ directory.
 We assume that SG++ or its bindings have been successfully built before.
-@subsection linux_using_cpp C++
+## C++
 First, compile the program
 while supplying the include paths of the relevant modules:
-@verbatim
+
+```console
 g++ tutorial.cpp \
 -c -std=c++11 -fopenmp \
 -I/PATH_TO_SGPP/base/src \
 -o tutorial.o
-@endverbatim
+```
+
 Then, link the program by indicating the SG++ library path and the modules
 you want to link against:
-@verbatim
+
+```console
 g++ tutorial.o \
 -fopenmp \
 -L/PATH_TO_SGPP/lib/sgpp \
 -lsgppbase \
 -o tutorial
-@endverbatim
+```
+
 To run the program, note that you have to set the @c LD_LIBRARY_PATH
 environment variable to include the SG++ library path:
-@verbatim
+
+```console
 export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:$LD_LIBRARY_PATH"
 ./tutorial
-@endverbatim
-@subsection linux_using_python Python
+```
+
+## Python
 The Python bindings pysgpp can be used either by setting the
 @c PYTHONPATH environment variable to include the @c lib directory, i.e.
-@verbatim
+
+``` console
 export PYTHONPATH="/PATH_TO_SGPP/lib:$PYTHONPATH"
-@endverbatim
+```
+
 or by installing pysgpp in the local @c site-packages folder:
-@verbatim
+
+```console
 python setup.py install --user
-@endverbatim
+```
 To run your Python program, don't forget to update the @c LD_LIBRARY_PATH
 environment variable in any case:
-@verbatim
+
+```console
 export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:$LD_LIBRARY_PATH"
 python tutorial.py
-@endverbatim
+```
+
 @subsection linux_using_java Java
 Java programs using the Java bindings jsgpp have to be compiled in this way:
-@verbatim
+
+```console
 javac -cp .:/PATH_TO_SGPP/lib/jsgpp/jsgpp.jar tutorial.java
-@endverbatim
+```
 When running Java programs, you have to augment @c LD_LIBRARY_PATH
 not only by the SG++ library path, but also by a path specific for jsgpp:
-@verbatim
+
+```console
 export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:/PATH_TO_SGPP/lib/jsgpp:$LD_LIBRARY_PATH"
 java -cp .:/PATH_TO_SGPP/lib/jsgpp/jsgpp.jar tutorial
-@endverbatim
-@subsection linux_using_matlab MATLAB
+```
+
+## MATLAB
 MATLAB can use SG++ in three ways.
-@subsubsection linux_using_matlab_binaries Via Binaries
+### Via Binaries
 The recommended way is to download the binaries for use with MATLAB
 that are listed at \ref downloads.
 For instructions, please see the \ref matlab page.
-@subsubsection linux_using_matlab_mex Via MEX Interface
+
+### Via MEX Interface
 If the binaries don't work for you, then it is possible to write and
 compile a MEX interface yourself (similar to the interface that the
 binaries would provide).
@@ -265,7 +282,8 @@ The parameters to be passed to
 MATLAB's @c mex function</a> which compiles
 the program are largely the same as for plain C++.
 Alternatively, you can link and compile by yourself:
-@verbatim
+
+```console
 g++ your_mex_program.cpp \
 -c -std=c++11 -fopenmp -fPIC \
 -Wall -Wextra \
@@ -279,7 +297,8 @@ g++ your_mex_program.o \
 -lmex \
 -lsgppbase \
 -o your_mex_program.mexa64
-@endverbatim
+```
+
 Of course, you have to add include paths and library switches for each
 module that @c your_mex_program uses.
 @subsubsection linux_using_matlab_jsgpp Via jsgpp
@@ -291,18 +310,20 @@ Before we can use these methods in MATLAB, we have to add
 installation.)
 Open the file @c /PATH_TO_MATLAB/toolbox/local/librarypath.txt in a text editor
 and add the line
-@verbatim
+
+```console
 /PATH_TO_SGPP/lib/jsgpp
-@endverbatim
+```
+
 at the end of the file.
 Now we can start MATLAB.
 However, we have to set the environment variables @c LD_LIBRARY_PATH and
 @c LD_PRELOAD before:
-@verbatim
+```console
 export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/sgpp:/PATH_TO_SGPP/lib/jsgpp:$LD_LIBRARY_PATH"
 export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6:$LD_PRELOAD"
 matlab
-@endverbatim
+```
 The variable @c LD_LIBRARY_PATH has to be set to allow MATLAB to find
 the shared libraries (see above).
 However, this does not suffice:
@@ -312,7 +333,8 @@ to MATLAB's internal @c LD_LIBRARY_PATH.
 Since this version of @c libstdc++ is most likely incompatible with the
 version used to compile SG++, you will get errors like this
 when executing SG++ programs in MATLAB:
-@verbatim
+
+```console
 Error using tutorial (line 5)
 Java exception occurred:
 java.lang.UnsatisfiedLinkError: /PATH_TO_SGPP/lib/jsgpp/libjsgpp.so:
@@ -325,13 +347,16 @@ at java.lang.ClassLoader.loadLibrary(Unknown Source)
 at java.lang.Runtime.loadLibrary0(Unknown Source)
 at java.lang.System.loadLibrary(Unknown Source)
 at sgpp.LoadJSGPPLib.loadJSGPPLib(LoadJSGPPLib.java:10)
-@endverbatim
+```
+
 To work around this issue, set the @c LD_PRELOAD variable
 to load the correct version @c libstdc++ before calling MATLAB.
 You can find the correct version by examining the output of
-@verbatim
+
+```console
 ldd /PATH_TO_SGPP/lib/jsgpp/libjsgpp.so
-@endverbatim
+```
+
 and searching for a line containing @c libstdc++.
 On 64-bit Ubuntu systems, it can be located in
 <tt>/usr/lib/x86_64-linux-gnu/libstdc++.so.6</tt>,
@@ -343,24 +368,29 @@ is newer than that of the Java you built jsgpp with
 (check with <tt>java -version</tt> in a terminal).
 Sometimes, you have to force MATLAB to use your installed JDK
 by using the <tt>MATLAB_JAVA</tt> environment variable:
-@verbatim
+
+```console
 export MATLAB_JAVA="/PATH_TO_JDK/jre"
-@endverbatim
+```
+
 (e.g., <tt>MATLAB_JAVA="/usr/lib/jvm/java-7-openjdk-amd64/jre"</tt>).
 You can get errors like this otherwise:
-@verbatim
+
+```console
 Undefined variable "sgpp" or class "sgpp.LoadJSGPPLib.loadJSGPPLib".
-@endverbatim
+```
+
 Keep in mind that, however, MATLAB seems not to be compatible with Java 8 yet.
 After starting MATLAB,
 we have to add the @c jsgpp.jar file to MATLAB's class path with the command
-@verbatim
+
+```console
 javaaddpath('/PATH_TO_SGPP/lib/jsgpp/jsgpp.jar');
-@endverbatim
+```
 The final step consists in loading the jsgpp library via
-@verbatim
+```console
 sgpp.LoadJSGPPLib.loadJSGPPLib();
-@endverbatim
+```
 You should now be able to use SG++ in MATLAB.
 For an example, look at <tt>base/examples/tutorial.m</tt>.
 However, note that the example was written for the MATLAB SG++ binaries
@@ -370,25 +400,25 @@ methods like <tt>sgpp.createOperationEval</tt>, which are now located
 at <tt>sgpp.jsgpp.*</tt>.
 @subsubsection linux_using_matlab_hints Hints
 - Use
-@verbatim
+```console
 javaclasspath();
-@endverbatim
+```
 to see the loaded jar files (upper part static, lower
 part dynamic; our jsgpp.jar should be in the latter part).
 - Write
-@verbatim
+```console
 import sgpp.*
-@endverbatim
+```
 in MATLAB to not have to write @c sgpp. in front of every method.
 - Call
-@verbatim
+```console
 methods('sgpp.Classname')
-@endverbatim
+```
 to see all methods of the class "Classname" (e.g. @c Grid).
 - The methods itself can also be called like Java methods in the MATLAB
 command window, e.g.:
-@verbatim
+```console
 dataVector = sgpp.DataVector(10)
 dataVector.setAll(0)
 dataVector
-@endverbatim
+```

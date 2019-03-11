@@ -14,7 +14,39 @@ In the constructor, we give the dimensionality of the domain
 (in this case ![f1]).
 The eval method evaluates the objective function and returns the function
 value ![f2] for a given point ![f3].
-\include ExampleFunction.java
+
+´´´java
+public class ExampleFunction extends sgpp.OptScalarFunction {
+  /**
+   * Constructor.
+   */
+  public ExampleFunction() {
+    super(2);
+  }
+
+  /**
+   * Evaluates the test function.
+   *
+   * @param x     point \f$\vec{x} \in [0, 1]^2\f$
+   * @return      \f$f(\vec{x})\f$
+   */
+  public double eval(sgpp.DataVector x) {
+    if ((x.get(0) >= 0.0) && (x.get(0) <= 1.0) &&
+        (x.get(1) >= 0.0) && (x.get(1) <= 1.0)) {
+      // minimum is f(x) = -2 for x[0] = 3*pi/16, x[1] = 3*pi/14
+      return Math.sin(8.0 * x.get(0)) + Math.sin(7.0 * x.get(1));
+    } else {
+      return Double.POSITIVE_INFINITY;
+    }
+  }
+
+  /**
+   * Dummy method needed for SWIG, which provides the actual method body.
+   */
+  public void clone(sgpp.SWIGTYPE_p_std__unique_ptrT_sgpp__optimization__ScalarFunction_t clone) {
+  }
+}
+´´´
 
 The actual example looks follows.
 \dontinclude optimization.java

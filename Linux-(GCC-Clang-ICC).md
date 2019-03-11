@@ -2,7 +2,8 @@ This page contains instructions for compiling and using SG++ with
 GCC, Clang or ICC under Linux.
 For brevity, we assume you want to compile with GCC;
 the compiler can be changed easily, however.
-# Dependencies
+(#Dependencies)
+[create an anchor](#Dependencies)
 ## Required
 The following software is required in order to build SG++:
 - <a href="https://gcc.gnu.org/" target="_blank">GCC (&ge; 4.8)</a> or
@@ -94,11 +95,13 @@ After compilation, all unit-tests
 if Boost.Test is installed.
 There are also some tests written in Python,
 but the majority is written with Boost.Test.
+
 When the build is finished,
 the shared libraries are installed in <tt>lib/sgpp</tt>.
 If you use it, add this directory to your <tt>LD_LIBRARY_PATH</tt>.
 Instructions are also displayed at the end of the build.
-@subsection linux_compilation_configuration Configuration
+
+## Configuration
 SCons uses the file <tt>SConstruct</tt>. This file contains all information for
 compiling SGpp.
 If you just execute <tt>scons</tt>,
@@ -120,20 +123,28 @@ The currently available modules are (see the[modules](https://github.com/SGpp/SG
 - <tt>SG_PARALLEL</tt>: classes for parallel computing
 - <tt>SG_COMBIGRID</tt>: combigrid classes
 - <tt>SG_OPTIMIZATION</tt>: optimization of objective functions
+
 Also, there are two switches for supported high-level back-ends:
+
 - <tt>SG_PYTHON</tt>: Python bindings
 - <tt>SG_JAVA</tt>: Java bindings
+
 For example, the command
-@verbatim
+
+```console
 scons SG_OPTIMIZATION=0
-@endverbatim
+```
+
 will compile all modules except optimization.
+
 Additionally, you can pass some specific flags to the compiler
 using the <tt>CPPFLAGS</tt> environment variable:
-@verbatim
+
+```console
 scons CPPFLAGS='-g -O0'
-@endverbatim
-@subsection linux_compilation_pysgpp Python Bindings
+```
+
+## Python Bindings
 The Python bindings are important,
 because some unit tests are written in Python.
 By default, the Python bindings are built, too.

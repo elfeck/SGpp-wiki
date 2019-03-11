@@ -195,9 +195,11 @@ As an example application, we consider the [quick start tutorial](https://github
 Note that all examples, are automatically built after each SCons run.
 Therefore, the following steps are not necessary to compile the examples;
 rather, the intent is to show the steps to build an application using SG++.
+
 In the following, the current directory is always <tt>base/examples</tt> and
-@c /PATH_TO_SGPP refers to the absolute path of the SG++ directory.
+ `/PATH_TO_SGPP` refers to the absolute path of the SG++ directory.
 We assume that SG++ or its bindings have been successfully built before.
+
 ## C++
 First, compile the program
 while supplying the include paths of the relevant modules:

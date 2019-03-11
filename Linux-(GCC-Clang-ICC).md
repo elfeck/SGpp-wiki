@@ -20,8 +20,7 @@ if you want to use SG++ within Python, Java, or MATLAB.
 SWIG creates bindings from C/C++ functions in order to make
 them available as a Python module or
 prepare them to be called from Java code.
-- <a href="http://www.python.org/" target="_blank">
-Python development headers</a> are needed,
+- <a href="http://www.python.org/" target="_blank"> Python development headers</a> are needed,
 if you want to compile the Python bindings.
 - <a href="http://www.numpy.org/" target="_blank">NumPy for Python 2.7</a>
 is needed, if you want to run the Python tests/examples.

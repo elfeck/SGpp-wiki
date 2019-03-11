@@ -23,5 +23,5 @@ Please note that the modularization results in a somewhat unconventional folder 
 as "modular" as possible requires to have everything belonging to a module below that directory. This especially applies to the src folder. Its subdirectories reflect the namespaces. Therefore, the module name reappears once again:
 
 
-'/path/to/SGpp/module/src/sgpp/module/...'
+' /path/to/SGpp/module/src/sgpp/module/... '
 

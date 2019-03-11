@@ -1,3 +1,3 @@
 Welcome to the SGpp wiki!
 
-Get started with our [Introductory Examples](https://github.com/SGpp/SGpp/wiki/Introductory-Examples).
+Get started with our [quick start examples](https://github.com/SGpp/SGpp/wiki/Quick-Start).

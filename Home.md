@@ -1,7 +1,7 @@
 Welcome to the SGpp wiki!
 
 SGpp consits of several modules, each designed for a specific task.
-* **base**:      the central module, provides grids, bases, refinement and data types
+* **base**: the central module, provides grids, bases, refinement and data types
 * **combigrid**: regular and dimensionally adaptive combination technique
 * ...
 

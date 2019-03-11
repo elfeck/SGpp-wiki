@@ -34,7 +34,6 @@ a possible solution to circumvent this problem.
 
 Now, you should be able to run the MATLAB example,
 which we describe in the rest of this page.
-\dontinclude optimization.m
 
 At the beginning of the program, we disable OpenMP within matsgpp since
 it interferes with SWIG's director feature.
@@ -178,14 +177,56 @@ fprintf('\nsgpp::optimization example program terminated.\n');
 ```
 
 The example program outputs the following results:
-\verbinclude optimization.output_matlab.txt
+```matlab
+sgpp::optimization example program started.
+
+--------------------------------------------------------------------------------
+Generating grid...
+
+    Adaptive grid generation (Ritter-Novak)...
+        100.0% (N = 29, k = 3)
+    Done in 0ms.
+--------------------------------------------------------------------------------
+Hierarchizing...
+
+    Solving linear system (automatic method)...
+        Solving linear system (Gaussian elimination)...
+        Done in 0ms.
+    Done in 0ms.
+--------------------------------------------------------------------------------
+Optimizing smooth interpolant...
+
+x0 = [7.50000000000000000000e-01, 7.50000000000000000000e-01]
+f(x0) = 8.125, ft(x0) = 8.125
+
+    Optimizing (gradient descent)...
+        108 evaluations, x = [8.05312073972314856896e-01, 6.98251390596593024540e-01], f(x) = -2.784842
+    Done in 0ms.
+
+xOpt = [8.05312073972314856896e-01, 6.98251390596593024540e-01]
+f(xOpt) = 0.0927254, ft(xOpt) = -2.78484
+
+--------------------------------------------------------------------------------
+Optimizing objective function (for comparison)...
+
+    Optimizing (Nelder-Mead)...
+        309 steps, f(x) = 0.000000
+    Done in 0ms.
+
+xOptNM = [8.00000000000000044409e-01, 6.99999999999999955591e-01]
+f(xOptNM) = 0, ft(xOptNM) = -2.64809
+
+--------------------------------------------------------------------------------
+
+sgpp::optimization example program terminated.
+```
 
 We see that both the gradient-based optimization of the smooth sparse grid
 interpolant and the gradient-free optimization of the objective function
 find reasonable approximations of one of the four global minima
 (![f4]).
 
-[f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D%5Ccolon%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
 [f1]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D
 [f2]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cnabla%5Ctilde%7Bf%7D
 [f3]: http://chart.apis.google.com/chart?cht=tx&chl=f

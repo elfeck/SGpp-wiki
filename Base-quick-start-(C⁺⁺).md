@@ -5,8 +5,6 @@ bivariate function on a regular sparse grid.
 Identical versions of the example are given in all languages
 currently supported by SG++: C++, Python, Java, and MATLAB.
 
-For instructions on how to compile and run the example, please see \ref installation.
-
 In the example, we create a two-dimensional regular sparse grid of level 3
 (with grid points ![f0])
 using piecewise bilinear basis functions

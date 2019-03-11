@@ -8,7 +8,7 @@ On Ubuntu most [dependencies](https://dakota.sandia.gov/content/linux-ubuntu-140
 3. Point to dakota include and library directory when building SG++
 Example custom.py with the appropriate options for building the combigrid module
 
-`
+```python
 OPT=1
 USE_UMFPACK=1
 USE_EIGEN=1
@@ -29,4 +29,4 @@ RUN_CPPLINT=0
 RUN_PYTHON_TESTS=0
 CPPPATH="<dakota_install>/include"
 LIBPATH="<dakota_install>/lib"
-`
+```

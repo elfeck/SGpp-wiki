@@ -10,6 +10,7 @@ These examples show the most basic features of each module. Additional examples,
 
 ### Combigrid module
 * [C⁺⁺](https://github.com/SGpp/SGpp/wiki/Combigrid-quick-start-(C%E2%81%BA%E2%81%BA))
+* Python
 
 ### Datadriven module
 

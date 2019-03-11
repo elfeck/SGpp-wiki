@@ -28,5 +28,6 @@ These examples show the most basic features of each module. Additional examples,
 * [MATLAB](https://github.com/SGpp/SGpp/wiki/Optimization-quick-start-(MATLAB))
 
 ### Solver module
+*[C⁺⁺](https://github.com/SGpp/SGpp/wiki/Solver-quick-start-(C%E2%81%BA%E2%81%BA))
 
 

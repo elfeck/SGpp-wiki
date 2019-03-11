@@ -13,7 +13,7 @@ public class example_learnerSGDE {
     public static DataMatrix readARFF(String fileNameDefined) {
 ```
 
-		* -File class needed to turn stringName to actual file
+File class needed to turn stringName to actual file
 
 ```java
         File file = new File(fileNameDefined);
@@ -21,7 +21,7 @@ public class example_learnerSGDE {
         try{
 ```
 
-			* -read from filePooped with Scanner class
+read from filePooped with Scanner class
 
 ```java
             Scanner inputStream = new Scanner(file);
@@ -40,13 +40,13 @@ public class example_learnerSGDE {
 			
 ```
 
-			* hashNext() loops line-by-line
+hashNext() loops line-by-line
 
 ```java
             while(inputStream.hasNext()){
 ```
 
-				* read single line, put in string
+read single line, put in string
 
 ```java
                 String[] data = inputStream.next().split(",");
@@ -57,7 +57,7 @@ public class example_learnerSGDE {
             }
 ```
 
-			* after loop, close scanner
+after loop, close scanner
 
 ```java
             inputStream.close();

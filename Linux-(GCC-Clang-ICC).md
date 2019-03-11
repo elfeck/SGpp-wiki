@@ -67,22 +67,28 @@ target="_blank">SWIG 3.0 .deb file</a> here.
 
 # Compilation with SCons
 Compilation of the C++ libraries is done with SCons. Execute
-@verbatim
+
+```console
 scons -j <number of cores>
-@endverbatim
+```
+
 in the main folder to compile SG++ with GCC.
 For configuration (including other compilers) and
 optimization, see below.
 If SCons does not seem to find external dependencies
 even if they are installed,
 you might want to clear the SCons cache before trying again:
-@verbatim
+
+```console
 rm -r .sconf_temp .sconsign.dblite
-@endverbatim
+```
+
 To obtain help on parameters for compilation, type
-@verbatim
+
+```console
 scons --help
-@endverbatim
+```
+
 After compilation, all unit-tests
 (located in the <tt>tests</tt>-folder of each module) are executed,
 if Boost.Test is installed.
@@ -105,7 +111,7 @@ However, you should take into account the dependencies between
 the modules to avoid "undefined symbol" errors:
 When using them, depending on the dependencies,
 other modules might have to be included, too.
-The currently available modules are (see the @ref modules page):
+The currently available modules are (see the[modules](https://github.com/SGpp/SGpp/wiki/Modules) page):
 - <tt>SG_BASE</tt>: basic functionality
 - <tt>SG_DATADRIVEN</tt>: operations on data
 - <tt>SG_SOLVER</tt>: classes for solving the systems of equations

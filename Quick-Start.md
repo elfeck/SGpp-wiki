@@ -15,6 +15,8 @@ These examples show the most basic features of each module. Additional examples,
 ### Datadriven module
 * density estimation
     * [C⁺⁺](https://github.com/SGpp/SGpp/wiki/Datadriven-density-estimation-quick-start-(C%E2%81%BA%E2%81%BA))
+    * Python
+    * [Java](a)
 
 * datamining pipeline (examplesPipeline/miner.cpp)
 

@@ -55,11 +55,9 @@ or you might get trouble, i.e.,
 the paths <tt>C:\\PATH_TO_MINGW</tt> etc.,
 where you install the software, should be free of spaces.
 2. MinGW:
-1. Download <tt>mingw-w64-install.exe</tt> from the
-<a href="http://sourceforge.net/projects/mingw-w64/" target="_blank">
-MinGW-w64 SourceForge page</a>.
-2. Run the installer and select version at least 6.3.0 and the architecture `x86_64`.
-3. Prepend <tt>C:\\PATH_TO_MINGW\\bin</tt> to the <tt>PATH</tt>
+    * Download <tt>mingw-w64-install.exe</tt> from the <a href="http://sourceforge.net/projects/mingw-w64/" target="_blank"> MinGW-w64 SourceForge page</a>.
+    * Run the installer and select version at least 6.3.0 and the architecture `x86_64`.
+    * Prepend <tt>C:\\PATH_TO_MINGW\\bin</tt> to the <tt>PATH</tt>
 environment variable.
 3. Python:
 1. Download <tt>python-2.7.11.amd64.msi</tt> or similar from the

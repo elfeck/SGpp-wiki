@@ -5,7 +5,6 @@ To compile and customize SG++ select your operating system and compiler to get i
 * [Linux (GCC/Clang/ICC)](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC))
 * [OSX (GCC/ICC)](https://github.com/SGpp/SGpp/wiki/OSX-(GCC-ICC))
 * [Windows (MinGW)](https://github.com/SGpp/SGpp/wiki/Windows-(MinGW))
-* [MATLAB binaries](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries)
 
 SG++ can also be used with other OS/compiler combinations that are not listed here. SG++ should at least work with GCC, Clang, or ICC on Linux, GCC on OSX, and MinGW on Windows.
 

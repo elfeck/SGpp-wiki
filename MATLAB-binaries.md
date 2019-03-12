@@ -1,5 +1,5 @@
 This page explains how to install and use the binaries we provide for
-use with MATLAB.
+use with MATLAB as part of every SGpp [release](https://github.com/SGpp/SGpp/releases).
 # Linux
 1. Extract the archive to an arbitrary location, say
 <tt>/PATH_TO_BINARIES</tt>.

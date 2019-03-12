@@ -1,4 +1,4 @@
-To insure extendability and maintainability, SG++ is divided into a number of modules that implement different functionality.
+To insure extendability and maintainability, SG⁺⁺ is divided into a number of modules that implement different functionality.
 
 Different modules can be compiled independently from each other.
 
@@ -12,7 +12,7 @@ The modules can depend on each other. Especially all depend on the base module. 
 * [Module sgpp::quadrature](https://github.com/SGpp/SGpp/wiki/Module-sgpp::quadrature) Stochastic and deterministic quadrature algorithms.
 * [Module sgpp::solver](https://github.com/SGpp/SGpp/wiki/Module-sgpp::solver) Solvers in the broadest sense: PDE, linear equations, gradient descent, etc.
 
-The modules correspond to the C++ namespaces. Roughly speaking, all files from one namespace belong to the respective module. But a module can contain files belonging to some another namespace, i.e. static factory methods in the namespace sgpp::op_factory.
+The modules correspond to the C⁺⁺ namespaces. Roughly speaking, all files from one namespace belong to the respective module. But a module can contain files belonging to some another namespace, i.e. static factory methods in the namespace sgpp::op_factory.
 
 # Folder structure
 

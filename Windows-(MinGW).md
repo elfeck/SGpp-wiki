@@ -60,32 +60,19 @@ where you install the software, should be free of spaces.
     * Prepend <tt>C:\\PATH_TO_MINGW\\bin</tt> to the <tt>PATH</tt>
 environment variable.
 3. Python:
-1. Download <tt>python-2.7.11.amd64.msi</tt> or similar from the
-<a href="http://python.org/" target="_blank">Python page</a>.
-Python 3.x is incompatible with SCons and
-the x86 version will not work with pysgpp.
-2. Run the installer.
-3. Prepend <tt>C:\\PATH_TO_PYTHON</tt> and
-<tt>C:\\PATH_TO_PYTHON\\Scripts</tt>
-to the <tt>PATH</tt> environment variable
-(this can also be done by the installer).
+    * Download <tt>python-2.7.11.amd64.msi</tt> or similar from the <a href="http://python.org/" target="_blank">Python page</a>. Python 3.x is incompatible with SCons and the x86 version will not work with pysgpp.
+    * Run the installer.
+    * Prepend <tt>C:\\PATH_TO_PYTHON</tt> and <tt>C:\\PATH_TO_PYTHON\\Scripts</tt> to the <tt>PATH</tt> environment variable (this can also be done by the installer).
 4. PyWin32:
-1. Download <tt>pywin32-219.win-amd64-py2.7.exe</tt> or similar from the
-<a href="http://sourceforge.net/projects/pywin32/" target="_blank">
-PyWin32 SourceForge page</a>
-(selecting a version for amd64 and Python 2.7 is important).
-2. Run the installer, selecting the Python version you installed earlier.
+    * Download <tt>pywin32-219.win-amd64-py2.7.exe</tt> or similar from the <a href="http://sourceforge.net/projects/pywin32/" target="_blank"> PyWin32 SourceForge page</a> (selecting a version for amd64 and Python 2.7 is important).
+    * Run the installer, selecting the Python version you installed earlier.
 5. SCons:
-1. Download <tt>scons-2.4.1-amd64-setup.exe</tt> or similar from the
-<a href="http://sourceforge.net/projects/scons/" target="_blank">
-SCons SourceForge page</a>
-(selecting a version for amd64 is important).
-2. Run the installer, selecting the Python version you installed earlier.
+    * Download <tt>scons-2.4.1-amd64-setup.exe</tt> or similar from the <a href="http://sourceforge.net/projects/scons/" target="_blank"> SCons SourceForge page</a> (selecting a version for amd64 is important).
+    * Run the installer, selecting the Python version you installed earlier.
 6. Boost.Test:
-1. Download <tt>boost_1_63_0.7z</tt> or similar (but at least version 1.63) from the
-<a href="http://www.boost.org/" target="_blank">Boost page</a>.
-2. Unpack the archive.
-3. Run the following in <tt>cmd.exe</tt>:
+    * Download <tt>boost_1_63_0.7z</tt> or similar (but at least version 1.63) from the <a href="http://www.boost.org/" target="_blank">Boost page</a>.
+    * Unpack the archive.
+    * Run the following in <tt>cmd.exe</tt>:
 ```console
 cd C:\PATH_TO_BOOST
 bootstrap.bat gcc
@@ -96,64 +83,41 @@ link=shared ^
 threading=multi ^
 runtime-link=shared
 ```
-4. Copy
+4. Copy 
 <tt>C:\\PATH_TO_BOOST\\stage\\lib\\libboost_unit_test_framework-mgw52-mt-1_59.dll</tt>
 or similar to
 <tt>C:\\PATH_TO_BOOST\\stage\\lib\\libboost_unit_test_framework.dll</tt>.
-5. Prepend <tt>C:\\PATH_TO_BOOST\\stage\\lib</tt> to the <tt>PATH</tt>
-environment variable.
+5. Prepend <tt>C:\\PATH_TO_BOOST\\stage\\lib</tt> to the <tt>PATH</tt> environment variable.
 7. SWIG:
-1. Download <tt>swigwin-3.0.7.zip</tt> or similar from the
-<a href="http://www.swig.org/" target="_blank">SWIG page</a>.
-A special x64 version is not necessary.
-2. Extract the archive.
-3. Prepend <tt>C:\\PATH_TO_SWIG</tt> to the <tt>PATH</tt>
-environment variable.
+    * Download <tt>swigwin-3.0.7.zip</tt> or similar from the <a href="http://www.swig.org/" target="_blank">SWIG page</a>. A special x64 version is not necessary.
+    * Extract the archive.
+    * Prepend <tt>C:\\PATH_TO_SWIG</tt> to the <tt>PATH</tt> environment variable.
 8. NumPy:
-1. Download <tt>numpy‑1.9.3+mkl‑cp27‑none‑win_amd64.whl</tt> or similar
-from <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy"
-target="_blank">
-this third-party page</a>
-(selecting a version for amd64 is important).
-2. Run <tt>pip install numpy‑1.9.3+mkl‑cp27‑none‑win_amd64.whl</tt>
-to install NumPy.
+    * Download <tt>numpy‑1.9.3+mkl‑cp27‑none‑win_amd64.whl</tt> or similar from <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy"target="_blank"> this third-party page</a> (selecting a version for amd64 is important).
+    * Run <tt>pip install numpy‑1.9.3+mkl‑cp27‑none‑win_amd64.whl</tt> to install NumPy.
 9. JDK:
-1. Download <tt>jdk-8u66-windows-x64.exe</tt> or similar from the
-<a href="http://www.java.com/" target="_blank">Java page</a>
-(selecting a version for amd64 is important).
-2. Run the installer.
-3. Prepend <tt>C:\\PATH_TO_JDK\\bin</tt> to the <tt>PATH</tt>
-environment variable.
-4. If SCons does not seem to find the JDK in the right place,
-try checking the <tt>JAVA_HOME</tt> environment variable
-(either set it to the right path, e.g., <tt>C:\\PATH_TO_JDK</tt>
-without <tt>bin</tt>, or unset it completely).
+    * Download <tt>jdk-8u66-windows-x64.exe</tt> or similar from the <a href="http://www.java.com/" target="_blank">Java page</a> (selecting a version for amd64 is important).
+    * Run the installer.
+    * Prepend <tt>C:\\PATH_TO_JDK\\bin</tt> to the <tt>PATH</tt> environment variable.
+    * If SCons does not seem to find the JDK in the right place, try checking the <tt>JAVA_HOME</tt> environment variable (either set it to the right path, e.g., <tt>C:\\PATH_TO_JDK</tt> without <tt>bin</tt>, or unset it completely).
 10. Doxygen:
-1. Download <tt>doxygen-1.8.10-setup.exe</tt> or similar from the
-<a href="http://www.doxygen.org/" target="_blank">Doxygen page</a>.
-2. Run the installer.
-3. Prepend <tt>C:\\PATH_TO_DOXYGEN\\bin</tt> to the <tt>PATH</tt>
-environment variable.
+    * Download <tt>doxygen-1.8.10-setup.exe</tt> or similar from the <a href="http://www.doxygen.org/" target="_blank">Doxygen page</a>.
+    * Run the installer.
+    * Prepend <tt>C:\\PATH_TO_DOXYGEN\\bin</tt> to the <tt>PATH</tt> environment variable.
 11. Dot:
-1. Download <tt>graphviz-2.38.msi</tt> or similar from the
-<a href="http://www.graphviz.org/" target="_blank">Graphviz page</a>.
-2. Run the installer.
-3. Prepend <tt>C:\\PATH_TO_GRAPHVIZ\\bin</tt> to the <tt>PATH</tt>
-environment variable.
+    * Download <tt>graphviz-2.38.msi</tt> or similar from the <a href="http://www.graphviz.org/" target="_blank">Graphviz page</a>.
+    * Run the installer.
+    * Prepend <tt>C:\\PATH_TO_GRAPHVIZ\\bin</tt> to the <tt>PATH</tt> environment variable.
 12. MATLAB:
-1. Install MATLAB with the installer.
-2. Prepend <tt>C:\\PATH_TO_MATLAB\\bin</tt> to the <tt>PATH</tt>
-environment variable.
+    * Install MATLAB with the installer.
+    * Prepend <tt>C:\\PATH_TO_MATLAB\\bin</tt> to the <tt>PATH</tt> environment variable.
 13. GSL:
-1. Download <tt>gsl-1.15-x64.7z</tt> from the
-<a href="https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/Binaries%20%2864-bit%29/" target="_blank">MinGW-w64 SourceForge page</a>.
-2. Extract the archive.
-3. Copy <tt>C:\\PATH_TO_GSL\\bin\\libgsl-0.dll</tt> to
-<tt>C:\\PATH_TO_GSL\\bin\\libgsl.dll</tt> and
-	  <tt>C:\\PATH_TO_GSL\\bin\\libgslcblas-0.dll</tt> to
-<tt>C:\\PATH_TO_GSL\\bin\\libgslcblas.dll</tt>.
-4. Prepend <tt>C:\\PATH_TO_GSL\\bin</tt> to the <tt>PATH</tt>
-environment variable.
+    * Download <tt>gsl-1.15-x64.7z</tt> from the <a href="https://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/Binaries%20%2864-bit%29/" target="_blank">MinGW-w64 SourceForge page</a>.
+    * Extract the archive.
+    * Copy <tt>C:\\PATH_TO_GSL\\bin\\libgsl-0.dll</tt> to <tt>C:\\PATH_TO_GSL\\bin\\libgsl.dll</tt> and
+	  <tt>C:\\PATH_TO_GSL\\bin\\libgslcblas-0.dll</tt> to <tt>C:\\PATH_TO_GSL\\bin\\libgslcblas.dll</tt>.
+    * Prepend <tt>C:\\PATH_TO_GSL\\bin</tt> to the <tt>PATH</tt> environment variable.
+
 # Compilation with SCons
 Before you compile with SCons you need to make sure that command line finds the executable. It is located in <tt><python 2 installation path>/Scripts</tt>. Add it either to your <tt>PATH</tt> variable or provide the full path when calling SCons. Furthermore, when compiling with SCons, supply <tt>COMPILER=gnu</tt> to override the default of MSVC++. Don't forget to add the locations of the Boost include and library path.
 ```console
@@ -163,23 +127,24 @@ BOOST_INCLUDE_PATH=C:\PATH_TO_BOOST ^
 BOOST_LIBRARY_PATH=C:\PATH_TO_BOOST\stage\lib
 ```
 For additional remarks about building with SCons,
-please refer to the @ref linux_compilation "Linux page".
+please refer to the [Linux page](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC)).
+
 # Using SG++
 In this section, we show how SG++ can be used as a library in other programs.
 For C++, this includes compilation, linking, and execution of the program
 using SG++.
 We also show how to use SG++ from the other supported languages
 (Python, Java, and MATLAB).
-As an example application, we consider the @ref example_tutorial_cpp example
-from the directory <tt>base\\examples</tt>;
+As an example application, we consider the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA));
 however, the instructions can be analogously applied to other programs.
-Note that all examples, including @ref example_tutorial_cpp, are automatically built
+Note that all examples are automatically built
 after each SCons run.
 Therefore, the following steps are not necessary to compile the examples;
 rather, the intent is to show the steps to build an application using SG++.
 In the following, the current directory is always <tt>base\\examples</tt> and
 <tt>C:\\PATH_TO_SGPP</tt> refers to the absolute path of the SG++ directory.
 We assume that SG++ or its bindings have been successfully built before.
+
 ## C++
 First, compile the program
 while supplying the include paths of the relevant modules:
@@ -229,9 +194,9 @@ java -cp .;C:\PATH_TO_SGPP\lib\jsgpp\jsgpp.jar tutorial
 ## MATLAB
 MATLAB can use SG++ in three ways.
 ### Via Binaries
-The recommended way is to download the binaries for use with MATLAB
-that are listed at \ref downloads.
-For instructions, please see the \ref matlab page.
+The recommended way is to download the binaries for use with MATLAB that are listed at [Downloads and Version History](http://sgpp.sparsegrids.org/downloads.html).
+For instructions, please see the [matlab page](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries).
+
 ### Via MEX Interface
 If the binaries don't work for you, then it is possible to write and
 compile a MEX interface yourself (similar to the interface that the

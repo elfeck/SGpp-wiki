@@ -14,7 +14,7 @@
 * Rightclick newly created Project->New->Convert to a C/C++ Project (Adds C/C++ nature)
 * Select "Makefile project" and "Linux GCC" as toolchain
 
-![Convert_to_a_C-C___Project__018](/uploads/5808d4043c74e794ddfe6787320aa56d/Convert_to_a_C-C___Project__018.png)
+![convert](https://user-images.githubusercontent.com/5756739/54192400-23fd8800-44b8-11e9-94be-add028662be1.png)
 
 # Fix C++11 header indexing
 * Rightclick Project->Properties ->C/C++ General->Preprocessor Include Paths, Macros etc.->Providers (Tab)
@@ -22,7 +22,7 @@
 * Move the latter to the top of the list
 * Add "-std=c++11" to the "Command to get compiler specs" field
 
-![Properties_for_SGpp__019](/uploads/2c3ff36e319b9e2f0243bd8ae564bd28/Properties_for_SGpp__019.png)
+![c++11](https://user-images.githubusercontent.com/5756739/54192412-295ad280-44b8-11e9-8b74-863e52b7b2a8.png)
 * Rightclick Project->Index->Rebuild
 
 # Configure SCons build 
@@ -35,7 +35,7 @@ Either overwrite Eclipse build or install SConsolidator plugin
 * Enter scons parameters (e.g: "-j4 SG_ALL=0 SG_BASE=1") in "Build (Incremental build)"
 * Enter "-c" in Clean
 
-![Properties_for_SGpp__020](/uploads/d8e4cf52e9b4704f61e8915681a736a3/Properties_for_SGpp__020.png)
+![build](https://user-images.githubusercontent.com/5756739/54192348-07f9e680-44b8-11e9-88c8-7b08233fb3e5.png)
 * Optionally add different build configurations
 
 ## Install SConsolidator

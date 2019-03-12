@@ -18,8 +18,7 @@ as a prerequisite for SCons (Python 3.0 is not yet support by SCons).
 If you do not plan to compile the Python bindings (pysgpp),
 then the x86 version of Python is sufficient.
 - <a href="http://sourceforge.net/projects/pywin32/" target="_blank">
-PyWin32 (x64)</a>
-for parallel building and some tweaks in our `SConstruct`.
+PyWin32 (x64)</a> for parallel building and some tweaks in our `SConstruct`.
 - <a href="http://www.scons.org/" target="_blank">SCons (&ge; 2.3)</a>
 is required for building (build system).
 ## Recommended

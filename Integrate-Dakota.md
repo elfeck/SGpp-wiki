@@ -14,7 +14,11 @@ or the dakota git repository:
 by performing 
 ```console
 git clone https://software.sandia.gov/git/dakota
-edit dakota/.gitmodules to redirect each of the submodule URLs  to https://software.sandia.gov/git/
+```
+
+edit `dakota/.gitmodules`  to redirect each of the submodule URLs  to `https://software.sandia.gov/git/`
+
+```console
 git submodule sync
 git submodule update --init
 ```

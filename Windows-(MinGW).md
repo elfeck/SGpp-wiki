@@ -29,11 +29,9 @@ You can also skip the unit tests, but this is not recommended.
 if you want to use SG++ within Python, Java, or MATLAB.
 SWIG creates bindings from C/C++ functions in order to make
 them available as a Python module or prepare them to be called from Java code.
-- <a href="http://www.numpy.org/" target="_blank">
-NumPy for Python 2.7 (x64)</a> is needed,
+- <a href="http://www.numpy.org/" target="_blank"> NumPy for Python 2.7 (x64)</a> is needed,
 if you want to run the Python tests/examples.
-- <a href="http://www.java.com/" target="_blank">
-Java Development Kit (JDK, x64)</a>,
+- <a href="http://www.java.com/" target="_blank"> Java Development Kit (JDK, x64)</a>,
 if you want to compile the Java bindings.
 - <a href="http://www.doxygen.org/" target="_blank">Doxygen</a> is required to
 create and compile the documentation, which you are reading right now.

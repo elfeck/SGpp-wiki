@@ -41,7 +41,7 @@ is required for some functionality of the <tt>SG_DATADRIVEN</tt> module.
 - <a href="http://faculty.cse.tamu.edu/davis/suitesparse.html" target="_blank"> UMFPACK (in SuiteSparse)</a> is recommended for the <tt>SG_OPTIMIZATION</tt> module.
 - <a href="http://arma.sourceforge.net/" target="_blank">Armadillo</a> is recommended for the <tt>SG_OPTIMIZATION</tt> module.
 - <a href="http://getfem.org/gmm.html" target="_blank">Gmm++</a> can be used in conjunction with the <tt>SG_OPTIMIZATION</tt> module.
-- <a href="https://dakota.sandia.gov/">DAKOTA</a> is required for the Polynomial Chaos Expansion functionalities of the <tt>SG_COMBIGRID</tt> module. [Installation instructions](@ref install_dakota)
+- <a href="https://dakota.sandia.gov/">DAKOTA</a> is required for the Polynomial Chaos Expansion functionalities of the <tt>SG_COMBIGRID</tt> module. [Installation instructions](https://github.com/SGpp/SGpp/wiki/Integrate-Dakota)
 - <a href="https://www.cgal.org/index.html">CGAL</a> is required for a new Sparse Grid Density Estimation of the <tt>SG_DATADRIVEN</tt> module. It is required to solve a quadratic optimization problem to guarantee positive function values at the grid points.
 
 ## Installation

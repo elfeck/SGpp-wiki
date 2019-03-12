@@ -280,7 +280,7 @@ Therefore, you likely have to change some calls especially to static
 methods like <tt>sgpp.createOperationEval</tt>, which are now located
 at <tt>sgpp.jsgpp.*</tt>.
 ### Hints
-See the @ref linux_using_matlab_hints "Linux page" for hints on how to
+See the [Linux page](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC)) for hints on how to
 use SG++ within MATLAB.
 # Troubleshooting
 - In <tt>cmd.exe</tt>, type
@@ -292,13 +292,10 @@ to display the values of all environment variables.
 ```console
 OperationMultipleEvalSubspaceCombined.hpp:82:121: fatal error: ../../OperationMultipleEvalSubspace/combined/OperationMultipleEvalSubspaceCombined_calculateIndexCombined.hpp: No such file or directory
 ```
-then a developer didn't read the @ref development_coding "developer How-Tos"
-and did not know that relative include paths are not supported under Windows
-using MinGW.
-To solve this issue you either find out who it was and burn his house down
-or fix it by yourself (preferable).
-If you are using an official release of SG++, please report the bug to
-the developers. Thanks!
+then a developer didn't read the [developer How-Tos](http://sgpp.sparsegrids.org/development.html#development_coding)
+and did not know that relative include paths are not supported under Windows using MinGW.
+You can fix this issue by yourself.
+Please report this bug to the developers. Thanks!
 - If you are using an older computer (say < 2011) and the compilation seem to succeed but the unit tests fail, then you might have a problem with your architecture. By default SG++ is compiled with AVX support, which your processor may not support. Try to add the flag
 ```console
 ARCH=SSE3

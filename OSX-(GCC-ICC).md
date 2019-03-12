@@ -58,7 +58,7 @@ then install boost using ` brew install boost --c++11 `
 export JNI_CPPINCLUDE=/System/Library/Frameworks/JavaVM.framework/Versions/Current/Headers
 `
 The path itself can vary on your system. Note that the version has to correspond to an installed version.
-@section osx_compilation Compilation with SCons
+# Compilation with SCons
 Apple has installed a prehistoric version of GCC on your Mac.
 But it is there and it will cause you trouble, because scons thinks
 this is the GCC you want to use. You need to tell it the correct paths.
@@ -94,7 +94,8 @@ When the build is finished,
 the shared libraries are installed in <tt>lib/sgpp</tt>.
 If you use it, add this directory to your <tt>DYLD_FALLBACK_LIBRARY_PATH</tt>.
 Instructions are also displayed at the end of the build.
-@subsection osx_compilation_configuration Configuration
+
+## Configuration
 SCons uses the file <tt>SConstruct</tt>. This file contains all information for
 compiling SGpp.
 If you just execute <tt>scons</tt> (with CC and CXX specified as above) ,
@@ -107,7 +108,7 @@ However, you should take into account the dependencies between
 the modules to avoid "undefined symbol" errors:
 When using them, depending on the dependencies,
 other modules might have to be included, too.
-The currently available modules are (see the @ref modules page):
+The currently available modules are (see the [modules page](https://github.com/SGpp/SGpp/wiki/Modules)):
 - <tt>SG_BASE</tt>: basic functionality
 - <tt>SG_DATADRIVEN</tt>: operations on data
 - <tt>SG_SOLVER</tt>: classes for solving the systems of equations
@@ -129,7 +130,7 @@ using the <tt>CPPFLAGS</tt> environment variable:
 ```console
 scons CPPFLAGS='-g -O0'
 ```
-@subsection osx_compilation_pysgpp Python Bindings
+## Python Bindings
 The Python bindings are important,
 because some unit tests are written in Python.
 By default, the Python bindings are built, too.
@@ -158,7 +159,7 @@ By default, the Java bindings are built, too.
 If not, then the JDK is missing
 (see \ref linux_dependencies).
 <!--
-@subsection osx_compilation_eclipse Eclipse and SCons
+## Eclipse and SCons
 Create a Makefile project and change the project properties as follows:
 - <i>Properties</i> &rarr; <i>C/C++ Build</i> &rarr; <i>Builder Settings</i>:
 Disable <i>Use default build command</i> and set <i>Build command</i> to
@@ -173,17 +174,17 @@ For C++, this includes compilation, linking, and execution of the program
 using SG++.
 We also show how to use SG++ from the other supported languages
 (Python, Java, and MATLAB).
-As an example application, we consider the @ref example_tutorial_cpp
-from the directory <tt>base/examples</tt>;
+As an example application, we consider the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA));
 however, the instructions can be analogously applied to other programs.
-Note that all examples, including @ref example_tutorial_cpp, are automatically built
+Note that all examples are automatically built
 after each SCons run.
 Therefore, the following steps are not necessary to compile the examples;
 rather, the intent is to show the steps to build an application using SG++.
 In the following, the current directory is always <tt>base/examples</tt> and
 `/PATH_TO_SGPP` refers to the absolute path of the SG++ directory.
 We assume that SG++ or its bindings have been successfully built before.
-@subsection osx_using_cpp C++
+
+## C++
 First, compile the program
 while supplying the include paths of the relevant modules:
 ```console
@@ -207,7 +208,8 @@ environment variable to include the SG++ library path:
 export DYLD_FALLBACK_LIBRARY_PATH ="/PATH_TO_SGPP/lib/sgpp:$DYLD_FALLBACK_LIBRARY_PATH "
 ./tutorial
 ```
-@subsection osx_using_python Python
+
+## Python
 The Python bindings pysgpp can be used either by setting the
 `PYTHONPATH` environment variable to include the `lib` directory, i.e.
 ```console
@@ -223,7 +225,7 @@ environment variable in any case:
 export DYLD_FALLBACK_LIBRARY_PATH ="/PATH_TO_SGPP/lib/sgpp:$DYLD_FALLBACK_LIBRARY_PATH "
 python tutorial.py
 ```
-@subsection osx_misc Misc
+## Misc
 Other options as specified in the linux tutorial may work in Mac OSX but have not been tested so far.
 Share your success stories and issues with us to make this documentation more complete.
 

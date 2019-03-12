@@ -43,20 +43,20 @@ management is recomended. We will relly on the commonly used on <a href="http://
 In order for things to work propperly, you should keep to the order proposed below:
 - Install the Java JDK from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">the Oracle webpage </a>
 - python 2.7 is already part of Mac OSX
-- Install GCC ```console brew install gcc ```
-- SCons: ```console brew install scons ```
-- SWIG: ```console brew install swig ```
-- Doxygen: ```console brew install doxygen --with-graphviz ```
-- Dot: ```console brew install graphviz ```
-- Dot: ```console brew install gsl ```
-- NumPy: use the python package manager PIP ```console pip install numpy ```
+- Install GCC ` brew install gcc `
+- SCons: ` brew install scons `
+- SWIG: ` brew install swig `
+- Doxygen: ` brew install doxygen --with-graphviz `
+- Dot: ` brew install graphviz `
+- Dot: ` brew install gsl `
+- NumPy: use the python package manager PIP ` pip install numpy `
 - Boost: Here comes the tricky part. In order for boost to be compatible with C++11 headers, we have to compile the Boost package using GCC.
-First ```console export HOMEBREW_CC=gcc-5 ``` and ```console export HOMEBREW_CXX=g++-5 ``` (may differ from which version your GCC actually is),
-then install boost using ```console brew install boost --c++11 ```
-- Add ```console export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" ``` in your <tt>~/.bash_profile</tt> If the Java headers (jni.h, for example) are located somewhere else on your system, export the following variable manually
-```console
+First ` export HOMEBREW_CC=gcc-5 ` and ` export HOMEBREW_CXX=g++-5 ` (may differ from which version your GCC actually is),
+then install boost using ` brew install boost --c++11 `
+- Add ` export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)" ` in your <tt>~/.bash_profile</tt> If the Java headers (jni.h, for example) are located somewhere else on your system, export the following variable manually
+`
 export JNI_CPPINCLUDE=/System/Library/Frameworks/JavaVM.framework/Versions/Current/Headers
-```
+`
 The path itself can vary on your system. Note that the version has to correspond to an installed version.
 @section osx_compilation Compilation with SCons
 Apple has installed a prehistoric version of GCC on your Mac.

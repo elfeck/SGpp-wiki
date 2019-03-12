@@ -1,8 +1,8 @@
 Welcome to the SGpp wiki!
 
-You can either use the SG++ debian package provided with every [release](https://github.com/SGpp/SGpp/releases) or continue to [installation instructions](https://github.com/SGpp/SGpp/wiki/Installation).
+You can simply use the SG++ debian package provided with every [release](https://github.com/SGpp/SGpp/releases) or continue to [installation instructions](https://github.com/SGpp/SGpp/wiki/Installation) for more detailed information.
 
-Get started with our [quick start examples](https://github.com/SGpp/SGpp/wiki/Quick-Start)!
+The [quick start examples](https://github.com/SGpp/SGpp/wiki/Quick-Start) demonstrate basic usage of SG++.
 
 Further information about the individual SGpp modules can be found [here](https://github.com/SGpp/SGpp/wiki/Modules).
 

@@ -66,6 +66,7 @@ target="_blank">SWIG 3.0 .deb file</a> here.
 - Doxygen: <tt>doxygen</tt>
 - Dot: <tt>graphviz</tt>
 - GSL: <tt>libgsl-dev</tt>
+- zlib: <tt>zlib1g-dev</tt> and <tt>zlib1g</tt>
 
 # Compilation with SCons
 Compilation of the C++ libraries is done with SCons. Execute

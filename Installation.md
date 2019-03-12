@@ -1,6 +1,6 @@
 The easiest way to use SG⁺⁺ are the debian packages we provide with every [release](https://github.com/SGpp/SGpp/releases).
 
-To compile and customize SG⁺⁺ select your operating system and compiler to get instructions.
+To compile and customize SG⁺⁺ select your operating system:
 
 * [Linux (GCC/Clang/ICC)](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC))
 * [OSX (GCC/ICC)](https://github.com/SGpp/SGpp/wiki/OSX-(GCC-ICC))

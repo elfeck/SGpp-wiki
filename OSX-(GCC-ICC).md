@@ -157,7 +157,7 @@ dir(pysgpp)
 ## Java Bindings
 By default, the Java bindings are built, too.
 If not, then the JDK is missing
-(see \ref linux_dependencies).
+(see the [Linux dependencies](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC))).
 <!--
 ## Eclipse and SCons
 Create a Makefile project and change the project properties as follows:

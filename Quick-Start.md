@@ -1,6 +1,6 @@
 This is an overview of the quick start examples for SGpp.
 
-These examples show the most basic features of each module. Additional examples, showing the more advanced features of SGpp, are contained in the [full documentation](http://sgpp.sparsegrids.org/examples.html).
+These examples show the most basic features of each [module](https://github.com/SGpp/SGpp/wiki/Modules). Additional examples, showing the more advanced features of SGpp, are contained in the [full documentation](http://sgpp.sparsegrids.org/examples.html).
 
 ### Base module
 * [C⁺⁺](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA))

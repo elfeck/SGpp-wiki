@@ -1,12 +1,28 @@
-Install and enable Dakota for the sgpp::combigrid module.
+In order to use orthogonal polynomials with combigrid PCE and the combigird probability density functions, you have to install the Dakota library. You can do this as follows (tested with Dakota 6.8):
+Install dependencies as described here:
+[https://dakota.sandia.gov/content/install-required-tools-and-libraries](https://dakota.sandia.gov/content/install-required-tools-and-libraries)
 
-1. Obtain source code either from [git](https://dakota.sandia.gov/content/getting-dakota-source-code) or downloading the [appropriate source package](https://dakota.sandia.gov/downloads).
+On Ubuntu most dependencies can be installed from standard package repository. See
+[https://dakota.sandia.gov/content/linux-ubuntu-1404](https://dakota.sandia.gov/content/linux-ubuntu-1404)
 
-2. Follow the [compilation and installation guide](https://dakota.sandia.gov/content/build-compile-source-code).
-On Ubuntu most [dependencies](https://dakota.sandia.gov/content/linux-ubuntu-1404) can be installed from standard package repository.
+for reference. Obtain source code either from downloading appropriate source package:
+[https://dakota.sandia.gov/downloads](https://dakota.sandia.gov/downloads)
 
-3. Point to dakota include and library directory when building SG++
-Example custom.py with the appropriate options for building the combigrid module
+or the dakota git repository:
+[https://dakota.sandia.gov/content/getting-dakota-source-code](https://dakota.sandia.gov/content/getting-dakota-source-code)
+
+by performing 
+```console
+git clone https://software.sandia.gov/git/dakota
+edit dakota/.gitmodules to redirect each of the submodule URLs  to https://software.sandia.gov/git/
+git submodule sync
+git submodule update --init
+```
+Then follow compilation and installation example at [https://dakota.sandia.gov/content/configure-compile-and-install-dakota](https://dakota.sandia.gov/content/configure-compile-and-install-dakota).
+
+Point to dakota include and library directory when building SG++.
+
+Example custom.py with the appropriate options for building the combigrid module:
 
 ```python
 OPT=1

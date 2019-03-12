@@ -14,4 +14,4 @@ gradient-based as well gradient-free ones, are implemented for optimizating the 
 surrogate.
 
 
-[f0]: http://chart.apis.google.com/chart?cht=tx&chl=f%5Ccolon%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f0]: http://chart.apis.google.com/chart?cht=tx&chl=f:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D

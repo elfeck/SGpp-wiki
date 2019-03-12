@@ -7,7 +7,7 @@ The modules can depend on each other. Especially all depend on the base module. 
 * [Module sgpp::base](https://github.com/SGpp/SGpp/wiki/Module-sgpp::base) Fundamental functionality required by all other modules.
 * [Module sgpp::combigrid](https://github.com/SGpp/SGpp/wiki/Module-sgpp::combigrid) Combination technique functionality.
 * [Module sgpp::datadriven](https://github.com/SGpp/SGpp/wiki/Module-sgpp::datadriven) Data mining and machine learning.
-* Module sgpp::optimization Optimization of smooth sparse grid interpolants.
+* [Module sgpp::optimization](https://github.com/SGpp/SGpp/wiki/Module-sgpp::optimization) Optimization of smooth sparse grid interpolants.
 * Module sgpp::pde Operations and functionality related to PDEs.
 * Module sgpp::quadrature Stochastic and deterministic quadrature algorithms.
 * Module sgpp::solver Solvers in the broadest sense: PDE, linear equations, gradient descent, etc.

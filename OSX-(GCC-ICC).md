@@ -135,7 +135,7 @@ The Python bindings are important,
 because some unit tests are written in Python.
 By default, the Python bindings are built, too.
 If not, then some prerequisites are missing
-(see \ref linux_dependencies).
+(see [Linux dependencies](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC))).
 By default, the Python bindings will be annotated with Python docstrings,
 if Doxygen is installed.
 Disabling this feature, which is recommended if you have to recompile the whole codebase frequently, is done by setting <tt>PYDOC=0</tt> in the

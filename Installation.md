@@ -1,4 +1,4 @@
-The easiest way to use SG⁺⁺ is using the debian packages we provide with every [release](https://github.com/SGpp/SGpp/releases).
+The easiest way to use SG⁺⁺ are the debian packages we provide with every [release](https://github.com/SGpp/SGpp/releases).
 
 To compile and customize SG⁺⁺ select your operating system and compiler to get instructions.
 

@@ -25,6 +25,12 @@
 ![c++11](https://user-images.githubusercontent.com/5756739/54192412-295ad280-44b8-11e9-8b74-863e52b7b2a8.png)
 * Rightclick Project->Index->Rebuild
 
+# Hide files
+* Open the C/C++ Projects View
+* Click on the small triangle ("View Menu") next to the minimize button of this view.
+* Click "Filters..."
+* Add filters
+
 # Configure SCons build 
 Either overwrite Eclipse build or install SConsolidator plugin
 

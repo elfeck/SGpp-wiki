@@ -2,7 +2,8 @@ This page contains instructions for compiling and using SG++ with
 GCC, Clang or ICC under Linux.
 For brevity, we assume you want to compile with GCC;
 the compiler can be changed easily, however.
-#Dependencies
+
+# Dependencies
 ## Required
 The following software is required in order to build SG++:
 - <a href="https://gcc.gnu.org/" target="_blank">GCC (&ge; 4.8)</a> or

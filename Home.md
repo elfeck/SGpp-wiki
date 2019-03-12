@@ -6,3 +6,5 @@ Get started with our [quick start examples](https://github.com/SGpp/SGpp/wiki/Qu
 
 Further information about the individual SGpp modules can be found [here](https://github.com/SGpp/SGpp/wiki/Modules).
 
+The complete documentation for developers can be found at [sgpp.sparsegrids.org](http://sgpp.sparsegrids.org/).
+

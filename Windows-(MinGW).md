@@ -194,7 +194,7 @@ java -cp .;C:\PATH_TO_SGPP\lib\jsgpp\jsgpp.jar tutorial
 ## MATLAB
 MATLAB can use SG++ in three ways.
 ### Via Binaries
-The recommended way is to download the binaries for use with MATLAB that are listed at [Downloads and Version History](http://sgpp.sparsegrids.org/downloads.html).
+The recommended way is to download the binaries for use with MATLAB that are part of the SGpp [releases ](https://github.com/SGpp/SGpp/releases)
 For instructions, please see the [matlab page](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries).
 
 ### Via MEX Interface

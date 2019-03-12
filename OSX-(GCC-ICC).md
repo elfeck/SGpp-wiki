@@ -174,7 +174,7 @@ For C++, this includes compilation, linking, and execution of the program
 using SG++.
 We also show how to use SG++ from the other supported languages
 (Python, Java, and MATLAB).
-As an example application, we consider the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA));
+As an example application, we consider the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA)) tutorial.cpp;
 however, the instructions can be analogously applied to other programs.
 Note that all examples are automatically built
 after each SCons run.

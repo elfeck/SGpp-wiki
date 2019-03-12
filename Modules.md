@@ -5,7 +5,7 @@ Different modules can be compiled independently from each other.
 The modules can depend on each other. Especially all depend on the base module. Libraries are generated for all modules. The following modules are available:
 
 * [Module sgpp::base](https://github.com/SGpp/SGpp/wiki/Module-sgpp::base) Fundamental functionality required by all other modules.
-* Module sgpp::combigrid Combination technique functionality.
+* [Module sgpp::combigrid](https://github.com/SGpp/SGpp/wiki/Module-sgpp::combigrid) Combination technique functionality.
 * Module sgpp::datadriven Data mining and machine learning.
 * Module sgpp::optimization SG++ module for optimization of smooth sparse grid interpolants.
 * Module sgpp::pde Operations and functionality related to PDEs.

@@ -29,7 +29,7 @@ The main functionality of the module is containted in
 - FullGrid*Evaluator, which takes the grid points, operators and a storage to compute a value on a regular/full grid ![f13]
 - CombigridEvaluator, which uses FullGridTensorEvaluator to perform the numeric computation on different regular/full grids and combines the obtained values
 - level manager classes that provide functionality to add a set of levels to the CombigridEvaluator, e.g. regular levels or adaptively generated levels.
-To use the UQ methods of the combigrid module, Dakota is required as a dependency. Click [here]() for installation instructions.
+To use the UQ methods of the combigrid module, Dakota is required as a dependency. Click [here](https://github.com/SGpp/SGpp/wiki/Integrate-Dakota) for installation instructions.
 
 
 [f0]: http://chart.apis.google.com/chart?cht=tx&chl=L%5E%7B2%7D

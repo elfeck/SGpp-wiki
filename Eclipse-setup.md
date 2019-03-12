@@ -4,7 +4,7 @@
 
 # Setup SG++ Project
 * File->Import... Git->Projects from Git
-![]((https://user-images.githubusercontent.com/5756739/54192381-1cd67a00-44b8-11e9-9068-5f63b4500b57.png))
+![a]((https://user-images.githubusercontent.com/5756739/54192381-1cd67a00-44b8-11e9-9068-5f63b4500b57.png))
 
 * Select "Clone URI"
 * Enter URI (SSH or HTPPS) and authetication details from [this projects main page](https://simsgs.informatik.uni-stuttgart.de:8444/SGpp/SGpp)

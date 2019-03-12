@@ -226,6 +226,6 @@ export DYLD_FALLBACK_LIBRARY_PATH ="/PATH_TO_SGPP/lib/sgpp:$DYLD_FALLBACK_LIBRAR
 python tutorial.py
 ```
 ## Misc
-Other options as specified in the linux tutorial may work in Mac OSX but have not been tested so far.
+Other options as specified in the [Linux instructions](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC)) may work in Mac OSX but have not been tested so far.
 Share your success stories and issues with us to make this documentation more complete.
 

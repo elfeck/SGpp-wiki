@@ -10,7 +10,8 @@ The following software is required in order to build SG++:
 <a href="http://clang.llvm.org/" target="_blank">Clang (&ge; 3.8)</a>
 - <a href="http://www.scons.org/" target="_blank">SCons (&ge; 2.3)</a>
 is required for building (build system).
-SCons is written in Python 2.7, which is therefore needed by SG++ as well.
+SCons is written in Python, which is therefore needed by SG++ as well. 
+For using SG++ Python functionality, Python 3 is required.
 ## Recommended
 The following software is recommended for core functionality:
 - <a href="http://www.boost.org/" target="_blank">Boost.Test</a>
@@ -23,7 +24,7 @@ them available as a Python module or
 prepare them to be called from Java code.
 - <a href="http://www.python.org/" target="_blank"> Python development headers</a> are needed,
 if you want to compile the Python bindings.
-- <a href="http://www.numpy.org/" target="_blank">NumPy for Python 2.7</a>
+- <a href="http://www.numpy.org/" target="_blank">NumPy for Python</a>
 is needed, if you want to run the Python tests/examples.
 - <a href="http://www.java.com/" target="_blank">Java Development Kit (JDK)</a>,
 if you want to compile the Java bindings.
@@ -60,8 +61,8 @@ including older Ubuntu versions.
 For Ubuntu 14.04 LTS, download the
 <a href="https://launchpad.net/ubuntu/utopic/amd64/swig3.0/3.0.2-1ubuntu1"
 target="_blank">SWIG 3.0 .deb file</a> here.
-- Python development headers: <tt>libpython-dev</tt>
-- NumPy: <tt>python-numpy</tt>
+- Python development headers: <tt>python3-dev</tt>
+- NumPy: <tt>python3-numpy</tt>
 - Java: <tt>openjdk-7-jdk</tt> or <tt>openjdk-8-jdk</tt> on Ubuntu &ge; 15.10
 - Doxygen: <tt>doxygen</tt>
 - Dot: <tt>graphviz</tt>

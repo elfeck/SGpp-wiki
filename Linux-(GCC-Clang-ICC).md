@@ -57,7 +57,7 @@ LLVM download page</a>, there are binaries for many other systems,
 including older Ubuntu versions.
 - SCons: <tt>scons</tt>
 - Boost.Test: <tt>libboost-test-dev</tt>
-- SWIG: <tt>swig3.0</tt> on Ubuntu &ge; 14.10.
+- SWIG: <tt>swig</tt> on Ubuntu &ge; 14.10.
 For Ubuntu 14.04 LTS, download the
 <a href="https://launchpad.net/ubuntu/utopic/amd64/swig3.0/3.0.2-1ubuntu1"
 target="_blank">SWIG 3.0 .deb file</a> here.

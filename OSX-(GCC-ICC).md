@@ -1,4 +1,4 @@
-This page contains instructions for compiling and using SG++ with
+This page contains instructions for compiling and using SG⁺⁺ with
 GCC or ICC under Mac OSX.
 For brevity, we assume you want to compile with GCC;
 the compiler can be changed easily, however.
@@ -6,16 +6,16 @@ the compiler can be changed easily, however.
 # Dependencies
 
 ## Required
-The following software is required in order to build SG++:
+The following software is required in order to build SG⁺⁺:
 - <a href="https://gcc.gnu.org/" target="_blank">GCC (&ge; 4.8)</a>
 - <a href="http://www.scons.org/" target="_blank">SCons (&ge; 2.3)</a> is required for building (build system).
-SCons is written in Python 2.7, which is therefore needed by SG++ as well.
+SCons is written in Python 2.7, which is therefore needed by SG⁺⁺ as well.
 
 ## Recommended
 The following software is recommended for core functionality:
 - <a href="http://www.boost.org/" target="_blank">Boost.Test</a> for compiling and running the unit tests.
 You can also skip the unit tests, but this is not recommended.
-- <a href="http://www.swig.org/" target="_blank">SWIG (&ge; 3.0)</a>, if you want to use SG++ within Python, Java, or MATLAB.
+- <a href="http://www.swig.org/" target="_blank">SWIG (&ge; 3.0)</a>, if you want to use SG⁺⁺ within Python, Java, or MATLAB.
 SWIG creates bindings from C/C++ functions in order to make
 them available as a Python module or
 prepare them to be called from Java code.
@@ -33,7 +33,7 @@ The following software can be installed for full functionality:
 - <a href="http://www.graphviz.org/" target="_blank"> dot in the Graphviz package</a>
 is optional and generates inheritance diagrams in the Doxygen documentation.
 - <a href="http://www.mathworks.com/" target="_blank">MATLAB</a>,
-if you want to use SG++ within MATLAB.
+if you want to use SG⁺⁺ within MATLAB.
 - <a href="https://www.gnu.org/software/gsl/" target="_blank">GNU Scientific Library (GSL)</a>,
 is required for some functionalities of the <tt>SG_DATADRIVEN</tt> module.
 ## Installation
@@ -72,7 +72,7 @@ Compilation of the C++ libraries is done with SCons. Execute
 ```console
 scons -j <number of cores>
 ```
-in the main folder to compile SG++ with GCC.
+in the main folder to compile SG⁺⁺ with GCC.
 For configuration (including other compilers) and
 optimization, see below.
 If SCons does not seem to find external dependencies
@@ -103,7 +103,7 @@ the default compilation with GCC for SSE3 instruction set is selected.
 The compiler can be changed using
 <tt>COMPILER=intel</tt>, e.g.
 To use other instruction sets, use <tt>ARCH=avx</tt>, etc.
-You are able to compile different SG++ modules independently.
+You are able to compile different SG⁺⁺ modules independently.
 However, you should take into account the dependencies between
 the modules to avoid "undefined symbol" errors:
 When using them, depending on the dependencies,
@@ -168,21 +168,21 @@ Disable <i>Use default build command</i> and set <i>Build command</i> to
 Set <i>Build (Incremental build)</i> to, e.g., <tt>-j 2</tt>
 and <i>Clean</i> to <tt>-c</tt>.
 -->
-# Using SG++
-In this section, we show how SG++ can be used as a library in other programs.
+# Using SG⁺⁺
+In this section, we show how SG⁺⁺ can be used as a library in other programs.
 For C++, this includes compilation, linking, and execution of the program
-using SG++.
-We also show how to use SG++ from the other supported languages
+using SG⁺⁺.
+We also show how to use SG⁺⁺ from the other supported languages
 (Python, Java, and MATLAB).
 As an example application, we consider the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA)) tutorial.cpp;
 however, the instructions can be analogously applied to other programs.
 Note that all examples are automatically built
 after each SCons run.
 Therefore, the following steps are not necessary to compile the examples;
-rather, the intent is to show the steps to build an application using SG++.
+rather, the intent is to show the steps to build an application using SG⁺⁺.
 In the following, the current directory is always <tt>base/examples</tt> and
-`/PATH_TO_SGPP` refers to the absolute path of the SG++ directory.
-We assume that SG++ or its bindings have been successfully built before.
+`/PATH_TO_SGPP` refers to the absolute path of the SG⁺⁺ directory.
+We assume that SG⁺⁺ or its bindings have been successfully built before.
 
 ## C++
 First, compile the program
@@ -193,7 +193,7 @@ g++ tutorial.cpp \
 -I/PATH_TO_SGPP/base/src \
 -o tutorial.o
 ```
-Then, link the program by indicating the SG++ library path and the modules
+Then, link the program by indicating the SG⁺⁺ library path and the modules
 you want to link against:
 ```console
 g++ tutorial.o \
@@ -203,7 +203,7 @@ g++ tutorial.o \
 -o tutorial
 ```
 To run the program, note that you have to set the `LD_LIBRARY_PATH`
-environment variable to include the SG++ library path:
+environment variable to include the SG⁺⁺ library path:
 ```console
 export DYLD_FALLBACK_LIBRARY_PATH ="/PATH_TO_SGPP/lib/sgpp:$DYLD_FALLBACK_LIBRARY_PATH "
 ./tutorial

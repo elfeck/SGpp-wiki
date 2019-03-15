@@ -1,4 +1,4 @@
-This page contains instructions for compiling and using SG++ with
+This page contains instructions for compiling and using SG⁺⁺ with
 MinGW (64-bit) under Windows.
 
 # Caveats
@@ -6,11 +6,11 @@ MinGW (64-bit) under Windows.
 and therefore turned off in the MinGW build.
 - Libraries compiled with different Windows compiler are in general not
 compatible with each other.
-So, using the compiled SG++ library from MSVC++ won't work or
+So, using the compiled SG⁺⁺ library from MSVC++ won't work or
 requires a large amount of work.
 # Dependencies
 ## Required
-The following software is required in order to build SG++:
+The following software is required in order to build SG⁺⁺:
 - <a href="http://mingw-w64.org/" target="_blank">MinGW-w64</a>,
 which provides the compiler toolchain including `g++`
 - <a href="http://python.org/" target="_blank">Python 2.7 (x64)</a>
@@ -27,7 +27,7 @@ The following software is recommended for core functionality:
 for compiling and running the unit tests.
 You can also skip the unit tests, but this is not recommended.
 - <a href="http://www.swig.org/" target="_blank">SWIG (&ge; 3.0)</a>,
-if you want to use SG++ within Python, Java, or MATLAB.
+if you want to use SG⁺⁺ within Python, Java, or MATLAB.
 SWIG creates bindings from C/C++ functions in order to make
 them available as a Python module or prepare them to be called from Java code.
 - <a href="http://www.numpy.org/" target="_blank"> NumPy for Python 2.7 (x64)</a> is needed,
@@ -44,7 +44,7 @@ The following software can be installed for full functionality:
 - <a href="http://www.graphviz.org/" target="_blank"> dot in the Graphviz package</a>
 is optional and generates inheritance diagrams in the Doxygen documentation.
 - <a href="http://www.mathworks.com/" target="_blank">MATLAB</a>,
-if you want to use SG++ within MATLAB.
+if you want to use SG⁺⁺ within MATLAB.
 - <a href="https://www.gnu.org/software/gsl/" target="_blank">Gnu Scientific Library (GSL)</a>,
 is required for some functionalities of the SG_DATADRIVEN module.
 # Installation
@@ -129,21 +129,21 @@ BOOST_LIBRARY_PATH=C:\PATH_TO_BOOST\stage\lib
 For additional remarks about building with SCons,
 please refer to the [Linux page](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC)).
 
-# Using SG++
-In this section, we show how SG++ can be used as a library in other programs.
+# Using SG⁺⁺
+In this section, we show how SG⁺⁺ can be used as a library in other programs.
 For C++, this includes compilation, linking, and execution of the program
-using SG++.
-We also show how to use SG++ from the other supported languages
+using SG⁺⁺.
+We also show how to use SG⁺⁺ from the other supported languages
 (Python, Java, and MATLAB).
 As an example application, we consider the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA)) tutorial.cpp;
 however, the instructions can be analogously applied to other programs.
 Note that all examples are automatically built
 after each SCons run.
 Therefore, the following steps are not necessary to compile the examples;
-rather, the intent is to show the steps to build an application using SG++.
+rather, the intent is to show the steps to build an application using SG⁺⁺.
 In the following, the current directory is always <tt>base\\examples</tt> and
-<tt>C:\\PATH_TO_SGPP</tt> refers to the absolute path of the SG++ directory.
-We assume that SG++ or its bindings have been successfully built before.
+<tt>C:\\PATH_TO_SGPP</tt> refers to the absolute path of the SG⁺⁺ directory.
+We assume that SG⁺⁺ or its bindings have been successfully built before.
 
 ## C++
 First, compile the program
@@ -154,7 +154,7 @@ g++ tutorial.cpp ^
 -IC:\PATH_TO_SGPP\base\src ^
 -o tutorial.o
 ```
-Then, link the program by indicating the SG++ library path and the modules
+Then, link the program by indicating the SG⁺⁺ library path and the modules
 you want to link against:
 ```console
 g++ tutorial.o -fopenmp ^
@@ -163,7 +163,7 @@ g++ tutorial.o -fopenmp ^
 -o tutorial
 ```
 To run the program, note that you have to set the <tt>PATH</tt>
-environment variable to include the SG++ library path:
+environment variable to include the SG⁺⁺ library path:
 ```console
 set PATH=C:\PATH_TO_SGPP\lib\sgpp;%PATH%
 tutorial
@@ -186,13 +186,13 @@ javac -cp .;C:\PATH_TO_SGPP\lib\jsgpp\jsgpp.jar tutorial.java
 ```
 Note the use of <tt>;</tt> instead of <tt>:</tt> like on Linux.
 When running Java programs, you have to augment `PATH`
-not only by the SG++ library path, but also by a path specific for jsgpp:
+not only by the SG⁺⁺ library path, but also by a path specific for jsgpp:
 ```console
 set PATH=C:\PATH_TO_SGPP\lib\sgpp:C:\PATH_TO_SGPP\lib\jsgpp:%PATH%
 java -cp .;C:\PATH_TO_SGPP\lib\jsgpp\jsgpp.jar tutorial
 ```
 ## MATLAB
-MATLAB can use SG++ in three ways.
+MATLAB can use SG⁺⁺ in three ways.
 ### Via Binaries
 The recommended way is to download the binaries for use with MATLAB that are part of the SGpp [releases ](https://github.com/SGpp/SGpp/releases)
 For instructions, please see the [matlab page](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries).
@@ -202,7 +202,7 @@ If the binaries don't work for you, then it is possible to write and
 compile a MEX interface yourself (similar to the interface that the
 binaries would provide).
 This means that you have to write a C++ program interacting
-with SG++ directly in C++ and converting input and output arguments
+with SG⁺⁺ directly in C++ and converting input and output arguments
 from and to MATLAB's data structures.
 If
 <a href="https://www.mathworks.com/help/matlab/ref/mex.html" target="_blank">
@@ -232,8 +232,8 @@ Refer to
 MATLAB's documentation page for troubleshooting with MinGW</a>
 for more information.
 ### Via jsgpp
-However, the more direct way to use SG++ from within MATLAB is to use jsgpp,
-i.e., using the Java library of SG++ and import it to MATLAB.
+However, the more direct way to use SG⁺⁺ from within MATLAB is to use jsgpp,
+i.e., using the Java library of SG⁺⁺ and import it to MATLAB.
 Before we can use these methods in MATLAB, we have to add
 <tt>C:\\PATH_TO_SGPP\\lib\\jsgpp</tt> to the `librarypath.txt` file of MATLAB.
 (Hint: Typing `matlabroot` in MATLAB returns the path of your MATLAB
@@ -272,16 +272,16 @@ The final step consists in loading the jsgpp library via
 ```console
 sgpp.LoadJSGPPLib.loadJSGPPLib();
 ```
-You should now be able to use SG++ in MATLAB.
+You should now be able to use SG⁺⁺ in MATLAB.
 For an example, look at <tt>base/examples/tutorial.m</tt>.
-However, note that the example was written for the MATLAB SG++ binaries
+However, note that the example was written for the MATLAB SG⁺⁺ binaries
 explained above.
 Therefore, you likely have to change some calls especially to static
 methods like <tt>sgpp.createOperationEval</tt>, which are now located
 at <tt>sgpp.jsgpp.*</tt>.
 ### Hints
 See the [Linux page](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC)) for hints on how to
-use SG++ within MATLAB.
+use SG⁺⁺ within MATLAB.
 # Troubleshooting
 - In <tt>cmd.exe</tt>, type
 ```console
@@ -296,7 +296,7 @@ then a developer didn't read the [developer How-Tos](http://sgpp.sparsegrids.org
 and did not know that relative include paths are not supported under Windows using MinGW.
 You can fix this issue by yourself.
 Please report this bug to the developers. Thanks!
-- If you are using an older computer (say < 2011) and the compilation seem to succeed but the unit tests fail, then you might have a problem with your architecture. By default SG++ is compiled with AVX support, which your processor may not support. Try to add the flag
+- If you are using an older computer (say < 2011) and the compilation seem to succeed but the unit tests fail, then you might have a problem with your architecture. By default SG⁺⁺ is compiled with AVX support, which your processor may not support. Try to add the flag
 ```console
 ARCH=SSE3
 ```

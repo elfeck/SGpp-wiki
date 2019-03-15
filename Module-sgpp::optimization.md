@@ -1,6 +1,6 @@
 Optimization of smooth sparse grid interpolants.
 
-This SG++ module was developed as part of a Master's thesis with the translated title
+This SG⁺⁺ module was developed as part of a Master's thesis with the translated title
 "Hierarchical Optimization with Gradient-Based Methods on Sparse Grid Functions".
 In the thesis, a new approach for minimizing objective functions
 ![f0] is developed.

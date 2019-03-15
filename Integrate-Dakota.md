@@ -24,7 +24,7 @@ git submodule update --init
 ```
 Then follow compilation and installation example at [https://dakota.sandia.gov/content/configure-compile-and-install-dakota](https://dakota.sandia.gov/content/configure-compile-and-install-dakota).
 
-Point to Dakota include and library directory when building SG++.
+Point to Dakota include and library directory when building SG⁺⁺.
 
 Example custom.py with the appropriate options for building the combigrid module:
 

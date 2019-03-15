@@ -2,7 +2,7 @@
 * Download and extract Eclipse IDE for C/C++ Developers from https://www.eclipse.org/downloads/eclipse-packages/
 * Start eclipse executable
 
-# Setup SG++ Project
+# Setup SG⁺⁺ Project
 * File->Import... Git->Projects from Git
 ![import](https://user-images.githubusercontent.com/5756739/54192381-1cd67a00-44b8-11e9-9068-5f63b4500b57.png)
 

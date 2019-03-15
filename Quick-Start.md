@@ -4,7 +4,7 @@ These examples show the most basic features of each [module](https://github.com/
 
 ### Base module
 * [C⁺⁺](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA))
-* [Python](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Python)) (Old Python 2 version!)
+* [Python](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Python))
 * [Java](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Java))
 * [MATLAB](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(MATLAB))
 

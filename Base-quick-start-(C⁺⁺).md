@@ -1,3 +1,5 @@
+
+
 To be able to quickly start with a toolkit, it is often advantageous
 (not only for the impatient users), to look at some code examples first.
 In this tutorial, we give a short example program which interpolates a
@@ -10,9 +12,13 @@ In the example, we create a two-dimensional regular sparse grid of level 3
 using piecewise bilinear basis functions
 ![f1].
 We then interpolate the function
+
 ![f2]
+
 with
+
 ![f3]
+
 by calculating the coefficients ![f4] such that
 ![f5] for all ![f6].
 This process is called <i>hierarchization</i> in sparse grid contexts;
@@ -50,9 +56,9 @@ double f(double x0, double x1) { return 16.0 * (x0 - 1) * x0 * (x1 - 1) * x1; }
 int main() {
 ```
 
-First, we create a two-dimensional grid (type sgpp::base::Grid)
+First, we create a two-dimensional grid (type `sgpp::base::Grid)`
 with piecewise bilinear basis functions with the help of the factory method
-sgpp::base::Grid.createLinearGrid().
+`sgpp::base::Grid::createLinearGrid()`.
 
 ```c++
   size_t dim = 2;
@@ -60,7 +66,7 @@ sgpp::base::Grid.createLinearGrid().
 ```
 
 Then we obtain a reference to the grid's
-sgpp::base::GridStorage object which allows us, e.g., to access grid
+`sgpp::base::GridStorage` object which allows us, e.g., to access grid
 points, to obtain the dimensionality (which we print) and the
 number of grid points.
 
@@ -69,9 +75,9 @@ number of grid points.
   std::cout << "dimensionality:         " << gridStorage.getDimension() << std::endl;
 ```
 
-Now, we use a sgpp::base::GridGenerator to
+Now, we use a `sgpp::base::GridGenerator` to
 create a regular sparse grid of level 3.
-Thus, gridStorage.getSize() returns 17, the number of grid points
+Thus, `gridStorage.getSize()` returns 17, the number of grid points
 of a two-dimensional regular sparse grid of level 3.
 
 ```c++
@@ -80,12 +86,12 @@ of a two-dimensional regular sparse grid of level 3.
   std::cout << "number of grid points:  " << gridStorage.getSize() << std::endl;
 ```
 
-We create an object of type sgpp::base::DataVector
-which is essentially a wrapper around a double array.
-The DataVector is initialized with as many
+We create an object of type `sgpp::base::DataVector`
+which is essentially a wrapper around a `double` array.
+The `DataVector` is initialized with as many
 entries as there are grid points. It serves as a coefficient vector for the
 sparse grid interpolant we want to construct. As the entries of a
-freshly created DataVector are not initialized, we set them to
+freshly created `DataVector` are not initialized, we set them to
 0.0. (This is superfluous here as we initialize them in the
 next few lines anyway.)
 
@@ -95,10 +101,10 @@ next few lines anyway.)
   std::cout << "length of alpha vector: " << alpha.getSize() << std::endl;
 ```
 
-The for loop iterates over all grid points: For each grid
-point gp, the corresponding coefficient ![f4] is set to the
+The `for` loop iterates over all grid points: For each grid
+point `gp`, the corresponding coefficient ![f4] is set to the
 function value at the grid point's coordinates which are obtained by
-getStandardCoordinate(dim).
+`getStandardCoordinate(dim)`.
 The current coefficient vector is then printed.
 
 ```c++
@@ -110,7 +116,7 @@ The current coefficient vector is then printed.
   std::cout << "alpha before hierarchization: " << alpha.toString() << std::endl;
 ```
 
-An object of sgpp::base::OperationHierarchisation is created and used to
+An object of `sgpp::base::OperationHierarchisation` is created and used to
 hierarchize the coefficient vector, which we print.
 
 ```c++
@@ -120,9 +126,9 @@ hierarchize the coefficient vector, which we print.
   std::cout << "alpha after hierarchization:  " << alpha.toString() << std::endl;
 ```
 
-Finally, a second DataVector is created which is used as a point to
+Finally, a second `DataVector` is created which is used as a point to
 evaluate the sparse grid function at. An object is obtained which
-provides an evaluation operation (of type sgpp::base::OperationEvaluation),
+provides an evaluation operation (of type `sgpp::base::OperationEvaluation)`,
 and the sparse grid interpolant is evaluated at ![f11],
 which is close to (but not exactly at) a grid point.
 
@@ -136,8 +142,7 @@ which is close to (but not exactly at) a grid point.
 ```
 
 The example results in the following output:
-
-```c++
+```
 dimensionality:         2
 number of grid points:  17
 length of alpha vector: 17
@@ -151,9 +156,9 @@ On the first level, we obtain 1, on the second 1/4, and on the third
 1/16 as surpluses.
 
 [f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvec%7Bx%7D_j%20%5Cin%20%5B0%2C%201%5D%5E2
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvarphi_j:%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D
-[f2]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20f:%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20f%28x_0%2C%20x_1%29%20%3A%3D%2016%20%28x_0%20-%201%29%20x_0%20%28x_1%20-%201%29%20x_1%0A
-[f3]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20u:%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20u%28x_0%2C%20x_1%29%20%3A%3D%20%5Csum_%7Bj%3D0%7D%5E%7BN-1%7D%20%5Calpha_j%20%5Cvarphi_j%28x_0%2C%20x_1%29%0A
+[f1]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvarphi_j%3A%5C%3B%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D
+[f2]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20f%3A%5C%3B%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20f%28x_0%2C%20x_1%29%20%3A%3D%2016%20%28x_0%20-%201%29%20x_0%20%28x_1%20-%201%29%20x_1%0A
+[f3]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%20%20u%3A%5C%3B%20%5B0%2C%201%5D%5E2%20%5Cto%20%5Cmathbb%7BR%7D%2C%5Cquad%0A%20%20u%28x_0%2C%20x_1%29%20%3A%3D%20%5Csum_%7Bj%3D0%7D%5E%7BN-1%7D%20%5Calpha_j%20%5Cvarphi_j%28x_0%2C%20x_1%29%0A
 [f4]: http://chart.apis.google.com/chart?cht=tx&chl=%5Calpha_j
 [f5]: http://chart.apis.google.com/chart?cht=tx&chl=u%28%5Cvec%7Bx%7D_j%29%20%3D%20f%28%5Cvec%7Bx%7D_j%29
 [f6]: http://chart.apis.google.com/chart?cht=tx&chl=j

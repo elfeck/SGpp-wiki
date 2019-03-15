@@ -67,6 +67,10 @@ target="_blank">SWIG 3.0 .deb file</a> here.
 - Doxygen: <tt>doxygen</tt>
 - Dot: <tt>graphviz</tt>
 - GSL: <tt>libgsl-dev</tt>
+- Eigen: <tt>libeigen3-dev</tt>
+- UMFPACK: <tt>libsuitesparse-dev</tt>
+- Armadillo: <tt>libarmadillo-dev</tt>
+- Gmm++: <tt>libgmm++-dev</tt>
 - zlib: <tt>zlib1g-dev</tt> and <tt>zlib1g</tt>
 
 # Compilation with SCons

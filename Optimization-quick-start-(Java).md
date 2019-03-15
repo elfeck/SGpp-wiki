@@ -1,9 +1,11 @@
-On this page, we look at an example application of the sgpp::optimization module.
+
+
+On this page, we look at an example application of the `sgpp::optimization` module.
 Versions of the example are given in all languages
 currently supported by SG++: C++, Python, Java, and MATLAB.
 
-The example interpolates a bivariate test function like the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Java)).
-However, we use B-splines here instead to obtain a smoother interpolant.
+The example interpolates a bivariate test function with B-splines instead
+of piecewise linear basis functions to obtain a smoother interpolant.
 The resulting sparse grid function is then minimized with the method of steepest descent.
 For comparison, we also minimize the objective function with Nelder-Mead's method.
 
@@ -14,8 +16,15 @@ In the constructor, we give the dimensionality of the domain
 (in this case ![f1]).
 The eval method evaluates the objective function and returns the function
 value ![f2] for a given point ![f3].
-
 ```java
+// Copyright (C) 2008-today The SG++ project
+// This file is part of the SG++ project. For conditions of distribution and
+// use, please see the copyright notice provided with SG++ or at
+// sgpp.sparsegrids.org
+
+/**
+ * Example test function.
+ */
 public class ExampleFunction extends sgpp.OptScalarFunction {
   /**
    * Constructor.
@@ -48,7 +57,10 @@ public class ExampleFunction extends sgpp.OptScalarFunction {
 }
 ```
 
+
+
 The actual example looks as follows.
+
 
 ```java
 public class optimization {
@@ -137,7 +149,7 @@ coefficients of the B-spline sparse grid interpolant
 We define the interpolant ![f5] and its gradient
 ![f6] for use with the gradient method (steepest descent).
 Of course, one can also use other optimization algorithms from
-sgpp::optimization::optimizer.
+`sgpp::optimization::optimizer`.
 
 ```java
     printLine();
@@ -220,7 +232,7 @@ directly to the objective function ![f7].
 ```
 
 The example program outputs the following results:
-```java
+```
 sgpp::optimization example program started.
 
 --------------------------------------------------------------------------------
@@ -266,19 +278,20 @@ f(xOptNM) = -2, ft(xOptNM) = -2.00077
 --------------------------------------------------------------------------------
 
 sgpp::optimization example program terminated.
-
 ```
+
+
 
 We see that both the gradient-based optimization of the smooth sparse grid
 interpolant and the gradient-free optimization of the objective function
 find reasonable approximations of the minimum, which lies at
 ![f8].
 
-[f0]: http://chart.apis.google.com/chart?cht=tx&chl=f:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f0]: http://chart.apis.google.com/chart?cht=tx&chl=f%3A%5C%3B%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
 [f1]: http://chart.apis.google.com/chart?cht=tx&chl=d%20%3D%202
 [f2]: http://chart.apis.google.com/chart?cht=tx&chl=f%28%5Cvec%7Bx%7D%29
 [f3]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvec%7Bx%7D%20%5Cin%20%5B0%2C%201%5D%5Ed
-[f4]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f4]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D%3A%5C%3B%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
 [f5]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D
 [f6]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cnabla%5Ctilde%7Bf%7D
 [f7]: http://chart.apis.google.com/chart?cht=tx&chl=f

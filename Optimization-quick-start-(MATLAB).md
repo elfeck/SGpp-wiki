@@ -1,4 +1,6 @@
-On this page, we look at an example application of the sgpp::optimization module.
+
+
+On this page, we look at an example application of the `sgpp::optimization` module.
 Versions of the example are given in all languages
 currently supported by SG++: C++, Python, Java, and MATLAB.
 
@@ -9,16 +11,15 @@ This is because the director feature in SWIG-matlab is still buggy.
 sgpp.OptScalarFunction, but some SG++ functions then crash with
 "Cannot call SwigStorage".)
 
-The example interpolates a bivariate test function like the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(MATLAB)).
-However, we use B-splines here instead to obtain a smoother interpolant.
+The example interpolates a bivariate test function with B-splines instead
+of piecewise linear basis functions to obtain a smoother interpolant.
 The resulting sparse grid function is then minimized with the method of steepest descent.
 For comparison, we also minimize the objective function with Nelder-Mead's method.
 
-For instructions on how to use SG++ within MATLAB, please see [Installation](https://github.com/SGpp/SGpp/wiki/Installation).
-However, for this example to work, some extra steps are necessary.
+For this example to work, some extra steps are necessary.
 In the following, we assume that we want to run the example on Linux.
 
-Please note that in order to get sgpp::optimization to work with MATLAB,
+Please note that in order to get `sgpp::optimization` to work with MATLAB,
 you have to disable support for Armadillo and UMFPACK when compiling SG++,
 i.e. set USE_ARMADILLO and USE_UMFPACK to "no".
 This is due to incompatible BLAS and LAPACK libraries
@@ -34,6 +35,7 @@ a possible solution to circumvent this problem.
 
 Now, you should be able to run the MATLAB example,
 which we describe in the rest of this page.
+
 
 At the beginning of the program, we disable OpenMP within matsgpp since
 it interferes with SWIG's director feature.
@@ -104,7 +106,7 @@ end
 We define the interpolant ![f1] and its gradient
 ![f2] for use with the gradient method (steepest descent).
 Of course, one can also use other optimization algorithms from
-sgpp::optimization::optimizer.
+`sgpp::optimization::optimizer`.
 
 ```matlab
 printLine();
@@ -177,7 +179,7 @@ fprintf('\nsgpp::optimization example program terminated.\n');
 ```
 
 The example program outputs the following results:
-```matlab
+```
 sgpp::optimization example program started.
 
 --------------------------------------------------------------------------------
@@ -221,12 +223,14 @@ f(xOptNM) = 0, ft(xOptNM) = -2.64809
 sgpp::optimization example program terminated.
 ```
 
+
+
 We see that both the gradient-based optimization of the smooth sparse grid
 interpolant and the gradient-free optimization of the objective function
 find reasonable approximations of one of the four global minima
 (![f4]).
 
-[f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D%3A%5C%3B%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
 [f1]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D
 [f2]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cnabla%5Ctilde%7Bf%7D
 [f3]: http://chart.apis.google.com/chart?cht=tx&chl=f

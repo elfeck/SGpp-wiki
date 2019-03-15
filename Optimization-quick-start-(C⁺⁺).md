@@ -1,14 +1,16 @@
-On this page, we look at an example application of the sgpp::optimization module.
+
+
+On this page, we look at an example application of the `sgpp::optimization` module.
 Versions of the example are given in all languages
 currently supported by SG++: C++, Python, Java, and MATLAB.
 
-The example interpolates a bivariate test function like the [base quick start example](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA)).
-However, we use B-splines here instead to obtain a smoother interpolant.
+The example interpolates a bivariate test function with B-splines instead
+of piecewise linear basis functions to obtain a smoother interpolant.
 The resulting sparse grid function is then minimized with the method of steepest descent.
 For comparison, we also minimize the objective function with Nelder-Mead's method.
 
-First, we include all the necessary headers, including those of the sgpp::base and
-sgpp::optimization module.
+First, we include all the necessary headers, including those of the `sgpp::base` and
+`sgpp::optimization` module.
 
 ```c++
 #include <sgpp_base.hpp>
@@ -21,12 +23,12 @@ sgpp::optimization module.
 
 The function ![f0] to be minimized
 is called <i>objective function</i> and has to derive from
-sgpp::optimization::ScalarFunction.
+`sgpp::optimization::ScalarFunction`.
 In the constructor, we give the dimensionality of the domain
 (in this case ![f1]).
 The eval method evaluates the objective function and returns the function
 value ![f2] for a given point ![f3].
-The clone method returns a std::unique_ptr to a clone of the object
+The clone method returns a `std::unique_ptr` to a clone of the object
 and is used for parallelization (in case eval is not thread-safe).
 
 ```c++
@@ -45,7 +47,7 @@ class ExampleFunction : public sgpp::optimization::ScalarFunction {
 };
 ```
 
-Now, we can start with the main function.
+Now, we can start with the `main` function.
 
 ```c++
 void printLine() {
@@ -120,7 +122,7 @@ coefficients of the B-spline sparse grid interpolant
 We define the interpolant ![f5] and its gradient
 ![f6] for use with the gradient method (steepest descent).
 Of course, one can also use other optimization algorithms from
-sgpp::optimization::optimizer.
+`sgpp::optimization::optimizer`.
 
 ```c++
   printLine();
@@ -195,20 +197,16 @@ directly to the objective function ![f7].
 ```
 
 The example program outputs the following results:
-
-```c++
+```
 sgpp::optimization example program started.
 
 --------------------------------------------------------------------------------
-
 Generating grid...
 
 Adaptive grid generation (Ritter-Novak)...
     100.0% (N = 29, k = 3)
 Done in 3ms.
-
 --------------------------------------------------------------------------------
-
 Hierarchizing...
 
 Solving linear system (automatic method)...
@@ -219,9 +217,7 @@ Solving linear system (automatic method)...
         solving with Armadillo
     Done in 0ms.
 Done in 1ms.
-
 --------------------------------------------------------------------------------
-
 Optimizing smooth interpolant...
 
 x0 = [0.625, 0.75]
@@ -235,7 +231,6 @@ xOpt = [0.589526, 0.673268]
 f(xOpt) = -1.99999, ft(xOpt) = -2.00078
 
 --------------------------------------------------------------------------------
-
 Optimizing objective function (for comparison)...
 
 Optimizing (Nelder-Mead)...
@@ -250,16 +245,18 @@ f(xOptNM) = -2, ft(xOptNM) = -2.00077
 sgpp::optimization example program terminated.
 ```
 
+
+
 We see that both the gradient-based optimization of the smooth sparse grid
 interpolant and the gradient-free optimization of the objective function
 find reasonable approximations of the minimum, which lies at
 ![f8].
 
-[f0]: http://chart.apis.google.com/chart?cht=tx&chl=f:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f0]: http://chart.apis.google.com/chart?cht=tx&chl=f%3A%5C%3B%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
 [f1]: http://chart.apis.google.com/chart?cht=tx&chl=d%20%3D%202
 [f2]: http://chart.apis.google.com/chart?cht=tx&chl=f%28%5Cvec%7Bx%7D%29
 [f3]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvec%7Bx%7D%20%5Cin%20%5B0%2C%201%5D%5Ed
-[f4]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D:%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
+[f4]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D%3A%5C%3B%20%5B0%2C%201%5D%5Ed%20%5Cto%20%5Cmathbb%7BR%7D
 [f5]: http://chart.apis.google.com/chart?cht=tx&chl=%5Ctilde%7Bf%7D
 [f6]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cnabla%5Ctilde%7Bf%7D
 [f7]: http://chart.apis.google.com/chart?cht=tx&chl=f

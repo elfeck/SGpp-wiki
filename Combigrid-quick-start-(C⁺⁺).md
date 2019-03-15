@@ -1,3 +1,5 @@
+
+
 This tutorial contains examples with increasing complexity to introduce you to the combigrid
 module. The combigrid module is quite separated from the other modules. It only refers to the
 base module for things like DataVector and DataMatrix.
@@ -221,7 +223,7 @@ points.
       sgpp::combigrid::CombigridMultiOperation::createLinearLejaPolynomialInterpolation(d, func);
 ```
 
-One method to pass the data is via a std::vector<sgpp::base::DataVector>. We will use 2
+One method to pass the data is via a `std::vector<sgpp::base::DataVector>`. We will use 2
 interpolation points.
 
 ```c++
@@ -480,10 +482,7 @@ Now create an operation as usual and evaluate the interpolation with a test para
   std::cout << "Target function value: " << func(parameter) << "\n";
   std::cout << "Numerical result: " << result << "\n";
 }
-```
 
-### Example 7: Interpolation with an operation
-```
 void example7() {
   //  std::shared_ptr<sgpp::combigrid::CombigridOperation> operation =
   //      sgpp::combigrid::CombigridOperation::createExpUniformBoundaryLinearInterpolation(1, func);
@@ -513,6 +512,7 @@ Now compare the result to the actual function value:
             << std::endl;
 }
 ```
+
 ### Example 8: UQ setting with variance refinement
 
 This example shows how to use the variance refinement method that uses the PCE transformation for

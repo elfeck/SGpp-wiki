@@ -1,10 +1,11 @@
+
 This examples demonstrates density estimation.
 
 ```c++
 #include <sgpp/base/datatypes/DataMatrix.hpp>
 #include <sgpp/base/grid/Grid.hpp>
 #include <sgpp/datadriven/DatadrivenOpFactory.hpp>
-#include <sgpp/datadriven/application/GaussianKDE.hpp>
+#include <sgpp/datadriven/application/KernelDensityEstimator.hpp>
 #include <sgpp/datadriven/application/LearnerSGDE.hpp>
 #include <sgpp/datadriven/configuration/RegularizationConfiguration.hpp>
 #include <sgpp/datadriven/tools/ARFFTools.hpp>
@@ -55,13 +56,13 @@ int main(int argc, char** argv) {
   std::string filename = "../../datasets/friedman/friedman2_4d_300000.arff";
 
   std::cout << "# loading file: " << filename << std::endl;
-  sgpp::datadriven::Dataset dataset = sgpp::datadriven::ARFFTools::readARFF(filename);
+  sgpp::datadriven::Dataset dataset =
+    sgpp::datadriven::ARFFTools::readARFFFromFile(filename);
   sgpp::base::DataMatrix& samples = dataset.getData();
 ```
 
 Configure the sparse grid of level 3 with linear basis functions and the same dimension as the
 given test data.
-
 Alternatively load a sparse grid that has been saved to a file, see the commented line.
 
 ```c++
@@ -78,7 +79,7 @@ are specified.
 
 ```c++
   std::cout << "# create adaptive refinement config" << std::endl;
-  sgpp::base::AdpativityConfiguration adaptConfig;
+  sgpp::base::AdaptivityConfiguration adaptConfig;
   adaptConfig.numRefinements_ = 0;
   adaptConfig.noPoints_ = 10;
 ```
@@ -103,12 +104,11 @@ Configure the regularization for the laplacian operator.
   regularizationConfig.type_ = sgpp::datadriven::RegularizationType::Laplace;
 ```
 
-Configure the learner by specifying: 
-
-- enable kfold?
-- an initial value for the lagrangian multiplier ![f0] and the interval ![f1] in which ![f0] will be searched, 
-- whether a logarithmic scale is used, 
-- the parameters shuffle and an initial seed for the random value generation, 
+Configure the learner by specifying:
+- an initial value for the lagrangian multiplier ![f0] and the interval
+  ![f1] in which ![f0] will be searched,
+- whether a logarithmic scale is used,
+- the parameters shuffle and an initial seed for the random value generation,
 - whether parts of the output shall be kept off.
 
 ```c++
@@ -141,7 +141,7 @@ Estimate the probability density function (pdf) via a gaussian kernel density es
 and print the corresponding values.
 
 ```c++
-  sgpp::datadriven::GaussianKDE kde(samples);
+  sgpp::datadriven::KernelDensityEstimator kde(samples);
   sgpp::base::DataVector x(learner.getDim());
   x.setAll(0.5);
 
@@ -173,7 +173,7 @@ operation and apply it to the points. Finally print the calculated values.
   std::cout << "------------------------------------------------------" << std::endl;
   // inverse Rosenblatt transformation
   sgpp::datadriven::OperationInverseRosenblattTransformation* opInvRos(
-      sgpp::op_factory::createOperationInverseRosenblattTransformation(*learner.getGrid().get()));
+      sgpp::op_factory::createOperationInverseRosenblattTransformation(*learner.getGrid()));
   sgpp::base::DataMatrix points(12, gridConfig.dim_);
   randu(points);
 
@@ -181,7 +181,7 @@ operation and apply it to the points. Finally print the calculated values.
   std::cout << points.toString() << std::endl;
 
   sgpp::base::DataMatrix pointsCdf(points.getNrows(), points.getNcols());
-  opInvRos->doTransformation(learner.getSurpluses().get(), &points, &pointsCdf);
+  opInvRos->doTransformation(learner.getSurpluses(), &points, &pointsCdf);
 ```
 
 To check whether the results are correct perform a Rosenform transformation on the data that
@@ -191,8 +191,8 @@ values.
 ```c++
   points.setAll(0.0);
   sgpp::datadriven::OperationRosenblattTransformation* opRos(
-      sgpp::op_factory::createOperationRosenblattTransformation(*learner.getGrid().get()));
-  opRos->doTransformation(learner.getSurpluses().get(), &pointsCdf, &points);
+      sgpp::op_factory::createOperationRosenblattTransformation(*learner.getGrid()));
+  opRos->doTransformation(learner.getSurpluses(), &pointsCdf, &points);
   std::cout << "------------------------------------------------------" << std::endl;
   std::cout << pointsCdf.toString() << std::endl;
   std::cout << "------------------------------------------------------" << std::endl;
@@ -202,4 +202,4 @@ values.
 
 
 [f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Clambda
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl=%0A%5B%5Clambda_%7BStart%7D%20%2C%20%5Clambda_%7BEnd%7D%5D%20
+[f1]: http://chart.apis.google.com/chart?cht=tx&chl=%20%5B%5Clambda_%7BStart%7D%20%2C%20%5Clambda_%7BEnd%7D%5D%20

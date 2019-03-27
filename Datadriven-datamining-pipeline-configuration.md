@@ -17,7 +17,7 @@ The top-level structure of pipeline configuration is structured as follows:
 
 
 ```
-example\_config.json:
+example_config.json:
 {
     "dataSource": {
         ...

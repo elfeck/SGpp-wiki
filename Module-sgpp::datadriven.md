@@ -44,6 +44,6 @@ example_config.json:
 
 <table>
 <caption>dataTransformation</caption>
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</tr><th>Comment</th><th>Depends on</th></tr>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range<th>Comment</th><th>Depends on</th></tr>
 <tr><td>type</td><td>String</td><td>"rosenblatt", "none"</td><td>The type of data transformation. Currently only rosenblatt transformation is available</td><td></td></tr>
 </table>

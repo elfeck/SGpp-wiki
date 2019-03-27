@@ -15,9 +15,9 @@ the configuration.
 
 The top-level structure of pipeline configuration is structured as follows:
 
-example\_config.json:
 
 ```
+example\_config.json:
 {
     "dataSource": {
         ...
@@ -52,8 +52,8 @@ For instance where the datafile is located, if the data contains targets
 (for supervised learning) or what columns of the data should be considered for
 read-in.
 
+### dataSource
 <table>
-<caption>dataSource</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>filePath</td><td>String</td><td>relative or absolute path</td><td>Path to the datafile. Path may be absolute or relative to the directory of execution of the binary</td><td></td></tr>
 <tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td></tr>
@@ -77,8 +77,8 @@ The value -1 indicates that all rows should be read in</td><td></td></tr>
 The dataTransformation is an attribute to transform the data <b>after</b> it is read in. Currently only rosenblatt transformation is
 implemented but this could be used for normalization, outlier-removal, etc. in the future.
 
+### dataTransformation
 <table>
-<caption>dataTransformation</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>type</td><td>String</td><td>"rosenblatt", "none"</td><td>The type of data transformation. Currently only rosenblatt transformation is available</td><td></td></tr>
 </table>
@@ -90,8 +90,8 @@ specified in this attribute.
 Currently implemented are mean squared error (MSE), accuracy (L2 norm of the 
 difference between prediction and targets), and negative log likelihood (NLL).
 
+### scorer
 <table>
-<caption>scorer</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>metric</td><td>String</td><td>"mse", "nll", "accuracy"</td><td>The metric that the scorer uses during learning</td><td></td></tr>
 </table>
@@ -105,8 +105,8 @@ Besides the type, many aspects of the SG++-related parameters, such
 as the grid type, grid level (gridConfig),
 refinement and coarsening behavior (adaptivityConfig) and much more may be configured.
 
+### fitter
 <table>
-<caption>fitter</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>type</td><td>String</td><td>"regressionLeastSquares", "densityEstimation", "classification"</td><td>Currently "classification" is not implemented in the UniversalMiner (see Fitter configuration below for more info)</td><td></td></tr>
 <tr><td>gridConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
@@ -125,8 +125,8 @@ grid type, the initial level, etc. Note, that the dimension can usually
 be inferred automatically from the dataset which overwrites
 the dim attribute listed here.
 
+### gridConfig
 <table>
-<caption>gridConfig</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>gridType</td><td>String</td><td>all sgpp::base::GridTypes</td><td>The type of the grid</td><td></td></tr>
 <tr><td>dim</td><td>Integer</td><td>[1, inf)</td><td>The dimension of the grid</td><td></td></tr>
@@ -139,8 +139,8 @@ the dim attribute listed here.
 The adativity configuration allows to specify parameters related to adaptive grid refinement
 and coarsening.
 
+### adaptivityConfig
 <table>
-<caption>adaptivityConfig</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>numRefinements</td><td>Integer</td><td>[0, inf)</td><td>The number of refinements</td><td></td></tr>
 <tr><td>threshold</td><td>Float</td><td>[0.0, inf)</td><td>Threshold for surplus refinement. Only grid points with a surplus above this threshold are considered for refinement</td><td></td></tr>
@@ -162,8 +162,8 @@ Configuration for crossvalidation. To make use of crossvalidation we need a port
 dedicated to that purpose. The attribute to control this cross validation data is
 in the configuration dataSource "validationPortion".
 
+### crossValidation
 <table>
-<caption>crossValidation</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>enable</td><td>Bool</td><td>true, false</td><td>Should crossvalidation be used?</td><td>dataSource.validationPortion > 0.0</td></tr>
 <tr><td>kFold</td><td>Integer</td><td>[1, inf)</td><td>Number of batches for used during cross validation</td><td>enable=true</td></tr>
@@ -180,8 +180,8 @@ in the configuration dataSource "validationPortion".
 The density estimation configuration is only relevant if the fitter (type) is densityEstimation or classification which
 is a sub-type of densityEstimation.
 
+### densityEstimationConfig
 <table>
-<caption>densityEstimationConfig</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>densityEstimationType</td><td>String</td><td>"cg", "decomposition"</td><td>Should conjugate gradient or matrix decomposition be used?</td><td></td></tr>
 <tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td></tr>
@@ -195,8 +195,9 @@ The database configuration includes a single attribute "filePath" that may be
 set to point to a JSON file containing information about how a densityEstimation decomposition
 is to be stored as a file. This may be useful if the computation of a decomposition is expensive and should be stored to avoid re-computation.
 
+### database
+
 <table>
-<caption>database</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>filePath</td><td>String</td><td></td><td>Path to a JSON file containing information about how and where a decomposition is (to be) stored</td><td>densityEstimationConfig.densityEstimationType="decomposition"</td></tr>
 </table>
@@ -205,8 +206,9 @@ The solver configuration controls how the SG++ solver module behaves in order to
 systems of linear equations. solverRefineConfig applies for systems that are solved during
 refinement. solverFinalConfig is used for anything else.
 
+### solverRefineConfig
+
 <table>
-<caption>solverRefineConfig</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>solverType</td><td>String</td><td>"cg", "bicgstab", "fista"</td><td>The type of solver to be used</td><td></td></tr>
 <tr><td>eps</td><td>Float</td><td>(0, inf)</td><td></td><td></td></tr>
@@ -214,8 +216,9 @@ refinement. solverFinalConfig is used for anything else.
 <tr><td>threshold</td><td>Float</td><td>[0, inf)</td><td>An additional abort cricterium for the solver</td><td></td></tr>
 </table>
 
+### solverFinalConfig
+
 <table>
-<caption>solverFinalConfig</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>solverType</td><td>String</td><td>"cg", "bicgstab", "fista"</td><td>The type of solver to be used</td><td></td></tr>
 <tr><td>eps</td><td>Float</td><td>(0, inf)</td><td></td><td></td></tr>
@@ -226,8 +229,9 @@ refinement. solverFinalConfig is used for anything else.
 The regularization configuration controls what type and to what extend the learning
 process is impacted by the regularization lambda.
 
+### regularizationConfig
+
 <table>
-<caption>regularizationConfig</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>regularizationType</td><td>String</td><td>"identity", "laplace", "diagonal", "lasso", "elasticNet", "groupLasso"</td><td>The method used to do regularization</td><td></td></tr>
 <tr><td>lambda</td><td>Float</td><td>[0, inf)</td><td>Lambda parameter commonly used for regularization. Regulates much smoothness is enforced by the regularization.</td><td></td></tr>
@@ -238,8 +242,9 @@ process is impacted by the regularization lambda.
 The learner configuration applies only for classification fitting and controls
 how (new) data is integrated into the model.
 
+### learner
+
 <table>
-<caption>learner</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>usePrior</td><td>Boolean</td><td>true, false</td><td>Should the prior (distribution of data points into classes) be used?</td><td>fitter.type="classification"</td></tr>
 <tr><td>beta</td><td>float</td><td>(0, 1)</td><td>Weight for scaling the impact of new data batches compared to old data batches</td><td>fitter.type="classification"</td></tr>
@@ -276,6 +281,7 @@ DataSourceConfiguration.
 
 <b>Mandatory Values:</b> filePath
 
+```
 "dataSource": {
     "filePath": "",
     "fileType": "none",
@@ -294,6 +300,7 @@ DataSourceConfiguration.
     "readinClasses: [ ],
     "readinColumns": [ ],
 },
+```
 
 ## Scorer
 
@@ -302,9 +309,11 @@ ScorerConfiguration.
 
 <b>Mandatory Values:</b> <i>none</i>
 
+```
 "scorer": {
     "metric": "accuracy",
 },
+```
 
 ## Fitter
 
@@ -457,8 +466,9 @@ In order to use HPO, certain attributes described above (i.e. gridConfig.level)
 change and expect different values. See below for a describtion of these changes.
 In the following first the "hpo" config itself.
 
+### hpo
+
 <table>
-<caption>hpo</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>method</td><td>String</td><td>"harmonica", "bayesian"</td><td>The type of HPO</td><td></td></tr>
 <tr><td>randomSeed</td><td>Integer</td><td>[0, inf)</td><td>Seed for random sampling within HPO</td><td></td></tr>
@@ -467,16 +477,18 @@ In the following first the "hpo" config itself.
 <tr><td>bayesianOptimization</td><td>Dictionary</td><td>see table below</td><td>Supply this value if bayesianOptimization-hpo should be used, otherwise omit it</td><td>method="bayesian"</td></tr>
 </table>
 
+### harmonica
+
 <table>
-<caption>harmonica</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>lambda</td><td>Float</td><td>[0, inf)</td><td>Regularization lambda for lasso regression used by harmonica-hpo</td><td></td></tr>
 <tr><td>stages</td><td>[Integer]</td><td>Each value in [0, inf)</td><td>The amount of samples to take in each stage of harmonica-hpo</td><td></td></tr>
 <tr><td>constraints</td><td>[Integer]</td><td>Each value in [0, inf)</td><td>Amount of constraints to introduce after each stage of harmonica-hpo</td><td></td></tr>
 </table>
 
+### bayesianOptimization
+
 <table>
-<caption>bayesianOptimization</caption>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>nRandom</td><td>Integer</td><td>[0, inf)</td><td>Number of random samples used to warm up bayesianOptimization-hpo</td><td></td></tr>
 <tr><td>nRuns</td><td>Integer</td><td>[0, inf)</td><td>Number of samples bayesianOptimization-hpo is run for</td><td></td></tr>

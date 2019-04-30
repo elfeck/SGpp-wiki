@@ -447,6 +447,13 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
         "beta": 1.0,
     },
 
+    "parallelConfig": {
+        "processRows": 4,
+        "processColumns": 1,
+        "rowBlockSize": 64,
+        "columnBlockSize": 64,
+    },
+
 },
 ```
 

@@ -118,6 +118,7 @@ refinement and coarsening behavior (adaptivityConfig) and much more may be confi
 <tr><td>solverFinalConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
 <tr><td>regularizationConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
 <tr><td>learner</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
+<tr><td>parallelConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
 </table>
 
 The grid configuration allows to specify general grid properties such as the
@@ -250,6 +251,19 @@ how (new) data is integrated into the model.
 <tr><td>beta</td><td>float</td><td>(0, 1)</td><td>Weight for scaling the impact of new data batches compared to old data batches</td><td>fitter.type="classification"</td></tr>
 </table>
 
+### parallelConfig
+
+The parallelConfig deals with domain parallelization of SGDE based classification (see [here](https://mediatum.ub.tum.de/1485092)). It can be used to parallelize the SGDE learning process with ScaLAPACK.
+
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
+<tr><td>processRows</td><td>Integer</td><td>[1, inf)</td><td>optional, number of rows in the process grid.</td><td>fitter.type="classification"</td></tr>
+<tr><td>processColumns</td><td>Integer</td><td>[1, inf)</td><td>optional, number of columns in the process grid.</td><td>fitter.type="classification"</td></tr>
+<tr><td>rowBlockSize</td><td>Integer</td><td>[1, inf)</td><td>block size in the row dimension for the 2d block cyclic distribution</td><td>fitter.type="classification"</td></tr>
+<tr><td>columnBlockSize</td><td>Integer</td><td>[1, inf)</td><td>block size in the column dimension for the 2d block cyclic distribution</td><td>fitter.type="classification"</td></tr>
+</table>
+
+If processRows or processColumns is not given (or -1), a square process grid is formed.
 
 
 # Default and Mandatory Configuration

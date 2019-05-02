@@ -467,6 +467,11 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
         "columnBlockSize": 64,
     },
 
+    "geometryConfig": {
+        "dim": [28, 28],
+        "stencil": "DN",
+    },
+
 },
 ```
 

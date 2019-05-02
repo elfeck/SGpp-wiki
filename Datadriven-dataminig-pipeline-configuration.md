@@ -119,6 +119,7 @@ refinement and coarsening behavior (adaptivityConfig) and much more may be confi
 <tr><td>regularizationConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
 <tr><td>learner</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
 <tr><td>parallelConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
+<tr><td>geometryConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td></tr>
 </table>
 
 The grid configuration allows to specify general grid properties such as the
@@ -266,6 +267,17 @@ The parallelConfig deals with domain parallelization of SGDE based classificatio
 If processRows or processColumns is not given (or 0 or -1), a square process grid is formed.
 
 ScaLAPACK decomposes matrices and vectors into blocks that are cyclically mapped onto a process grid (see [here](http://www.netlib.org/scalapack/slug/node110.html#SECTION04522000000000000000), [here](http://www.netlib.org/scalapack/slug/node106.html) and [here](http://www.netlib.org/scalapack/slug/node76.html#SECTION04432000000000000000)). The parameters for the block size specify the size of the individiual blocks.
+
+### geometryConfig
+
+The geometryConfig structure lets you create a geometry aware sparse grid that contains much less points then a regular sparse grid. When performining e.g. image classification, the number of dimensions is too high to start with a regular sparse grid of level > 2, thus we use geometry aware sparse grids to reduce the number of grid points.
+
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
+<tr><td>dim</td><td>JSON-array</td><td>Integers for array entries</td><td>Specifies the resolution of the picture. Support: ONLY 2D Array support = Image, Default Value = std::vector<int64_t>()</td><td></td></tr>
+<tr><td>stencil</td><td>String</td><td>"none", "DN"</td><td>The stencil specifies what pixel/dimension interactions are included in the a priori geometry aware grid</td><td></td></tr>
+</table>
+
 
 # Default and Mandatory Configuration
 

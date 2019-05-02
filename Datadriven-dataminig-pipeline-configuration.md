@@ -257,14 +257,15 @@ The parallelConfig deals with domain parallelization of SGDE based classificatio
 
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
-<tr><td>processRows</td><td>Integer</td><td>[1, inf)</td><td>optional, number of rows in the process grid.</td><td>fitter.type="classification"</td></tr>
-<tr><td>processColumns</td><td>Integer</td><td>[1, inf)</td><td>optional, number of columns in the process grid.</td><td>fitter.type="classification"</td></tr>
-<tr><td>rowBlockSize</td><td>Integer</td><td>[1, inf)</td><td>block size in the row dimension for the 2d block cyclic distribution</td><td>fitter.type="classification"</td></tr>
-<tr><td>columnBlockSize</td><td>Integer</td><td>[1, inf)</td><td>block size in the column dimension for the 2d block cyclic distribution</td><td>fitter.type="classification"</td></tr>
+<tr><td>processRows</td><td>Integer</td><td>[1, inf)</td><td>optional, number of rows in the process grid.</td><td>(fitter.type="classification" OR fitter.type="densityEstimation") AND (fitter.densityEstimationConfig.densityEstimationType="decomposition") AND (fitter.densityEstimationConfig.matrixDecompositionType="chol" OR fitter.densityEstimationConfig.matrixDecompositionType="orthoadapt")</td></tr>
+<tr><td>processColumns</td><td>Integer</td><td>[1, inf)</td><td>optional, number of columns in the process grid.</td><td>(fitter.type="classification" OR fitter.type="densityEstimation") AND (fitter.densityEstimationConfig.densityEstimationType="decomposition") AND (fitter.densityEstimationConfig.matrixDecompositionType="chol" OR fitter.densityEstimationConfig.matrixDecompositionType="orthoadapt")</td></tr>
+<tr><td>rowBlockSize</td><td>Integer</td><td>[1, inf)</td><td>block size in the row dimension for the 2d block cyclic distribution</td><td>(fitter.type="classification" OR fitter.type="densityEstimation") AND (fitter.densityEstimationConfig.densityEstimationType="decomposition") AND (fitter.densityEstimationConfig.matrixDecompositionType="chol" OR fitter.densityEstimationConfig.matrixDecompositionType="orthoadapt")</td></tr>
+<tr><td>columnBlockSize</td><td>Integer</td><td>[1, inf)</td><td>block size in the column dimension for the 2d block cyclic distribution</td><td>(fitter.type="classification" OR fitter.type="densityEstimation") AND (fitter.densityEstimationConfig.densityEstimationType="decomposition") AND (fitter.densityEstimationConfig.matrixDecompositionType="chol" OR fitter.densityEstimationConfig.matrixDecompositionType="orthoadapt")</td></tr>
 </table>
 
-If processRows or processColumns is not given (or -1), a square process grid is formed.
+If processRows or processColumns is not given (or 0 or -1), a square process grid is formed.
 
+ScaLAPACK decomposes matrices and vectors into blocks that are cyclically mapped onto a process grid (see [here](http://www.netlib.org/scalapack/slug/node110.html#SECTION04522000000000000000), [here](http://www.netlib.org/scalapack/slug/node106.html) and [here](http://www.netlib.org/scalapack/slug/node76.html#SECTION04432000000000000000)). The parameters for the block size specify the size of the individiual blocks.
 
 # Default and Mandatory Configuration
 

@@ -186,6 +186,8 @@ is a sub-type of densityEstimation.
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
 <tr><td>densityEstimationType</td><td>String</td><td>"cg", "decomposition"</td><td>Should conjugate gradient or matrix decomposition be used?</td><td></td></tr>
+<tr><td>normalize</td><td>Bool</td><td>true, false</td><td>Should the density
+function be normalized?</td><td>fitter.densityEstimationType="decomposition"</td></tr>
 <tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td></tr>
 <tr><td>iCholSweepsDecompose</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td></tr>
 <tr><td>iCholSweepsRefine</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td></tr>
@@ -423,6 +425,7 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
 
     "densityEstimationConfig": {
         "densityEstimationType": "decomposition",
+        "normalize": false,
         "matrixDecompositionType": "chol",
         "iCholSweepsDecompose": "4",
         "iCholSweepsRefine": 4,

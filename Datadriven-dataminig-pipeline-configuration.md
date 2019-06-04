@@ -389,6 +389,7 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
         "gridType": "linear",
         "dim": 0,
         "level": 3,
+        "generalGridType": "regular",
         "maxDegree": 1,
         "boundaryLevel": 0,
         "fileName": "",

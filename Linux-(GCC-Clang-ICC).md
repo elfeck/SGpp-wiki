@@ -46,6 +46,7 @@ is required for some functionality of the <tt>SG_DATADRIVEN</tt> module.
 - <a href="https://dakota.sandia.gov/">DAKOTA</a> is required for the Polynomial Chaos Expansion functionalities of the <tt>SG_COMBIGRID</tt> module. [Installation instructions](https://github.com/SGpp/SGpp/wiki/Integrate-Dakota)
 - <a href="https://www.cgal.org/index.html">CGAL</a> is required for a new Sparse Grid Density Estimation of the <tt>SG_DATADRIVEN</tt> module. It is required to solve a quadratic optimization problem to guarantee positive function values at the grid points.
 - <a href="https://www.zlib.net/" target="_blank">zlib</a> is recommended for the <tt>SG_DATADRIVEN</tt> module.
+- <a href="http://www.python.org/" target="_blank"> Python development headers</a> is required if you want to use the combigrid technique together with the data mining pipline (you need to compile the library with USE_PYTHON_EMBEDDING=1 in order to activate this feature)
 
 ## Installation
 On a recent Ubuntu system (&ge; 14.04 LTS),

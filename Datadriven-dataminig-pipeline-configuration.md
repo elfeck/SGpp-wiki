@@ -1,3 +1,30 @@
+# Table of Contents
+
+1. [Overview](#overview)
+2. [Data Source Configuration](#data-source-configuration)
+    1. [dataSource](#datasource)
+    2. [dataTransformation](#datatransformation)
+3. [Scorer Configuration](#scorer-configuration)
+    1. [scorer](#scorer)
+4. [Fitter Configuration](#fitter-configuration)
+    1. [fitter](#fitter)
+    2. [gridConfig](#gridconfig)
+    4. [adaptivityConfig](#adaptivityconfig)
+    5. [crossValidation](#crossvalidation)
+    6. [densityEstimationConfig](#densityestimationconfig)
+    7. [dataBase](#database)
+    8. [solverRefineConfig](#solverrefineconfig)
+    9. [solverFinalConfig](#solverfinalconfig)
+    10. [regularizationConfig](#regularizationconfig)
+    11. [learner](#learner)
+    12. [parallelConfig](#parallelconfig)
+    13. [geometryConfig](#geometryconfig)
+5. [Default Values and Mandatory Configuration](#default-and-mandatory-configuration)
+    1. [dataSource](#datasource-1)
+    2. [scorer](#scorer-1)
+    3. [fitter](#fitter-1)
+6. [Hyperparameter Optimization](#hyperparameter-optimization)
+
 # Overview
 
 The datamining pipeline is a part of SG++ that provides a streamlined way to

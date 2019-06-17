@@ -128,7 +128,7 @@ hierarchize the coefficient vector, which we print.
 
 Finally, a second `DataVector` is created which is used as a point to
 evaluate the sparse grid function at. An object is obtained which
-provides an evaluation operation (of type `sgpp::base::OperationEvaluation)`,
+provides an evaluation operation (of type `sgpp::base::OperationEvaluation`),
 and the sparse grid interpolant is evaluated at ![f11],
 which is close to (but not exactly at) a grid point.
 
@@ -152,7 +152,7 @@ u(0.52, 0.73) = 0.7696
 ```
 
 It can be clearly seen that the surpluses decay with a factor of 1/4:
-On the first level, we obtain 1, on the second 1/4, and on the third
+on the first level, we obtain 1, on the second 1/4, and on the third
 1/16 as surpluses.
 
 [f0]: http://chart.apis.google.com/chart?cht=tx&chl=%5Cvec%7Bx%7D_j%20%5Cin%20%5B0%2C%201%5D%5E2

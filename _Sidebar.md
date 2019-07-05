@@ -16,7 +16,7 @@
    2. [`sgpp::combigrid`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::combigrid)
    3. [`sgpp::datadriven`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::datadriven)
       1. [Data mining pipeline](https://github.com/SGpp/SGpp/wiki/Datadriven-datamining-pipeline)
-      2. [Data mining pipeline configuration](https://github.com/SGpp/SGpp/wiki/Datadriven-dataminig-pipeline-configuration)
+      2. [Data mining pipeline configuration](https://github.com/SGpp/SGpp/wiki/Datadriven-datamining-pipeline-configuration)
    4. [`sgpp::optimization`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::optimization)
    5. [`sgpp::pde`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::pde)
    6. [`sgpp::quadrature`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::quadrature)

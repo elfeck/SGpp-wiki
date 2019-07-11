@@ -59,7 +59,7 @@ read-in.
 <tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td></tr>
 <tr><td>compression</td><td>Boolean</td><td>true, false</td><td>Supply true if the file containing the data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td></tr>
 <tr><td>numBatches</td><td>Integer</td><td>[1, inf)</td><td>Into how many batches the dataset should be split. If the value is 1 then the entire dataset is taken as a whole</td><td></td></tr>
-<tr><td>batchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch. If 0 then then take all avaliable samples</td><td></td></tr>
+<tr><td>batchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch. If 0 then take all avaliable samples</td><td></td></tr>
 
 <tr><td>validationPortion</td><td>Float</td><td>[0.0, 1.0]</td><td>The fraction of the available data to be used as validation data</td><td></td></tr>
 <tr><td>hasTargets</td><td>Boolean</td><td>true, false</td><td>If true the last column of the data file is treated as targets for supervised learning. If this is the case then this target column is not part of the data per se, i.e. it will not be a column in the sgpp::base::DataMatrix containing all data but rather in a sgpp::base::DataVector containing the targets</td><td></td></tr>
@@ -343,6 +343,15 @@ DataSourceConfiguration.
     "readinCutoff": -1,
     "readinClasses: [ ],
     "readinColumns": [ ],
+    "testFilePath": "",
+    "testFileType": "none",
+    "testIsCompressed: false,
+    "testNumBatches": 1,
+    "testBatchSize:" 0,
+    "testHasTargets": true,
+    "testReadinCutoff": -1,
+    "testReadinClasses: [ ],
+    "testReadinColumns": [ ],
 },
 ```
 

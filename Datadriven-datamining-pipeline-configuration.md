@@ -180,8 +180,7 @@ in the configuration dataSource "validationPortion".
 <tr><td>logScale</td><td>Bool</td><td>true, false</td><td>Should the interval [lambdaStart, lambdaEnd] be interpreted as logscale?</td><td>enable=true</td></tr>
 </table>
 
-The density estimation configuration is only relevant if the fitter (type) is densityEstimation or classification which
-is a sub-type of densityEstimation.
+The density estimation configuration is only relevant if the fitter (type) is densityEstimation or classification which is a sub-type of densityEstimation.
 
 ### densityEstimationConfig
 <table>
@@ -189,12 +188,17 @@ is a sub-type of densityEstimation.
 <tr><td>densityEstimationType</td><td>String</td><td>"cg", "decomposition"</td><td>Should conjugate gradient or matrix decomposition be used?</td><td></td></tr>
 <tr><td>normalize</td><td>Bool</td><td>true, false</td><td>Should the density
 function be normalized?</td><td>fitter.densityEstimationType="decomposition"</td></tr>
-<tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td></tr>
+<tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt", "smw_ortho", "smw_chol"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td></tr>
 <tr><td>iCholSweepsDecompose</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td></tr>
 <tr><td>iCholSweepsRefine</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td></tr>
 <tr><td>iCholSweepsUpdateLambda</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td></tr>
 <tr><td>iCholSweepsSolver</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td></tr>
 </table>
+
+**Remarks:**
+* smw_ortho: Uses symmetric tridiagonal hessenberg decomposition for offline phase/matrix and Sherman-Morrison-Woodburry formula for refinement and/or coarsening in the online phase. 
+* smw_chol: Uses (symmetric) cholesky decomposition for offline phase/matrix and Sherman-Morrison-Woodburry formula for refinement and/or coarsening in the online phase.
+
 
 The database configuration includes a single attribute "filePath" that may be
 set to point to a JSON file containing information about how a densityEstimation decomposition

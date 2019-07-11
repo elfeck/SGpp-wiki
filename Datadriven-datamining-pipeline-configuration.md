@@ -71,6 +71,16 @@ The value -1 indicates that all rows should be read in</td><td></td></tr>
 <tr><td>readinClasses</td><td>Float List</td><td>Subset of class labels</td><td>Only rows with a class label in this list are read in. An empty list means all class labels are considered. This is intended for class labels and floats are equal with 10e-3 precision</td><td>hasTargets=true</td></tr>
 <tr><td>readinColumns</td><td>Integer List</td><td>Subset of column indices</td><td>Only columns with index in this list are read in. An empty list means all columns are read in</td><td></td></tr>
 <tr><td>dataTransformation</td><td>Dictionary</td><td>see table below</td><td>Configuration for further data transformation, i.e. rosenblatt transformation</td><td></td></tr>
+<tr><td>testFilePath</td><td>String</td><td>relative or absolute path</td><td>Path to the datafile used for the test data. Path may be absolute or relative to the directory of execution of the binary</td><td></td></tr>
+<tr><td>testFileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the test datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td></tr>
+<tr><td>testIsCompressed</td><td>Boolean</td><td>true, false</td><td>Value is True if the file containing the test data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td></tr>
+<tr><td>testNumBatches</td><td>Integer</td><td>[1, inf)</td><td>Into how many batches the test dataset should be split. If the value is 1 then the entire dataset is taken as a whole</td><td></td></tr>
+<tr><td>testBatchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch of the test dataset. If 0 then take all avaliable samples</td><td></td></tr>
+<tr><td>testHasTargets</td><td>Boolean</td><td>true, false</td><td>If true the last column of the test data file is treated as targets for supervised learning. If this is the case then this target column is not part of the data per se, i.e. it will not be a column in the sgpp::base::DataMatrix containing all data but rather in a sgpp::base::DataVector containing the targets</td><td></td></tr>
+<tr><td>testReadinCutoff</td><td>Integer</td><td>[-1, inf)</td><td>The row-index in the test dataset after which to cut off the data read in.
+The value -1 indicates that all rows should be read in</td><td></td></tr>
+<tr><td>testReadinClasses</td><td>Float List</td><td>Subset of class labels</td><td>Only rows with a class label in this list are read in. An empty list means all class labels are considered. This is intended for class labels and floats are equal with 10e-3 precision</td><td>testHasTargets=true</td></tr>
+<tr><td>testReadinColumns</td><td>Integer List</td><td>Subset of column indices</td><td>Only columns with index in this list are read in. An empty list means all columns are read in</td><td></td></tr>
 </table>
 
 

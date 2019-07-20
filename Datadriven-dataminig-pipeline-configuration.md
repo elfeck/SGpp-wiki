@@ -81,23 +81,22 @@ read-in.
 
 ### dataSource
 <table>
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
-<tr><td>filePath</td><td>String</td><td>relative or absolute path</td><td>Path to the datafile. Path may be absolute or relative to the directory of execution of the binary</td><td></td></tr>
-<tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td></tr>
-<tr><td>compression</td><td>Boolean</td><td>true, false</td><td>Supply true if the file containing the data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td></tr>
-<tr><td>numBatches</td><td>Integer</td><td>[1, inf)</td><td>Into how many batches the dataset should be split. If the value is 1 then the entire dataset is taken as a whole</td><td></td></tr>
-<tr><td>batchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch. If 0 then then take all avaliable samples</td><td></td></tr>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><<th><Default Value</th>/tr>
+<tr><td>filePath</td><td>String</td><td>relative or absolute path</td><td>Path to the datafile. Path may be absolute or relative to the directory of execution of the binary</td><td></td><td>TODO</td></tr>
+<tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td><td>TODO</td></tr>
+<tr><td>compression</td><td>Boolean</td><td>true, false</td><td>Supply true if the file containing the data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td><td>TODO</td></tr>
+<tr><td>numBatches</td><td>Integer</td><td>[1, inf)</td><td>Into how many batches the dataset should be split. If the value is 1 then the entire dataset is taken as a whole</td><td></td><td>TODO</td></tr>
+<tr><td>batchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch. If 0 then then take all avaliable samples</td><td></td><td>TODO</td></tr>
 
-<tr><td>validationPortion</td><td>Float</td><td>[0.0, 1.0]</td><td>The fraction of the available data to be used as validation data</td><td></td></tr>
+<tr><td>validationPortion</td><td>Float</td><td>[0.0, 1.0]</td><td>The fraction of the available data to be used as validation data</td><td></td><td>TODO</td></tr>
 <tr><td>hasTargets</td><td>Boolean</td><td>true, false</td><td>If true the last column of the data file is treated as targets for supervised learning. If this is the case then this target column is not part of the data per se, i.e. it will not be a column in the sgpp::base::DataMatrix containing all data but rather in a sgpp::base::DataVector containing the targets</td><td></td></tr>
-<tr><td>shuffling</td><td>String</td><td>"sequential", "random"</td><td>How the data is shuffeled. Sequential means no shuffeling</td><td></td></tr>
-<tr><td>randomSeed</td><td>Integer</td><td>(-inf, inf)</td><td>The seed used for all (most, excluding HPO) random number generation used by the pipeline</td><td></td></tr>
-<tr><td>epochs</td><td>Integer</td><td>[1, inf)</td><td>The number of epochs to train</td><td></td></tr>
-<tr><td>readinCutoff</td><td>Integer</td><td>[-1, inf)</td><td>The row-index in the dataset after which to cut off the data read in.
-The value -1 indicates that all rows should be read in</td><td></td></tr>
-<tr><td>readinClasses</td><td>Float List</td><td>Subset of class labels</td><td>Only rows with a class label in this list are read in. An empty list means all class labels are considered. This is intended for class labels and floats are equal with 10e-3 precision</td><td>hasTargets=true</td></tr>
-<tr><td>readinColumns</td><td>Integer List</td><td>Subset of column indices</td><td>Only columns with index in this list are read in. An empty list means all columns are read in</td><td></td></tr>
-<tr><td>dataTransformation</td><td>Dictionary</td><td>see table below</td><td>Configuration for further data transformation, i.e. rosenblatt transformation</td><td></td></tr>
+<tr><td>shuffling</td><td>String</td><td>"sequential", "random"</td><td>How the data is shuffeled. Sequential means no shuffeling</td><td></td><td>TODO</td></tr>
+<tr><td>randomSeed</td><td>Integer</td><td>(-inf, inf)</td><td>The seed used for all (most, excluding HPO) random number generation used by the pipeline</td><td></td><td>TODO</td></tr>
+<tr><td>epochs</td><td>Integer</td><td>[1, inf)</td><td>The number of epochs to train</td><td></td><td>TODO</td></tr>
+<tr><td>readinCutoff</td><td>Integer</td><td>[-1, inf)</td><td>The row-index in the dataset after which to cut off the data read in. The value -1 indicates that all rows should be read in</td><td></td><td>TODO</td></tr>
+<tr><td>readinClasses</td><td>Float List</td><td>Subset of class labels</td><td>Only rows with a class label in this list are read in. An empty list means all class labels are considered. This is intended for class labels and floats are equal with 10e-3 precision</td><td>hasTargets=true</td><td>TODO</td></tr>
+<tr><td>readinColumns</td><td>Integer List</td><td>Subset of column indices</td><td>Only columns with index in this list are read in. An empty list means all columns are read in</td><td></td><td>TODO</td></tr>
+<tr><td>dataTransformation</td><td>Dictionary</td><td>see table below</td><td>Configuration for further data transformation, i.e. rosenblatt transformation</td><td></td><td>TODO</td></tr>
 </table>
 
 

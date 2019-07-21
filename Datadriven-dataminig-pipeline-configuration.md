@@ -543,7 +543,7 @@ In the following first the "hpo" config itself.
 <tr><td>randomSeed</td><td>Integer</td><td>[0, inf)</td><td>Seed for random sampling within HPO</td><td></td><td>42</td></tr>
 <tr><td>trainSize</td><td>Integer</td><td>[-1, inf)</td><td>Number of training samples to be used for HPO. -1 means all available samples are used</td><td></td><td>-1</td></tr>
 <tr><td>harmonica</td><td>Dictionary</td><td>see table below</td><td>Supply this value if harmonica-hpo should be used, otherwise omit it</td><td>method="harmonica"</td><td><i>not used, i.e. not present in the config</i></td></tr>
-<tr><td>bayesianOptimization</td><td>Dictionary</td><td>see table below</td><td>Supply this value if bayesianOptimization-hpo should be used, otherwise omit it</td><td>method="bayesian"</td><td></td><td><i>used, i.e. present in the config</i></td></tr>
+<tr><td>bayesianOptimization</td><td>Dictionary</td><td>see table below</td><td>Supply this value if bayesianOptimization-hpo should be used, otherwise omit it</td><td>method="bayesian"</td><td><i>used, i.e. present in the config</i></td></tr>
 </table>
 
 ### harmonica

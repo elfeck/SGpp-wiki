@@ -106,7 +106,7 @@ implemented but this could be used for normalization, outlier-removal, etc. in t
 ### dataTransformation
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
-<tr><td>type</td><td>String</td><td>"rosenblatt", "none"</td><td>The type of data transformation. Currently only rosenblatt transformation is available</td><td></td><td><"none"/td></tr>
+<tr><td>type</td><td>String</td><td>"rosenblatt", "none"</td><td>The type of data transformation. Currently only rosenblatt transformation is available</td><td></td><td>"none"</td></tr>
 </table>
 
 # Scorer Configuration
@@ -119,7 +119,7 @@ difference between prediction and targets), and negative log likelihood (NLL).
 ### scorer
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
-<tr><td>metric</td><td>String</td><td>"mse", "nll", "accuracy"</td><td>The metric that the scorer uses during learning</td><td></td><td>accuracy</td></tr>
+<tr><td>metric</td><td>String</td><td>"mse", "nll", "accuracy"</td><td>The metric that the scorer uses during learning</td><td></td><td>"accuracy"</td></tr>
 </table>
 
 # Fitter Configuration
@@ -134,7 +134,7 @@ refinement and coarsening behavior (adaptivityConfig) and much more may be confi
 ### fitter
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
-<tr><td>type</td><td>String</td><td>"regressionLeastSquares", "densityEstimation", "classification"</td><td>Currently "classification" is not implemented in the UniversalMiner (see Fitter configuration below for more info)</td><td></td><td><b>Mandatory to specify</b></td></tr>
+<tr><td>type</td><td>String</td><td>"regressionLeastSquares", "densityEstimation", "classification"</td><td></td><td></td><td><b>Mandatory to specify</b></td></tr>
 <tr><td>gridConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
 <tr><td>adaptivityConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
 <tr><td>crossValidation</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
@@ -159,7 +159,7 @@ the dim attribute listed here.
 <tr><td>gridType</td><td>String</td><td>all sgpp::base::GridTypes</td><td>The type of the grid</td><td></td><td>"linear"</td></tr>
 <tr><td>dim</td><td>Integer</td><td>[1, inf)</td><td>The dimension of the grid</td><td></td><td>0</td></tr>
 <tr><td>level</td><td>Integer</td><td>[1, inf)</td><td>The level of the grid (initial, before refinement)</td><td></td><td>3</td></tr>
-<tr><td>generalGridType </td><td>String</td><td>"regular", "component"</td><td>"regular": compute solution on one sparse grid, "component": use the combination technique (works only, if the library is compiled with USE_PYTHON_EMBEDDING=1)</td><td></td><td>"regular"</td><td>(TODO)</td></tr>
+<tr><td>generalGridType </td><td>String</td><td>"regular", "component"</td><td>"regular": compute solution on one sparse grid, "component": use the combination technique (works only, if the library is compiled with USE_PYTHON_EMBEDDING=1)</td><td></td><td>"regular"</td></tr>
 <tr><td>maxDegree</td><td>Integer</td><td>[1, inf)</td><td>The maximal degree of polynomials used if the grid uses polynomial basis functions</td><td>gridType uses polynomial ansatz functions</td><td>1</td></tr>
 <tr><td>boundaryLevel</td><td>Integer</td><td>[0, inf)</td><td>The level of the boundary grid. <b>This parameter is currently recommended to be left empty.</b></td><td>gridType is a boundary grid</td><td>0</td></tr>
 <tr><td>fileName</td><td>String</td><td></td><td>The file name used if the grid is to be serialized to a file</td><td></td><td>""</td></tr>
@@ -538,29 +538,29 @@ In the following first the "hpo" config itself.
 ### hpo
 
 <table>
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
-<tr><td>method</td><td>String</td><td>"harmonica", "bayesian"</td><td>The type of HPO</td><td></td></tr>
-<tr><td>randomSeed</td><td>Integer</td><td>[0, inf)</td><td>Seed for random sampling within HPO</td><td></td></tr>
-<tr><td>trainSize</td><td>Integer</td><td>[-1, inf)</td><td>Number of training samples to be used for HPO. -1 means all available samples are used</td><td></td></tr>
-<tr><td>harmonica</td><td>Dictionary</td><td>see table below</td><td>Supply this value if harmonica-hpo should be used, otherwise omit it</td><td>method="harmonica"</td></tr>
-<tr><td>bayesianOptimization</td><td>Dictionary</td><td>see table below</td><td>Supply this value if bayesianOptimization-hpo should be used, otherwise omit it</td><td>method="bayesian"</td></tr>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>method</td><td>String</td><td>"harmonica", "bayesian"</td><td>The type of HPO</td><td></td><td>"bayesian"</td></tr>
+<tr><td>randomSeed</td><td>Integer</td><td>[0, inf)</td><td>Seed for random sampling within HPO</td><td></td><td>42</td></tr>
+<tr><td>trainSize</td><td>Integer</td><td>[-1, inf)</td><td>Number of training samples to be used for HPO. -1 means all available samples are used</td><td></td><td>-1</td></tr>
+<tr><td>harmonica</td><td>Dictionary</td><td>see table below</td><td>Supply this value if harmonica-hpo should be used, otherwise omit it</td><td>method="harmonica"</td><td><i>not used, i.e. not present in the config</i></td></tr>
+<tr><td>bayesianOptimization</td><td>Dictionary</td><td>see table below</td><td>Supply this value if bayesianOptimization-hpo should be used, otherwise omit it</td><td>method="bayesian"</td><td></td><td><i>used, i.e. present in the config</i></td></tr>
 </table>
 
 ### harmonica
 
 <table>
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
-<tr><td>lambda</td><td>Float</td><td>[0, inf)</td><td>Regularization lambda for lasso regression used by harmonica-hpo</td><td></td></tr>
-<tr><td>stages</td><td>[Integer]</td><td>Each value in [0, inf)</td><td>The amount of samples to take in each stage of harmonica-hpo</td><td></td></tr>
-<tr><td>constraints</td><td>[Integer]</td><td>Each value in [0, inf)</td><td>Amount of constraints to introduce after each stage of harmonica-hpo</td><td></td></tr>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>lambda</td><td>Float</td><td>[0, inf)</td><td>Regularization lambda for lasso regression used by harmonica-hpo</td><td></td><td>TODO</td></tr>
+<tr><td>stages</td><td>[Integer]</td><td>Each value in [0, inf)</td><td>The amount of samples to take in each stage of harmonica-hpo</td><td></td><td>TODO</td></tr>
+<tr><td>constraints</td><td>[Integer]</td><td>Each value in [0, inf)</td><td>Amount of constraints to introduce after each stage of harmonica-hpo</td><td></td><td>TODO</td></tr>
 </table>
 
 ### bayesianOptimization
 
 <table>
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th></tr>
-<tr><td>nRandom</td><td>Integer</td><td>[0, inf)</td><td>Number of random samples used to warm up bayesianOptimization-hpo</td><td></td></tr>
-<tr><td>nRuns</td><td>Integer</td><td>[0, inf)</td><td>Number of samples bayesianOptimization-hpo is run for</td><td></td></tr>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>nRandom</td><td>Integer</td><td>[0, inf)</td><td>Number of random samples used to warm up bayesianOptimization-hpo</td><td></td><td>TODO</td></tr>
+<tr><td>nRuns</td><td>Integer</td><td>[0, inf)</td><td>Number of samples bayesianOptimization-hpo is run for</td><td></td><td>TODO</td></tr>
 </table>
 
 

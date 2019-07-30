@@ -3,7 +3,7 @@
    1. [Linux](https://github.com/SGpp/SGpp/wiki/Linux-(GCC-Clang-ICC))
    2. [OSX](https://github.com/SGpp/SGpp/wiki/OSX-(GCC-ICC))
    3. [Windows](https://github.com/SGpp/SGpp/wiki/Windows-(MinGW))
-   4. [MATLAB Binaries](https://github.com/SGpp/SGpp/wiki/Windows-(MinGW))
+   4. [MATLAB Binaries](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries)
 3. [**Quick Start Examples**](https://github.com/SGpp/SGpp/wiki/Quick-Start)
    1. [Quick Start Example for `sgpp::base`](https://github.com/SGpp/SGpp/wiki/Quick-Start)
       1. [C⁺⁺](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(C%E2%81%BA%E2%81%BA))

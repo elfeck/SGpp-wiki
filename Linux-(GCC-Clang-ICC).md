@@ -335,6 +335,7 @@ Instructions
 13. export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6:$LD_PRELOAD"
 14. Open MATLAB
 15. Use pathtool to add   /PATH_TO_SGPP/matsgpp/matlab and   /PATH_TO_SGPP/matsgpp/matlab 
+16. Test with "sgpp.createLinearGrid(2)"
 
 Additional Instructions for Windows
 -----------------------------------

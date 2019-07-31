@@ -312,6 +312,70 @@ g++ your_mex_program.o \
 Of course, you have to add include paths and library switches for each
 module that 'your_mex_program' uses.
 
+## Via Mex Interface created by SWIG
+This is a short explanation of how to use a fork of SWIG to directly generate a MATLAB interface (via MEX files) for SG++ without Java.
+
+The creator of the SWIG fork has put some info to https://github.com/RobotLocomotion/drake/issues/1267. He forked SWIG to provide bindings to his own library (see https://github.com/casadi/casadi/wiki/matlab). There is an outdated version of the fork in the SWIG repository (https://github.com/swig/swig/tree/matlab). However, it doesn't seem to have been merged yet. Therefore, you have to compile the fork yourself. See http://www.swig.org/svn.html for generic instructions and http://www.swig.org/Doc2.0/Windows.html#Windows_swig_exe for compiling on Windows.
+
+Instructions
+------------
+
+1. Install MATLAB.
+2. Clone the SWIG fork from https://github.com/jaeandersson/swig and change to the extracted directory.
+3. Apply the patch below to the source of the SWIG fork. The first hunk fixes a problem that occurs when calling an overridden method that has one or more arguments. The check is not correctly done in this case. The second hunk fixes the problem that inheritance is not done correctly. Otherwise, the MATLAB correspondents of subclasses don't inherit from their superclasses.
+4. If you don't have PCRE installed, you have to download the PCRE source tarball, place it in the root folder of the SWIG fork, and run `Tools/pcre-build.sh`.
+5. Run `./autogen.sh`.
+6. Run `./configure`.
+7. Run `make`.
+8. The executable of the SWIG fork is now located at `./swig`.
+9. Clone SG++ and change to the directory of the clone.
+10. Compile SG++ with `PATH=/DIRECTORY_OF_SWIG_FORK:$PATH SWIG_LIB=/DIRECTORY_OF_SWIG_FORK/Lib scons -j 4 SG_ALL=0 SG_BASE=1 SG_MATLAB=1 MATLAB_INCLUDE_PATH=/PATH_TO_MATLAB/extern/include MATLAB_LIBRARY_PATH=/PATH_TO_MATLAB/bin/glnxa64` (for Linux, adapt the last path for other platforms).
+11. The compiled MATLAB interface can be found at `lib/matsgpp`. 
+
+
+Additional Instructions for Windows
+-----------------------------------
+
+On Windows, you have to install MSYS first:
+
+1. Install MinGW Installation Manager (mingw-get)
+2. Install msys-base and mingw-developer-tools (inside mingw-get)
+3. Follow the instructions at http://swig.org/Doc2.0/Windows.html#Windows_swig_exe
+   1. Download PCRE source tarball from their website http://www.pcre.org/
+   2. Extract SWIG-matlab ZIP (from step 1) to msys/1.0 directory
+   3. Start MSYS shell, change to extracted directory
+   4. Run `Tools/pcre-build.sh`
+   5. Run `./autogen.sh`, `./configure`, `make`
+   6. Move extracted directory (now contains `swig.exe`) to desired location
+
+Patch
+-----
+
+```diff
+diff --git a/Source/Modules/matlab.cxx b/Source/Modules/matlab.cxx
+index 11c6fb9..d2f8418 100644
+--- a/Source/Modules/matlab.cxx
++++ b/Source/Modules/matlab.cxx
+@@ -168,7 +168,7 @@ MATLAB::MATLAB():
+   /* Add code to manage protected constructors and directors */
+   director_prot_ctor_code = NewString("");
+   Printv(director_prot_ctor_code,
+-	 "if ( argc==1 ) { /* subclassed */\n",
++	 "if ( $comparison ) { /* subclassed */\n",
+ 	 "  $director_new \n",
+ 	 "} else {\n", "   mexErrMsgIdAndTxt(\"SWIG:RuntimeError\",\"accessing abstract class or protected constructor\"); \n", "  SWIG_fail;\n", "}\n", NIL);
+ 
+@@ -2111,6 +2111,8 @@ int MATLAB::classHandler(Node *n) {
+       if (bmodoptions) {
+           bpkg = Getattr(bmodoptions, "package");
+       }
++      if (!bpkg)
++          bpkg = pkg_name;
+       if (!bname || !bpkg || GetFlag(b.item, "feature:ignore"))
+ 	continue;
+       base_count++;
+```
+
 ### Via jsgpp
 The third way of using SG⁺⁺ from within MATLAB is jsgpp,
 i.e., using the Java library of SG⁺⁺ and import it to MATLAB.

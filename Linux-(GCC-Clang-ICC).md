@@ -312,7 +312,7 @@ g++ your_mex_program.o \
 Of course, you have to add include paths and library switches for each
 module that 'your_mex_program' uses.
 
-## Via Mex Interface created by SWIG
+### Via Mex Interface created by SWIG
 This is a short explanation of how to use a fork of SWIG to directly generate a MATLAB interface (via MEX files) for SG++ without Java.
 
 The creator of the SWIG fork has put some info to https://github.com/RobotLocomotion/drake/issues/1267. He forked SWIG to provide bindings to his own library (see https://github.com/casadi/casadi/wiki/matlab). There is an outdated version of the fork in the SWIG repository (https://github.com/swig/swig/tree/matlab). However, it doesn't seem to have been merged yet. Therefore, you have to compile the fork yourself. See http://www.swig.org/svn.html for generic instructions and http://www.swig.org/Doc2.0/Windows.html#Windows_swig_exe for compiling on Windows.
@@ -331,7 +331,10 @@ Instructions
 9. Clone SG++ and change to the directory of the clone.
 10. Compile SG++ with `PATH=/DIRECTORY_OF_SWIG_FORK:$PATH SWIG_LIB=/DIRECTORY_OF_SWIG_FORK/Lib scons -j 4 SG_ALL=0 SG_BASE=1 SG_MATLAB=1 MATLAB_INCLUDE_PATH=/PATH_TO_MATLAB/extern/include MATLAB_LIBRARY_PATH=/PATH_TO_MATLAB/bin/glnxa64` (for Linux, adapt the last path for other platforms).
 11. The compiled MATLAB interface can be found at `lib/matsgpp`. 
-
+12. export LD_LIBRARY_PATH="/PATH_TO_SGPP/lib/matsgpp/:$LD_LIBRARY_PATH"
+13. export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libstdc++.so.6:$LD_PRELOAD"
+14. Open MATLAB
+15. Use pathtool to add   /PATH_TO_SGPP/matsgpp/matlab and   /PATH_TO_SGPP/matsgpp/matlab 
 
 Additional Instructions for Windows
 -----------------------------------

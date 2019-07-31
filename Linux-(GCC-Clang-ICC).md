@@ -149,7 +149,7 @@ Additionally, you can pass some specific flags to the compiler
 using the <tt>CPPFLAGS</tt> environment variable:
 
 ```console
-scons CPPFLAGS='-g -O0'
+scons CPPFLAGS='-g,-O0'
 ```
 
 ## Python Bindings

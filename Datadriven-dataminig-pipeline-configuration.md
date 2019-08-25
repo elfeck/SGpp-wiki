@@ -159,7 +159,7 @@ the dim attribute listed here.
 <tr><td>gridType</td><td>String</td><td>all sgpp::base::GridTypes</td><td>The type of the grid</td><td></td><td>"linear"</td></tr>
 <tr><td>dim</td><td>Integer</td><td>[1, inf)</td><td>The dimension of the grid</td><td></td><td>0</td></tr>
 <tr><td>level</td><td>Integer</td><td>[1, inf)</td><td>The level of the grid (initial, before refinement)</td><td></td><td>3</td></tr>
-<tr><td>generalGridType </td><td>String</td><td>"regular", "component"</td><td>"regular": compute solution on one sparse grid, "component": use the combination technique (works only, if the library is compiled with USE_PYTHON_EMBEDDING=1)</td><td></td><td>"regular"</td></tr>
+<tr><td>generalGridType </td><td>String</td><td>"regular", "component"</td><td>"regular": compute solution on one sparse grid, "component": use the combination technique</td><td></td><td>"regular"</td></tr>
 <tr><td>maxDegree</td><td>Integer</td><td>[1, inf)</td><td>The maximal degree of polynomials used if the grid uses polynomial basis functions</td><td>gridType uses polynomial ansatz functions</td><td>1</td></tr>
 <tr><td>boundaryLevel</td><td>Integer</td><td>[0, inf)</td><td>The level of the boundary grid. <b>This parameter is currently recommended to be left empty.</b></td><td>gridType is a boundary grid</td><td>0</td></tr>
 <tr><td>fileName</td><td>String</td><td></td><td>The file name used if the grid is to be serialized to a file</td><td></td><td>""</td></tr>

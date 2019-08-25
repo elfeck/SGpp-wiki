@@ -37,7 +37,7 @@ without any programming required.<br/>
 
 The configuration of the datamining pipeline relies on plain JSON configuration files
 which are provided as an input to a program running the pipeline. The program
-then parses the configuration and proceedes with the datamining as specified by
+then parses the configuration and proceeds with the datamining as specified by
 the configuration.
 
 The top-level structure of pipeline configuration is structured as follows:
@@ -60,15 +60,15 @@ example_config.json:
 
 Each of these three attributes has many different sub-attributes to configure.
 Note that almost all attributes have built-in default values and it is often enough
-to only specifiy a select few attributes manually in the JSON configuration file.
+to only specify a select few attributes manually in the JSON configuration file.
 
-In the following all available attributes are listed in tablular form. The three
+In the following all available attributes are listed in tabular form. The three
 top-level JSON attributes are <b>dataSource</b>, <b>scorer</b> and <b>fitter</b>.
-Each of these may have attributes which are JSON dictonaries themselves. These are then
+Each of these may have attributes which are JSON dictionaries themselves. These are then
 listed separately.<br/>
 The column "Depends on" lists attribute-value pairs that the row in questions
 depends on. If the condition in the "Depends on" column is
-not fullfilled, the attribute in question will have no effect (but may still
+not fulfilled, the attribute in question will have no effect (but may still
 be set - it is just ignored by the program).
 
 
@@ -86,11 +86,11 @@ read-in.
 <tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td><td>"none"</td></tr>
 <tr><td>compression</td><td>Boolean</td><td>true, false</td><td>Supply true if the file containing the data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td><td>false</td></tr>
 <tr><td>numBatches</td><td>Integer</td><td>[1, inf)</td><td>Into how many batches the dataset should be split. If the value is 1 then the entire dataset is taken as a whole</td><td></td><td>1</td></tr>
-<tr><td>batchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch. If 0 then then take all avaliable samples</td><td></td><td>0</td></tr>
+<tr><td>batchSize</td><td>Integer</td><td>[0, inf)</td><td>The size of one batch. If 0 then then take all available samples</td><td></td><td>0</td></tr>
 
 <tr><td>validationPortion</td><td>Float</td><td>[0.0, 1.0]</td><td>The fraction of the available data to be used as validation data</td><td></td><td>0.3</td></tr>
 <tr><td>hasTargets</td><td>Boolean</td><td>true, false</td><td>If true the last column of the data file is treated as targets for supervised learning. If this is the case then this target column is not part of the data per se, i.e. it will not be a column in the sgpp::base::DataMatrix containing all data but rather in a sgpp::base::DataVector containing the targets</td><td></td><td>true</td></tr>
-<tr><td>shuffling</td><td>String</td><td>"sequential", "random"</td><td>How the data is shuffeled. Sequential means no shuffeling</td><td></td><td>"sequential"</td></tr>
+<tr><td>shuffling</td><td>String</td><td>"sequential", "random"</td><td>How the data is shuffled. Sequential means no shuffling</td><td></td><td>"sequential"</td></tr>
 <tr><td>randomSeed</td><td>Integer</td><td>(-inf, inf)</td><td>The seed used for all (most, excluding HPO) random number generation used by the pipeline</td><td></td><td>-1</td></tr>
 <tr><td>epochs</td><td>Integer</td><td>[1, inf)</td><td>The number of epochs to train</td><td></td><td>1</td></tr>
 <tr><td>readinCutoff</td><td>Integer</td><td>[-1, inf)</td><td>The row-index in the dataset after which to cut off the data read in. The value -1 indicates that all rows should be read in</td><td></td><td>-1</td></tr>
@@ -125,7 +125,7 @@ difference between prediction and targets), and negative log likelihood (NLL).
 # Fitter Configuration
 
 The fitter configuration specifies what and how the datamining task should be
-performed. Notably, the type of the fitter will specifiy the task, currently
+performed. Notably, the type of the fitter will specify the task, currently
 either one of least square regression, density estimation or classification.<br/>
 Besides the type, many aspects of the SG++-related parameters, such
 as the grid type, grid level (gridConfig),
@@ -165,7 +165,7 @@ the dim attribute listed here.
 <tr><td>fileName</td><td>String</td><td></td><td>The file name used if the grid is to be serialized to a file</td><td></td><td>""</td></tr>
 </table>
 
-The adativity configuration allows to specify parameters related to adaptive grid refinement
+The adaptivity configuration allows to specify parameters related to adaptive grid refinement
 and coarsening.
 
 ### adaptivityConfig
@@ -243,7 +243,7 @@ refinement. solverFinalConfig is used for anything else.
 <tr><td>solverType</td><td>String</td><td>"cg", "bicgstab", "fista"</td><td>The type of solver to be used</td><td></td><td>"cg"</td></tr>
 <tr><td>eps</td><td>Float</td><td>(0, inf)</td><td></td><td></td><td>1e-12</td></tr>
 <tr><td>maxIterations</td><td>Integer</td><td>[0, inf)</td><td>The upper boundary for solver iterations</td><td></td><td>100</td></tr>
-<tr><td>threshold</td><td>Float</td><td>[0, inf)</td><td>An additional abort cricterium for the solver</td><td></td><td>1e-12</td></tr>
+<tr><td>threshold</td><td>Float</td><td>[0, inf)</td><td>An additional abort criterion for the solver</td><td></td><td>1e-12</td></tr>
 </table>
 
 ### solverFinalConfig
@@ -253,7 +253,7 @@ refinement. solverFinalConfig is used for anything else.
 <tr><td>solverType</td><td>String</td><td>"cg", "bicgstab", "fista"</td><td>The type of solver to be used</td><td></td><td>"cg"</td></tr>
 <tr><td>eps</td><td>Float</td><td>(0, inf)</td><td></td><td></td><td>1e-12</td></tr>
 <tr><td>maxIterations</td><td>Integer</td><td>[0, inf)</td><td>The upper boundary for solver iterations</td><td></td><td>100</td></tr>
-<tr><td>threshold</td><td>Float</td><td>[0, inf)</td><td>An additional abort cricterium for the solver</td><td></td><td>1e-12</td></tr>
+<tr><td>threshold</td><td>Float</td><td>[0, inf)</td><td>An additional abort criterion for the solver</td><td></td><td>1e-12</td></tr>
 </table>
 
 The regularization configuration controls what type and to what extend the learning
@@ -294,11 +294,11 @@ The parallelConfig deals with domain parallelization of SGDE based classificatio
 
 If processRows or processColumns is not given (or 0 or -1), a square process grid is formed.
 
-ScaLAPACK decomposes matrices and vectors into blocks that are cyclically mapped onto a process grid (see [here](http://www.netlib.org/scalapack/slug/node110.html#SECTION04522000000000000000), [here](http://www.netlib.org/scalapack/slug/node106.html) and [here](http://www.netlib.org/scalapack/slug/node76.html#SECTION04432000000000000000)). The parameters for the block size specify the size of the individiual blocks.
+ScaLAPACK decomposes matrices and vectors into blocks that are cyclically mapped onto a process grid (see [here](http://www.netlib.org/scalapack/slug/node110.html#SECTION04522000000000000000), [here](http://www.netlib.org/scalapack/slug/node106.html) and [here](http://www.netlib.org/scalapack/slug/node76.html#SECTION04432000000000000000)). The parameters for the block size specify the size of the individual blocks.
 
 ### geometryConfig
 
-The geometryConfig structure lets you create a geometry aware sparse grid that contains much less points then a regular sparse grid. When performining e.g. image classification, the number of dimensions is too high to start with a regular sparse grid of level > 2, thus we use geometry aware sparse grids to reduce the number of grid points.
+The geometryConfig structure lets you create a geometry aware sparse grid that contains much less points then a regular sparse grid. When performing e.g. image classification, the number of dimensions is too high to start with a regular sparse grid of level > 2, thus we use geometry aware sparse grids to reduce the number of grid points.
 
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
@@ -388,7 +388,7 @@ to automatically construct the fitter specified in the JSON configuration.<br/>
 However, it is also possible to ignore the fitter type attribute in the
 JSON configuration and create the right fitter (factory) in the program
 itself. This approach is the older and (as of now) the more commonly used one,
-whereas the UniversalMiner\* in conjuction with the fitter type JSON attribute
+whereas the UniversalMiner\* in conjunction with the fitter type JSON attribute
 is relatively new.
 
 
@@ -532,7 +532,7 @@ hpo_example_config.json:
 ```
 
 In order to use HPO, certain attributes described above (i.e. gridConfig.level)
-change and expect different values. See below for a describtion of these changes.
+change and expect different values. See below for a description of these changes.
 In the following first the "hpo" config itself.
 
 ### hpo
@@ -596,7 +596,7 @@ not only the usual value for that attribute but also information for the
 HPO process. These additional HPO-specific attributes may for instance
 include "min" and "max" attributes to restrict the search-range of the optimization.<br>
 In the following all attributes which may be targeted with HPO are listed
-with their <b>new</b> dictonary structure. If the attribute should not be
+with their <b>new</b> dictionary structure. If the attribute should not be
 part of HPO, simply use the "normal", non-HPO value for the respective attribute as described above and
 it will be ignore by HPO.
 

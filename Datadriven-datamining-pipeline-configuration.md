@@ -26,6 +26,7 @@
     1. [dataSource](#datasource-1)
     2. [scorer](#scorer-1)
     3. [fitter](#fitter-1)
+    4. [visualization](#visualization-1)
 7. [Hyperparameter Optimization](#hyperparameter-optimization)
 
 # Overview

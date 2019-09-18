@@ -313,21 +313,26 @@ The geometryConfig structure lets you create a geometry aware sparse grid that c
 
 This attribute contains all the parameters necessary to run the visualization module. Note that this module is entirely optional so it must be defined in order to execute it. If the user wants to execute the module with all of the default parameters, an empty dictionary with key they "visualization" in the config file will suffice.
 
+### visualization
 This part of the configuration is comprised of 2 dictionaries:
-* generalConfig
-* parameters
-The attributes of each dictionary are described on the following tables.
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>generalConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
+<tr><td>parameters</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
+</table>
 
 ## generalConfig
 
-The generalConfig attribute contains the general parameters for configuration, like which algorithm to use, output format and the folder to store the data. Note that the heatmaps and cuts are always generated and that the graphs’ resolution will depend on the level of the grid used. The tsne algorithm is the only additional algorithm so far implemented for the visualization which reduces the dimensionality. Also note that the json output is to be used as an input for the plotly graph library.
+The generalConfig attribute contains the general parameters for configuration, like which algorithm to use, output format and the folder to store the data. Note that the heatmaps and cuts are **always generated** and that the graphs’ resolution **will depend on the level of the grid defined** at gridConfig in the Fitter module. The tsne algorithm is the only additional algorithm so far implemented for the visualization which reduces the dimensionality. **In this current version of the system the algorithm itself has not been fully integrated but it will be in a future release. Setting the parameters related to this algorithm will have no effect on the current execution of the module.**
+
+Also note that the json output is to be used as an input for the plotly graph library.
 
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
 <tr><td>algorithm</td><td>String</td><td>"tsne" plus other algorithms for visualization which could be implemented in the future</td><td>Algorithm to be executed to reduce the dimensionality of the model.</td><td></td><td>tsne</td></tr>
 <tr><td>targetDirectory</td><td>String</td><td>Absolute or relative path</td><td>Path to the file in which the data will be stored after the algorithm is applied</td><td></td><td>./output</td></tr>
-<tr><td>targetFileType</td><td>String</td><td>CSV, json</td><td>Format of the file in which to present the output of the visualization algorithm.</td><td></td><td>json</td></tr>
-<tr><td>numBatches</td><td>Integer</td><td>[1,Inf)</td><td>Number which determine after how many batches the visualization module will be executed. Note that the first batch is always executed.</td><td>If this parameter is higher than dataSource.numBatches (if it’s defined) the system will set it to that value.</td><td>1</td></tr>
+<tr><td>targetFileType</td><td>String</td><td>csv, json</td><td>Format of the file in which to present the output of the visualization algorithm.</td><td></td><td>csv</td></tr>
+<tr><td>numBatches</td><td>Integer</td><td>[1,Inf)</td><td>Number which determine after how many batches the visualization module will be executed. Note that the first batch is always executed.</td><td></td><td>1</td></tr>
 </table>
 
 ## Parameters
@@ -542,6 +547,35 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
 
 },
 ```
+## visualization
+
+<b>Developer Note:</b> Default values for the visualization configuration are set up in the method setupDefaults of class VisualizationConfiguration.
+
+<b>Mandatory Values:</b> <i>none</i>
+
+Defining the json just like this will enable and run the visualization module:
+```"visualization":{ },
+```
+
+**Default Values:**
+```
+"visualization": {
+    "generalConfig": {
+        "algorithm":"tsne",
+        "targetDirectory":"./output",
+        "targetFileType":"csv",
+        "numBatches" : 1,
+    },
+    "parameters": {
+        "perplexity":30,
+        "theta":0.5,
+        "maxNumberIterations":1000,
+        "targetDimension" :2,
+        "numberCores":1
+    }
+},
+```
+Note that the _seed_ is taken from the system’s current time.
 
 
 # Hyperparameter Optimization

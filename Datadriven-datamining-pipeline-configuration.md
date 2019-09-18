@@ -554,7 +554,8 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
 <b>Mandatory Values:</b> <i>none</i>
 
 Defining the json just like this will enable and run the visualization module:
-```"visualization":{ },
+```
+"visualization":{ },
 ```
 
 **Default Values:**

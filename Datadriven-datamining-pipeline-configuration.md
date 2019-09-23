@@ -85,11 +85,7 @@ read-in.
 
 ### dataSource
 <table>
-<<<<<<< HEAD:Datadriven-dataminig-pipeline-configuration.md
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><<th>Default Value</th></tr>
-=======
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
->>>>>>> 1a81326012c45aa430280d2261ce93090682424b:Datadriven-datamining-pipeline-configuration.md
 <tr><td>filePath</td><td>String</td><td>relative or absolute path</td><td>Path to the datafile. Path may be absolute or relative to the directory of execution of the binary</td><td></td><td><b>Mandatory to specify</b></td></tr>
 <tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td><td>"none"</td></tr>
 <tr><td>compression</td><td>Boolean</td><td>true, false</td><td>Supply true if the file containing the data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td><td>false</td></tr>
@@ -164,10 +160,10 @@ the dim attribute listed here.
 ### gridConfig
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>generalGridType </td><td>String</td><td>"regular", "component"</td><td>"regular": compute solution on one sparse grid, "component": use the combination technique</td><td></td><td>"regular"</td></tr>
 <tr><td>gridType</td><td>String</td><td>all sgpp::base::GridTypes</td><td>The type of the grid</td><td></td><td>"linear"</td></tr>
 <tr><td>dim</td><td>Integer</td><td>[1, inf)</td><td>The dimension of the grid</td><td></td><td>0</td></tr>
 <tr><td>level</td><td>Integer</td><td>[1, inf)</td><td>The level of the grid (initial, before refinement)</td><td></td><td>3</td></tr>
-<tr><td>generalGridType </td><td>String</td><td>"regular", "component"</td><td>"regular": compute solution on one sparse grid, "component": use the combination technique</td><td></td><td>"regular"</td></tr>
 <tr><td>maxDegree</td><td>Integer</td><td>[1, inf)</td><td>The maximal degree of polynomials used if the grid uses polynomial basis functions</td><td>gridType uses polynomial ansatz functions</td><td>1</td></tr>
 <tr><td>boundaryLevel</td><td>Integer</td><td>[0, inf)</td><td>The level of the boundary grid. <b>This parameter is currently recommended to be left empty.</b></td><td>gridType is a boundary grid</td><td>0</td></tr>
 <tr><td>fileName</td><td>String</td><td></td><td>The file name used if the grid is to be serialized to a file</td><td></td><td>""</td></tr>
@@ -179,7 +175,7 @@ and coarsening.
 ### adaptivityConfig
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
-<tr><td>numRefinements</td><td>Integer</td><td>[0, inf)</td><td>The number of refinements</td><td></td><td>0</td></tr>
+<tr><td>numRefinements</td><td>Integer</td><td>[0, inf)</td><td>The number of refinements</td><td></td><td>1</td></tr>
 <tr><td>threshold</td><td>Float</td><td>[0.0, inf)</td><td>Threshold for surplus refinement. Only grid points with a surplus above this threshold are considered for refinement</td><td></td><td>0.0</td></tr>
 <tr><td>maxLevelType</td><td>Boolean</td><td>true, false</td><td>The refinement type. Currently unused</td><td></td><td>false</td></tr>
 <tr><td>noPoints</td><td>Integer</td><td>[0, inf)</td><td>The maximal number of points to refine during one refinement</td><td></td><td>0</td></tr>
@@ -307,13 +303,6 @@ ScaLAPACK decomposes matrices and vectors into blocks that are cyclically mapped
 ### geometryConfig
 
 The geometryConfig structure lets you create a geometry aware sparse grid that contains much less points then a regular sparse grid. When performing e.g. image classification, the number of dimensions is too high to start with a regular sparse grid of level > 2, thus we use geometry aware sparse grids to reduce the number of grid points.
-<<<<<<< HEAD:Datadriven-dataminig-pipeline-configuration.md
-
-<table>
-<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
-<tr><td>dim</td><td>JSON-array</td><td>Integers for array entries</td><td>Specifies the resolution of the picture. Support: ONLY 2D Array support = Image, Default Value = std::vector<int64_t>()</td><td></td><td>[28, 28]</td></tr>
-<tr><td>stencil</td><td>String</td><td>"none", "DN"</td><td>The stencil specifies what pixel/dimension interactions are included in the a priori geometry aware grid</td><td></td><td>"DN"</td></tr>
-=======
 
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
@@ -345,7 +334,6 @@ Also note that the json output is to be used as an input for the plotly graph li
 <tr><td>targetDirectory</td><td>String</td><td>Absolute or relative path</td><td>Path to the file in which the data will be stored after the algorithm is applied</td><td></td><td>./output</td></tr>
 <tr><td>targetFileType</td><td>String</td><td>csv, json</td><td>Format of the file in which to present the output of the visualization algorithm.</td><td></td><td>csv</td></tr>
 <tr><td>numBatches</td><td>Integer</td><td>[1,Inf)</td><td>Number which determine after how many batches the visualization module will be executed. Note that the first batch is always executed.</td><td></td><td>1</td></tr>
->>>>>>> 1a81326012c45aa430280d2261ce93090682424b:Datadriven-datamining-pipeline-configuration.md
 </table>
 
 ## Parameters
@@ -477,10 +465,10 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
     },
 
     "adaptivityConfig": {
-        "numRefinements": 0,
+        "numRefinements": 1,
         "threshold": 0.0,
         "maxLevelType": false,
-        "noPoints": 0,
+        "noPoints": 5,
         "percent": 1.0,
         "refinementFunctorType": "surplus",
         "refinementPeriod": 1,

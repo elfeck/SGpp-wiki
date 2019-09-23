@@ -19,11 +19,15 @@
     11. [learner](#learner)
     12. [parallelConfig](#parallelconfig)
     13. [geometryConfig](#geometryconfig)
-5. [Default Values and Mandatory Configuration](#default-and-mandatory-configuration)
+5. [Visualization Configuration](#visualization-configuration)
+    1. [generalConfig](#generalconfig)
+    2. [parameters](#parameters)
+6. [Default Values and Mandatory Configuration](#default-and-mandatory-configuration)
     1. [dataSource](#datasource-1)
     2. [scorer](#scorer-1)
     3. [fitter](#fitter-1)
-6. [Hyperparameter Optimization](#hyperparameter-optimization)
+    4. [visualization](#visualization-1)
+7. [Hyperparameter Optimization](#hyperparameter-optimization)
 
 # Overview
 
@@ -81,7 +85,11 @@ read-in.
 
 ### dataSource
 <table>
+<<<<<<< HEAD:Datadriven-dataminig-pipeline-configuration.md
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><<th>Default Value</th></tr>
+=======
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+>>>>>>> 1a81326012c45aa430280d2261ce93090682424b:Datadriven-datamining-pipeline-configuration.md
 <tr><td>filePath</td><td>String</td><td>relative or absolute path</td><td>Path to the datafile. Path may be absolute or relative to the directory of execution of the binary</td><td></td><td><b>Mandatory to specify</b></td></tr>
 <tr><td>fileType</td><td>String</td><td>"arff", "csv", "none"</td><td>The file type of the datafile. Currently supported are ARFF and CSV files as well gzip compressed file. If "none" is supplied the file type is automatically inferred from the file extension. Note independent from the configuration file: Files used with the pipeline <b>must</b> have one of these extensions (with optional ".gz" extension for compressed files), otherwise the datafile cannot be read</td><td></td><td>"none"</td></tr>
 <tr><td>compression</td><td>Boolean</td><td>true, false</td><td>Supply true if the file containing the data is gzip compressed. It will then be automatically decompressed as the data is read in by the pipeline</td><td></td><td>false</td></tr>
@@ -299,6 +307,13 @@ ScaLAPACK decomposes matrices and vectors into blocks that are cyclically mapped
 ### geometryConfig
 
 The geometryConfig structure lets you create a geometry aware sparse grid that contains much less points then a regular sparse grid. When performing e.g. image classification, the number of dimensions is too high to start with a regular sparse grid of level > 2, thus we use geometry aware sparse grids to reduce the number of grid points.
+<<<<<<< HEAD:Datadriven-dataminig-pipeline-configuration.md
+
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>dim</td><td>JSON-array</td><td>Integers for array entries</td><td>Specifies the resolution of the picture. Support: ONLY 2D Array support = Image, Default Value = std::vector<int64_t>()</td><td></td><td>[28, 28]</td></tr>
+<tr><td>stencil</td><td>String</td><td>"none", "DN"</td><td>The stencil specifies what pixel/dimension interactions are included in the a priori geometry aware grid</td><td></td><td>"DN"</td></tr>
+=======
 
 <table>
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
@@ -306,6 +321,47 @@ The geometryConfig structure lets you create a geometry aware sparse grid that c
 <tr><td>stencil</td><td>String</td><td>"none", "DN"</td><td>The stencil specifies what pixel/dimension interactions are included in the a priori geometry aware grid</td><td></td><td>"DN"</td></tr>
 </table>
 
+# Visualization Configuration
+
+This attribute contains all the parameters necessary to run the visualization module. Note that this module is entirely optional so it must be defined in order to execute it. If the user wants to execute the module with all of the default parameters, an empty dictionary with key they "visualization" in the config file will suffice.
+
+### visualization
+This part of the configuration is comprised of 2 dictionaries:
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>generalConfig</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
+<tr><td>parameters</td><td>Dictionary</td><td>see table below</td><td></td><td></td><td></td></tr>
+</table>
+
+## generalConfig
+
+The generalConfig attribute contains the general parameters for configuration, like which algorithm to use, output format and the folder to store the data. Note that the heatmaps and cuts are **always generated** and that the graphs’ resolution **will depend on the level of the grid defined** at gridConfig in the Fitter module. The tsne algorithm is the only additional algorithm so far implemented for the visualization which reduces the dimensionality. **In this current version of the system the algorithm itself has not been fully integrated but it will be in a future release. Setting the parameters related to this algorithm will have no effect on the current execution of the module.**
+
+Also note that the json output is to be used as an input for the plotly graph library.
+
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>algorithm</td><td>String</td><td>"tsne" plus other algorithms for visualization which could be implemented in the future</td><td>Algorithm to be executed to reduce the dimensionality of the model.</td><td></td><td>tsne</td></tr>
+<tr><td>targetDirectory</td><td>String</td><td>Absolute or relative path</td><td>Path to the file in which the data will be stored after the algorithm is applied</td><td></td><td>./output</td></tr>
+<tr><td>targetFileType</td><td>String</td><td>csv, json</td><td>Format of the file in which to present the output of the visualization algorithm.</td><td></td><td>csv</td></tr>
+<tr><td>numBatches</td><td>Integer</td><td>[1,Inf)</td><td>Number which determine after how many batches the visualization module will be executed. Note that the first batch is always executed.</td><td></td><td>1</td></tr>
+>>>>>>> 1a81326012c45aa430280d2261ce93090682424b:Datadriven-datamining-pipeline-configuration.md
+</table>
+
+## Parameters
+
+parameters contains the technical parameters to run the visualization algorithm determined in the algorithm attribute of generalConfig
+
+<table>
+<tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
+<tr><td>perplexity</td><td>Integer</td><td>[5,50]</td><td>Perplexity value used to run the tsne algorithm. More information to be found in [this paper](https://lvdmaaten.github.io/publications/papers/JMLR_2008.pdf) at Section 2. Note: It should be not be bigger than the total amount of points to be processed by the algorithm
+</td><td>algorithm="tsne"</td><td>30</td></tr>
+<tr><td>theta</td><td>Float</td><td>(0,1]</td><td>Summarization threshold of a set of points used by the algorithm to approximate the probability distributions. More information about this parameter can be found in [this paper](https://lvdmaaten.github.io/publications/papers/JMLR_2014.pdf) at Section 4.2.</td><td>algorithm="tsne"</td><td>0.5</td></tr>
+<tr><td>seed</td><td>Integer</td><td>(0,Inf)</td><td>The seed to set in order to initialize the algorithm</td><td>algorithm="tsne"</td><td>System’s current time</td></tr>
+<tr><td>maxNumberIterations</td><td>Integer</td><td>[1,Inf)</td><td>Maximum number of iteration in which the gradient descent will be run</td><td>Algorithm which uses gradient descent</td><td>1000</td></tr>
+<tr><td>targetDimension</td><td>Integer</td><td>1,2,3</td><td>The number of dimensions to which the data will be reduced. If algorithm="tsne" and the output="json", then only with targetDimension=2 will the json output be shown.</td><td></td><td>2</td></tr>
+<tr><td>numberCores</td><td>Integer</td><td>[1,Inf)</td><td>Number of cores to used to run the algorithm</td><td></td><td>1</td></tr>
+</table>
 
 # Default and Mandatory Configuration
 
@@ -504,6 +560,36 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
 
 },
 ```
+## visualization
+
+<b>Developer Note:</b> Default values for the visualization configuration are set up in the method setupDefaults of class VisualizationConfiguration.
+
+<b>Mandatory Values:</b> <i>none</i>
+
+Defining the json just like this will enable and run the visualization module:
+```
+"visualization":{ },
+```
+
+**Default Values:**
+```
+"visualization": {
+    "generalConfig": {
+        "algorithm":"tsne",
+        "targetDirectory":"./output",
+        "targetFileType":"csv",
+        "numBatches" : 1,
+    },
+    "parameters": {
+        "perplexity":30,
+        "theta":0.5,
+        "maxNumberIterations":1000,
+        "targetDimension" :2,
+        "numberCores":1
+    }
+},
+```
+Note that the _seed_ is taken from the system’s current time.
 
 
 # Hyperparameter Optimization

@@ -178,7 +178,7 @@ and coarsening.
 <tr><td>numRefinements</td><td>Integer</td><td>[0, inf)</td><td>The number of refinements</td><td></td><td>1</td></tr>
 <tr><td>threshold</td><td>Float</td><td>[0.0, inf)</td><td>Threshold for surplus refinement. Only grid points with a surplus above this threshold are considered for refinement</td><td></td><td>0.0</td></tr>
 <tr><td>maxLevelType</td><td>Boolean</td><td>true, false</td><td>The refinement type. Currently unused</td><td></td><td>false</td></tr>
-<tr><td>noPoints</td><td>Integer</td><td>[0, inf)</td><td>The maximal number of points to refine during one refinement</td><td></td><td>0</td></tr>
+<tr><td>noPoints</td><td>Integer</td><td>[0, inf)</td><td>The maximal number of points to refine during one refinement</td><td></td><td>1</td></tr>
 <tr><td>percent</td><td>Float</td><td>[0.0, 1.0]</td><td>The maximal fraction ("percent") of points to be refined</td><td></td><td>1.0</td></tr>
 <tr><td>refinementIndicator</td><td>String</td><td>"surplus", "surplusVolume", "zeroCrossing", "dataBased", "gridPointBased", "multipleClass"</td><td>The functor type use for refinement</td><td></td><td>"surplus"</td></tr>
 <tr><td>precomputeEvaluations</td><td>Boolean</td><td>true, false</td><td>Determines if evaluations should be pre-computed during zero-crossing-based refinement</td><td>refinementIndicator="zeroCrossing"</td><td>true</td></tr>
@@ -218,7 +218,7 @@ is a sub-type of densityEstimation.
 <tr><th>Attribute Name</th><th>Attribute Type</th><th>Valid value range</th><th>Comment</th><th>Depends on</th><th>Default Value</th></tr>
 <tr><td>densityEstimationType</td><td>String</td><td>"cg", "decomposition"</td><td>Should conjugate gradient or matrix decomposition be used?</td><td></td><td>"decomposition"</td></tr>
 <tr><td>normalize</td><td>Bool</td><td>true, false</td><td>Should the density function be normalized?</td><td>fitter.densityEstimationType="decomposition"</td><td>false</td></tr>
-<tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td><td>"chol"</td></tr>
+<tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td><td>"orthoadapt"</td></tr>
 <tr><td>iCholSweepsDecompose</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td><td>4</td></tr>
 <tr><td>iCholSweepsRefine</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td><td>4</td></tr>
 <tr><td>iCholSweepsUpdateLambda</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td><td>2</td></tr>
@@ -468,7 +468,7 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
         "numRefinements": 1,
         "threshold": 0.0,
         "maxLevelType": false,
-        "noPoints": 5,
+        "noPoints": 1,
         "percent": 1.0,
         "refinementFunctorType": "surplus",
         "refinementPeriod": 1,
@@ -497,7 +497,7 @@ always overwritten by the previously mentioned setupDefaults function of FitterC
     "densityEstimationConfig": {
         "densityEstimationType": "decomposition",
         "normalize": false,
-        "matrixDecompositionType": "chol",
+        "matrixDecompositionType": "orthoadapt",
         "iCholSweepsDecompose": 4,
         "iCholSweepsRefine": 4,
         "iCholSweepsUpdateLambda": 2,

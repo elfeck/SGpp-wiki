@@ -1,4 +1,4 @@
-Welcome to the SG⁺⁺ wiki!
+Welcome to the SG⁺⁺ User Guide!
 
 You can simply use the SG⁺⁺ debian package provided with every [release](https://github.com/SGpp/SGpp/releases) or continue to [installation instructions](https://github.com/SGpp/SGpp/wiki/Installation) for detailed information on installation and usage of SG⁺⁺.
 

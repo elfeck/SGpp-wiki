@@ -15,7 +15,7 @@ SCons is written in Python 2.7, which is therefore needed by SG⁺⁺ as well.
 The following software is recommended for core functionality:
 - <a href="http://www.boost.org/" target="_blank">Boost.Test</a> for compiling and running the unit tests.
 You can also skip the unit tests, but this is not recommended.
-- <a href="http://www.swig.org/" target="_blank">SWIG (&ge; 3.0)</a>, if you want to use SG⁺⁺ within Python, Java, or MATLAB.
+- <a href="http://www.swig.org/" target="_blank">SWIG (&ge; 3.0.4)</a>, if you want to use SG⁺⁺ within Python, Java, or MATLAB.
 SWIG creates bindings from C/C++ functions in order to make
 them available as a Python module or
 prepare them to be called from Java code.

@@ -6,5 +6,5 @@ The [quick start examples](https://github.com/SGpp/SGpp/wiki/Quick-Start) demons
 
 Further information about the individual SG⁺⁺ modules can be found [here](https://github.com/SGpp/SGpp/wiki/Modules).
 
-The complete documentation for developers can be found at [sgpp.sparsegrids.org](http://sgpp.sparsegrids.org/development.html).
+The central hub for SG⁺⁺-related resources is [sgpp.sparsegrids.org](https://sgpp.sparsegrids.org/), for example, the [complete documentation for developers](https://sgpp.sparsegrids.org/docs/development.html) is located there.
 

@@ -10,6 +10,7 @@
       2. [Python](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Python))
       3. [Java](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Java))
       4. [MATLAB](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(MATLAB))
+      4. [Google colab](https://github.com/SGpp/SGpp/wiki/Installing-pysgpp-on-colab)
    2. [Quick Start Examples for Other Modules](https://github.com/SGpp/SGpp/wiki/Quick-Start)
 4. [**Modules**](https://github.com/SGpp/SGpp/wiki/Modules)
    1. [`sgpp::base`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::base)

@@ -12,6 +12,7 @@
       3. [Java](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(Java))
       4. [MATLAB](https://github.com/SGpp/SGpp/wiki/Base-quick-start-(MATLAB))
    2. [Quick Start Examples for Other Modules](https://github.com/SGpp/SGpp/wiki/Quick-Start)
+   3. [Python Notebooks](https://github.com/SGpp/SGpp/wiki/Python-Notebooks)
 4. [**Modules**](https://github.com/SGpp/SGpp/wiki/Modules)
    1. [`sgpp::base`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::base)
    2. [`sgpp::combigrid`](https://github.com/SGpp/SGpp/wiki/Module-sgpp::combigrid)

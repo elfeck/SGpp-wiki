@@ -10,8 +10,10 @@ To compile and customize SG⁺⁺ select your operating system:
 
 SG⁺⁺ could also build with other OS/compiler combinations that are not listed here. 
 
+To install SG⁺⁺'s Python module on Google colab, here is a reference: [colab / ipynb](https://github.com/SGpp/SGpp/wiki/Installing-pysgpp-on-colab).
 
 If you want to use SG⁺⁺ with MATLAB, we recommend to use the binaries provided in the [releases](https://github.com/SGpp/SGpp/releases) (see installation instructions on the [MATLAB binaries](https://github.com/SGpp/SGpp/wiki/MATLAB-binaries) page). There are also other options, if you do not want or are not able to use the binaries (in this case, proceed as explained on the page for your platform).
 
 Instructions for setting up Eclipse IDE for SG⁺⁺ can be found [here](https://github.com/SGpp/SGpp/wiki/Eclipse-setup).
 
+There are also example repositories available, showing how to integrate SG⁺⁺ into your own project using git submodules and CMake (or SCons). These work without a prior installation of SG⁺⁺ and instead automatically build and include it in the current project only. The example with CMake can be found [here](https://github.com/SGpp/SGpp_Example_Application_CMake), the one using SCons [here](https://github.com/SGpp/SGpp_Example_Application_SCons).

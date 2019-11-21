@@ -180,7 +180,7 @@ and coarsening.
 <tr><td>maxLevelType</td><td>Boolean</td><td>true, false</td><td>The refinement type. Currently unused</td><td></td><td>false</td></tr>
 <tr><td>noPoints</td><td>Integer</td><td>[0, inf)</td><td>The maximal number of points to refine during one refinement</td><td></td><td>0</td></tr>
 <tr><td>percent</td><td>Float</td><td>[0.0, 1.0]</td><td>The maximal fraction ("percent") of points to be refined</td><td></td><td>1.0</td></tr>
-<tr><td>refinementIndicator</td><td>String</td><td>"surplus", "surplusVolume", "zeroCrossing", "dataBased", "gridPointBased", "multipleClass", "classification"</td><td>The functor type use for refinement</td><td>For classification settings, "classification" is the best choice.</td><td>"surplus"</td></tr>
+<tr><td>refinementIndicator</td><td>String</td><td>"surplus", "surplusVolume", "zeroCrossing", "dataBased", "gridPointBased", "multipleClass", "classification"</td><td>The functor type use for refinement. For classification settings, "classification" is the best choice.</td><td></td><td>"surplus"</td></tr>
 <tr><td>precomputeEvaluations</td><td>Boolean</td><td>true, false</td><td>Determines if evaluations should be pre-computed during zero-crossing-based refinement</td><td>refinementIndicator="zeroCrossing"</td><td>true</td></tr>
 <tr><td>penalizeLevels</td><td>Boolean</td><td>true, false</td><td>Should grid points with higher level get penalized when refinement candidates are picked?</td><td></td><td>false</td></tr>
 <tr><td>scalingCoefficients</td><td>[Float]</td><td>List of length #classes with values (0, inf)</td><td>The scaling coefficients alpha for each class which are part of data-based refinement</td><td>refinementIndicator="dataBased"</td><td>[ ]</td></tr>

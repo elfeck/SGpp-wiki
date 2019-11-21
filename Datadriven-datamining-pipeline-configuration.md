@@ -219,6 +219,7 @@ is a sub-type of densityEstimation.
 <tr><td>densityEstimationType</td><td>String</td><td>"cg", "decomposition"</td><td>Should conjugate gradient or matrix decomposition be used?</td><td></td><td>"decomposition"</td></tr>
 <tr><td>normalize</td><td>Bool</td><td>true, false</td><td>Should the density function be normalized?</td><td>fitter.densityEstimationType="decomposition"</td><td>false</td></tr>
 <tr><td>matrixDecompositionType</td><td>String</td><td>"cg", "eigen", "chol", "denseichol", "orthoadapt"</td><td>The type of matrix decomposition. "cg" means LU decomposition</td><td>densityEstimationType="decomposition"</td><td>"chol"</td></tr>
+<tr><td>useOfflinePermutation</td><td>bool</td><td>true, false</td><td>Flag to specify wether the permutation and blow-up approach should be used for suitable decomposition types</td><td></td><td>true</td></tr>
 <tr><td>iCholSweepsDecompose</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td><td>4</td></tr>
 <tr><td>iCholSweepsRefine</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td><td>4</td></tr>
 <tr><td>iCholSweepsUpdateLambda</td><td>Integer</td><td>[0, inf)</td><td></td><td>matrixDecompositionType="denseichol"</td><td>2</td></tr>
